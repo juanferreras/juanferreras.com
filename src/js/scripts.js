@@ -53,35 +53,44 @@ $("document").ready(function() {
 	  $('.loading-spinner').fadeOut("slow");
 	});
 
-	var formFullName = chance.name(),
-		formName = formFullName.toLowerCase().split(" "),
-		formEmail = formName[0]+"@"+formName[1]+".com";
-
-	$('#formFullName').attr("placeholder",formFullName);
-	$('#formEmail').attr("placeholder",formEmail);
-
-	var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+	var form = $('#nl-form').clone();
+	var counter = 0;
 
 	$('[data-type="modal-trigger"]').on('click', function(){
-		var actionBtn = $(this),
-			scaleValue = retrieveScale(actionBtn.next('.modal-bg'));
-		
-		actionBtn.addClass('to-circle');
-		actionBtn.next('.modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-			animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
-			$scene.parallax('disable');
+		counter++;
+
+		if(counter>2){
+			$('#sherlockHolmes').show();
+		}
+
+		var formFullName = chance.name(),
+			formName = formFullName.toLowerCase().split(" "),
+			formEmail = formName[0]+"@"+formName[1]+".com";
+
+		$('#formFullName').attr("placeholder",formFullName);
+		$('#formEmail').attr("placeholder",formEmail);
+
+		var nlform = new NLForm(document.getElementById( 'nl-form'));
+
+		var actionBtn = $(this);
+		var body = $("body");
+		body.stop().animate({scrollTop:0}, '300', 'swing',function(){
+			var scaleValue = retrieveScale(actionBtn.next('.modal-bg'));
+
+			actionBtn.addClass('to-circle');
+			actionBtn.next('.modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
+				$scene.parallax('disable');
+			});
+
+			if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
 		});
 
-		//if browser doesn't support transitions...
-		if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
 	});
 
 	//trigger the animation - close modal window
 	$('.section .modal-close').on('click', function(){
 		closeModal();
-	});
-	$(document).keyup(function(event){
-		//if(event.which=='27') closeModal();
 	});
 
 	$(window).on('resize', function(){
@@ -139,38 +148,12 @@ $("document").ready(function() {
 			$scene.parallax('enable');
 			$scene.parallax('updateLayers');
 			animateLayer(section.find('.modal-bg'), 1, false);
+			setTimeout(function(){
+				$('#nl-form').replaceWith(form.clone());
+			}, 400);
 		});
 		//if browser doesn't support transitions...
 		if(section.parents('.no-csstransitions').length > 0 ) animateLayer(section.find('.modal-bg'), 1, false);
 	}
-
-	/*var delay = false;
-
-	$(document).on('mousewheel DOMMouseScroll', function(event) {
-	event.preventDefault();
-	if(delay) return;
-
-	delay = true;
-	setTimeout(function(){delay = false},200)
-
-	var wd = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-
-	var a = document.getElementsByTagName('section');
-	if(wd < 0) {
-	  for(var i = 0 ; i < a.length ; i++) {
-	    var t = a[i].getClientRects()[0].top;
-	    if(t >= 40) break;
-	  }
-	}
-	else {
-	  for(var i = a.length-1 ; i >= 0 ; i--) {
-	    var t = a[i].getClientRects()[0].top;
-	    if(t < -20) break;
-	  }
-	}
-	$('html,body').animate({
-	  scrollTop: a[i].offsetTop
-	}, 800, "easeInOutQuad");
-	});*/
 
 });

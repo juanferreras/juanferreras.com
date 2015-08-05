@@ -1,3 +1,6 @@
+#sherlockHolmes {
+  display: none;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -61,7 +64,7 @@
   position: absolute;
   z-index: 1;
   left: 65%;
-  top: 0;
+  top: 18px;
   width: 4em;
   border-radius: 0;
   opacity: 0;
@@ -298,4 +301,23 @@
   opacity: 1;
   visibility: visible;
   transition-delay: 0s;
+}
+.modal form+p {
+  font-size: 1rem;
+  color: #aaa;
+  line-height: 1.8;
+  max-width: 700px;
+  margin-top: 120px;
+}
+.modal p > q{
+  font-style: italic;
+  font-size: 1.05em;
+}
+.modal p::before{
+  content:"";
+  display:block;
+  height:1px;
+  width: 120px;
+  background-color: #aaa;
+  margin-bottom: 25px;
 }
