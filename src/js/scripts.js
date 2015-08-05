@@ -81,6 +81,7 @@ $("document").ready(function() {
 			actionBtn.next('.modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 				animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
 				$scene.parallax('disable');
+				$('.main-layer').css("transform","");
 			});
 
 			if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
