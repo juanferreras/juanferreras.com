@@ -48,23 +48,6 @@ input:focus::-ms-input-placeholder {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-section.about {
-  background: #151515;
-  padding: 30px 0;
-  margin-bottom: 16px;
-}
-
-header h3{
-  margin-top: 0.9em;
-}
-
-header h3 i{
-  font-size: 0.9em;
-  margin-right: 0.2em;
-  color: #3B3E41;
-}
-
 header.home{
   text-align: center;
   width: 100%;
@@ -75,20 +58,4 @@ header.home{
 
 header.home h3 {
   margin: 3px 0 6px;
-}
-
-.item>h3 {
-  margin-right: .7em;
-}
-
-.item>h3>a{
-  color: #162836;
-  border-bottom: 1px solid #162836;
-  padding-bottom: 0;
-  margin-left: 0;
-}
-.item>h3>a:focus,
-.item>h3>a:hover{
-  color: #162836;
-  margin-left:5px;
 }

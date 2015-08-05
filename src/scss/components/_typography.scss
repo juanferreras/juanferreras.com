@@ -1,7 +1,7 @@
 body {
   font-size: 16px;
   font-weight: 300;
-  color: #CCD2D7;
+  color: $color-grey-font;
   font-family: $font-sans-stack;
 }
 
@@ -9,7 +9,8 @@ h1,
 h2,
 .btn,
 p>em,
-.book-content>h4{
+.book-content>h4,
+h5{
   font-family: $font-sans-stack;
 }
 
@@ -20,13 +21,14 @@ a,
 .amp,
 .giant-ampersand,
 blockquote,
-.book-content ul{
+.book-content ul,
+section ul{
   font-family: $font-serif-stack;
   font-weight: normal;
 }
 
 h1{
-  color: #fff;
+  color: $color-white-font;
   font-weight: normal;
   font-weight: bold;
   font-size: 3.5em;
@@ -39,50 +41,47 @@ h1 > strong {
 }
 
 h2{
-  color: #162836;
+  color: $color-dark-font;
   font-size: 1.7em;
   margin-bottom: 0;
 }
 
 h3{
-  color: #162836;
+  color: $color-dark-font;
 }
 
 a,
 header h3{
-  color: #CCD2D7;
+  color: $color-base-font;
 }
 
 h1 {
   font-size: 2.5em;
-  color: #fff;
+  color: $color-white-font;
   padding: 0;
   margin: 0;
 }
 
 h2 {
   font-weight: 700;
-  border-bottom: 5px solid #162836;
   display: inline-block;
   line-height: 1.6;
-  margin-top: 1.75em;
+  margin-bottom: 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.4em;
+  width: 100%;
+  border-bottom: 1px solid $color-dark-font;
+  padding-bottom: .2em;
 }
 
 h3{
   font-weight: normal;
-}
-
-h3,
-h4{
   margin: 0;
   font-size: 1.2em;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-h4,
 .amp{
   font-style: italic;
 }
@@ -91,16 +90,28 @@ h4,
   font-size: 1em;
 }
 
+h4 {
+  display: block;
+  font-size: 1.2em;
+  line-height: 1.7;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: normal;
+  margin-top: .25em;
+}
+
 p.item{
   font-size: .9em;
-  color: #a8bec9;
+  color: $color-grey-font;
   margin-top: 0;
   line-height: 1.5;
   letter-spacing: .6px;
 }
 
 .item h4, .item p {
-  color: #AEAEAE;
+  color: $color-grey-font;
 }
 
 p {
@@ -114,7 +125,7 @@ section p{
 }
 
 p>em {
-  color: #fff;
+  color: $color-white-font;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
@@ -126,12 +137,12 @@ blockquote>q {
   line-height: 1.5;
   font-weight: normal;
   font-style: italic;
-  color: #CCD2D7;
+  color: $color-grey-font;
 }
 
 cite{
   font-style: normal;
-  color: #CCD2D7;
+  color: $color-grey-font;
 }
 
 q,
@@ -149,6 +160,11 @@ blockquote {
   margin: 20px 0;
 }
 
+p > q{
+  font-style: italic;
+  font-size: 1.05em;
+}
+
 .section-title{
   font-weight:bold;
 }
@@ -156,7 +172,7 @@ blockquote {
 .section-title:after {
   content: "";
   display: block;
-  background: #fff;
+  background: $color-white-font;
   width: 90%;
   max-width: 90px;
   height: 4px;
@@ -170,18 +186,23 @@ blockquote {
 .rule {
   box-sizing: border-box;
   height: 1px;
-  background: #162836;
+  background: $color-dark-font;
 }
 
 section#designer h1,
 section#designer p>em {
-  color: #222;
+  color: $color-dark-font;
 }
 section#designer blockquote>q,
 section#designer footer>cite,
 section#designer p{
-  color: #9a9a9a;
+  color: $color-grey-font;
+}
+section#developer blockquote>q,
+section#developer footer>cite,
+section#developer p{
+  color: $color-base-font;
 }
 section#designer h1::after{
-  background: #222;
+  background: $color-dark-font;
 }

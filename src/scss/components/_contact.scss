@@ -303,15 +303,12 @@
   transition-delay: 0s;
 }
 .modal form+p {
-  font-size: 1rem;
+  font-size: .9rem;
   color: #aaa;
   line-height: 1.8;
+  width: 90%;
   max-width: 700px;
   margin-top: 120px;
-}
-.modal p > q{
-  font-style: italic;
-  font-size: 1.05em;
 }
 .modal p::before{
   content:"";
@@ -320,4 +317,7 @@
   width: 120px;
   background-color: #aaa;
   margin-bottom: 25px;
+}
+.modal span#counter{
+  font-weight: bold;
 }

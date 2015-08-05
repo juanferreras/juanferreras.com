@@ -1,3 +1,13 @@
+ul.parallax{
+  height: 100%;
+  background-color: rgba(4, 5, 7, 1);
+  background-image: url("../img/bg.jpg");
+}
+ul.parallax>li{
+  width:100%;
+  height:100%;
+  margin: 0;
+}
 
 .book>.book-content{
   transform: rotate(-17deg);

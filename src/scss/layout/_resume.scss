@@ -1,0 +1,55 @@
+header.about {
+  background: #151515;
+  padding: 30px 0;
+  margin-bottom: 16px;
+}
+h3>a{
+  color: #162836;
+  border-bottom: 1px solid #162836;
+  padding-bottom: 0;
+  margin-left: 0;
+}
+h3>a:focus,
+h3>a:hover{
+  color: #162836;
+  margin-left:5px;
+}
+
+section > .row > div[class^="col-"]:nth-child(2){
+  text-align:left;
+  float:right;
+}
+
+section > .row blockquote{
+  text-align:center;
+}
+
+.note::before{
+  content:"";
+  width: 70px;
+  display:block;
+  height: 1px;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  background: $color-base-font;
+}
+
+.note{
+  font-size: .8em;
+}
+
+section .row p{
+  line-height:1.5;
+  margin-top: .3em;
+}
+
+section .row h4+p{
+  line-height:1.8;
+}
+
+section ul{
+  margin-top: .2em;
+}
+section ul li{
+  line-height: 1.7;
+}
