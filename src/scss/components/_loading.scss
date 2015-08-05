@@ -1,0 +1,46 @@
+.loading .button-container,
+.loading .mouse-icon,
+.loading .layer{
+  display: none !important;
+}
+.loading .layer.visible{
+  display:block !important;
+}
+.loading nav{
+  visibility:hidden;
+}
+.loading .background{
+  background:rgba(5,5,5,1);
+}
+.loading{
+  overflow:hidden;
+}
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading .loading-spinner {
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-name: rotate-forever;
+  animation-timing-function: linear;
+  height: 30px;
+  width: 30px;
+  border: 5px solid #444;
+  border-right-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.loading .loading-spinner {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 47%;
+  margin: 120px 0px -10px;
+  z-index: 9999;
+}

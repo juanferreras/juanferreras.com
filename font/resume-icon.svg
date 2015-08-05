@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="resume-icon" horiz-adv-x="1000" >
+<font-face font-family="resume-icon" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="mail-alt" unicode="&#xe800;" d="m1000 454v-443q0-37-26-63t-63-27h-822q-36 0-63 27t-26 63v443q25-28 56-49 202-137 278-192 32-24 51-37t53-27 61-13h2q28 0 61 13t53 27 51 37q95 68 278 192 32 22 56 49z m0 164q0-44-27-84t-68-69q-210-146-262-181-5-4-23-17t-30-22-29-18-33-15-27-5h-2q-12 0-27 5t-33 15-29 18-30 22-23 17q-51 35-147 101t-114 80q-35 23-65 64t-31 77q0 43 23 72t66 29h822q36 0 62-26t27-63z" horiz-adv-x="1000" />
+<glyph glyph-name="gift" unicode="&#xe801;" d="m518 93v400h-179v-400q0-14 10-21t26-8h107q16 0 26 8t10 21z m-255 471h109l-70 90q-15 17-39 17-22 0-38-15t-15-38 15-38 38-16z m384 54q0 22-15 38t-38 15q-24 0-39-17l-69-90h108q22 0 38 16t15 38z m210-143v-179q0-7-5-12t-13-5h-53v-233q0-22-16-37t-38-16h-607q-22 0-38 16t-16 37v233h-53q-8 0-13 5t-5 12v179q0 8 5 13t13 5h245q-51 0-88 36t-37 89 37 88 88 37q60 0 94-43l72-92 71 92q34 43 94 43 52 0 88-37t37-88-37-89-88-36h245q8 0 13-5t5-13z" horiz-adv-x="857.1" />
+<glyph glyph-name="home" unicode="&#xe802;" d="m786 296v-267q0-15-11-26t-25-10h-214v214h-143v-214h-214q-15 0-25 10t-11 26v267q0 1 0 2t0 2l321 264 321-264q1-1 1-4z m124 39l-34-41q-5-5-12-6h-2q-7 0-12 3l-386 322-386-322q-7-4-13-4-7 2-12 7l-35 41q-4 5-3 13t6 12l401 334q18 15 42 15t43-15l136-114v109q0 8 5 13t13 5h107q8 0 13-5t5-13v-227l122-102q5-5 6-12t-4-13z" horiz-adv-x="928.6" />
+</font>
+</defs>
+</svg>

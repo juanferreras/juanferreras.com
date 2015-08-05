@@ -1,0 +1,90 @@
+*:focus {
+  outline: none !important;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: rgba(4, 5, 7, 0.99);
+}
+
+::selection {
+  color: white;
+  background: rgba(4, 5, 7, 0.99);
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+input:active::-webkit-input-placeholder ,
+input:focus::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.2);
+}
+input::-moz-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+input:active::-moz-placeholder,
+input:focus::-moz-placeholder {
+  color: rgba(255,255,255,0.2);
+}
+input:-ms-input-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+input:active::-ms-input-placeholder ,
+input:focus::-ms-input-placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+.section {
+  text-align: center;
+}
+.section p {
+  margin: 2em 0;
+  line-height: 1.6;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section.about {
+  background: #151515;
+  padding: 30px 0;
+  margin-bottom: 16px;
+}
+
+header h3{
+  margin-top: 0.9em;
+}
+
+header h3 i{
+  font-size: 0.9em;
+  margin-right: 0.2em;
+  color: #3B3E41;
+}
+
+header.home{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding:0;
+  margin:0;
+}
+
+header.home h3 {
+  margin: 3px 0 6px;
+}
+
+.item>h3 {
+  margin-right: .7em;
+}
+
+.item>h3>a{
+  color: #162836;
+  border-bottom: 1px solid #162836;
+  padding-bottom: 0;
+  margin-left: 0;
+}
+.item>h3>a:focus,
+.item>h3>a:hover{
+  color: #162836;
+  margin-left:5px;
+}

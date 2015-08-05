@@ -1,0 +1,187 @@
+body {
+  font-size: 16px;
+  font-weight: 300;
+  color: #CCD2D7;
+  font-family: $font-sans-stack;
+}
+
+h1,
+h2,
+.btn,
+p>em,
+.book-content>h4{
+  font-family: $font-sans-stack;
+}
+
+h3,
+h4,
+p,
+a,
+.amp,
+.giant-ampersand,
+blockquote,
+.book-content ul{
+  font-family: $font-serif-stack;
+  font-weight: normal;
+}
+
+h1{
+  color: #fff;
+  font-weight: normal;
+  font-weight: bold;
+  font-size: 3.5em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 > strong {
+  font-weight: 600;
+}
+
+h2{
+  color: #162836;
+  font-size: 1.7em;
+  margin-bottom: 0;
+}
+
+h3{
+  color: #162836;
+}
+
+a,
+header h3{
+  color: #CCD2D7;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 700;
+  border-bottom: 5px solid #162836;
+  display: inline-block;
+  line-height: 1.6;
+  margin-top: 1.75em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.4em;
+}
+
+h3{
+  font-weight: normal;
+}
+
+h3,
+h4{
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+h4,
+.amp{
+  font-style: italic;
+}
+
+.amp {
+  font-size: 1em;
+}
+
+p.item{
+  font-size: .9em;
+  color: #a8bec9;
+  margin-top: 0;
+  line-height: 1.5;
+  letter-spacing: .6px;
+}
+
+.item h4, .item p {
+  color: #AEAEAE;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1;
+  margin-top: .4em;
+}
+
+section p{
+  line-height:1.8;
+}
+
+p>em {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+blockquote>q {
+  font-size: 1.3em;
+  line-height: 1.5;
+  font-weight: normal;
+  font-style: italic;
+  color: #CCD2D7;
+}
+
+cite{
+  font-style: normal;
+  color: #CCD2D7;
+}
+
+q,
+blockquote,
+blockquote>q {
+  quotes: "\201C" "\201D";
+}
+
+blockquote>footer {
+  text-align: right;
+  margin-right: 0px;
+}
+
+blockquote {
+  margin: 20px 0;
+}
+
+.section-title{
+  font-weight:bold;
+}
+
+.section-title:after {
+  content: "";
+  display: block;
+  background: #fff;
+  width: 90%;
+  max-width: 90px;
+  height: 4px;
+  margin: 10px 0;
+}
+
+.item {
+  margin: 20px 0;
+}
+
+.rule {
+  box-sizing: border-box;
+  height: 1px;
+  background: #162836;
+}
+
+section#designer h1,
+section#designer p>em {
+  color: #222;
+}
+section#designer blockquote>q,
+section#designer footer>cite,
+section#designer p{
+  color: #9a9a9a;
+}
+section#designer h1::after{
+  background: #222;
+}

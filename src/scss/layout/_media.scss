@@ -1,0 +1,112 @@
+@media screen and (min-width: 768px){
+  body{
+    font-size:16px;
+  }
+  h1{
+    font-weight: normal;
+    font-size:4em;
+  }
+  h3,
+  h4{
+    display:inline-block;
+  }
+  .wrapper {
+    width: 530px;
+  }
+  .container {
+    width: 85%;
+    max-width:950px;
+    margin: 0 auto;
+  }
+  .book,
+  .cup,
+  .mac,
+  .pen{
+    visibility:visible;
+  }
+  #designer{
+    background-image: url("../img/bg-designer-alt.jpg");
+  }
+  #developer{
+    background-image: url("../img/bg-dev.jpg");
+  }
+
+  section#designer>.info{
+    background: rgba(255,255,255,0.85);
+  }
+
+  section#developer>.info{
+    background: rgba(4, 5, 7, 0.75);
+  }
+  section>.info>.container{
+    max-width: 600px;
+    position:absolute;
+    top:0;bottom:0;
+    right: 0;
+    left: 0;
+    margin:auto;
+    height: 690px;
+  }
+  section>.info{
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+  }
+  main section {
+    min-height: 800px;
+    height: 100%;
+  }
+  .loading .loading-spinner {
+    left: 50%;
+  }
+  .section p {
+    font-size: 1.8rem;
+    line-height: 2;
+  }
+  .modal .modal-content {
+    padding: 4em 10%;
+  }
+  .modal-close {
+    top: 70px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .modal .modal-content {
+    padding: 6em 20%;
+  }
+  .modal p {
+    font-size: 2rem;
+    line-height: 2;
+  }
+}
+@media screen and (min-width:1170px) and (min-height:700px){
+  .clock{
+    visibility:visible;
+  }
+  section>.info{
+    width: 50%;
+    float: right;
+  }
+  span.giant-ampersand {
+    display:block;
+  }
+  blockquote>q {
+    font-size: 1.6em;
+  }
+  main section {
+    overflow: hidden;
+  }
+  main > nav{
+    display:block;
+  }
+  h3,
+  h4{
+    font-size:1.4em;
+  }
+}
+@media screen and (min-width:1170px) and (min-height:900px){
+  .phone,
+  .plant{
+    visibility:visible;
+  }
+}
