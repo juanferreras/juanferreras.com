@@ -9,12 +9,6 @@ h3>a{
   padding-bottom: 0;
   margin-left: 0;
 }
-h3>a:focus,
-h3>a:hover{
-  color: #162836;
-  margin-left:5px;
-}
-
 section > .row > div[class^="col-"]:nth-child(2){
   text-align:left;
   float:right;
@@ -55,4 +49,17 @@ section ul{
 }
 section ul li{
   line-height: 1.7;
+}
+
+ul.profile {
+  font-size: 1em;
+  text-align: left;
+  line-height: 1.7;
+  margin:0;
+  margin-top: 1em;
+  color: $color-grey-lighter-font;
+}
+ul.profile>li{
+  display:block;
+  margin:0;
 }

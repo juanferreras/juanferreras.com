@@ -68,13 +68,25 @@
     </script>
     <script src="js/modernizr.custom.js"></script>
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/Person">
     <header class="about">
         <div class="container">
-            <h1>Juan <strong>Ferreras</strong></h1>
-            <h3>
-                Designer <span class="amp">&</span> Front-End Developer
-            </h3>
+            <div class="row">
+                <div class="col-9">
+                    <h1 itemprop="name">Juan <strong>Ferreras</strong></h1>
+                    <h3 itemprop="jobTitle">Designer <span class="amp">&</span> Front-End Developer</h3>
+                </div>
+                <div class="col-3">
+                    <ul class="profile">
+                        <li itemprop="birthDate">29th of April, 1995</li>
+                        <li itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="addressLocality">Santa Fe</span>,
+                            <span itemprop="addressCountry">Argentina</span>
+                        </li>
+                        <li itemprop="url">juanferreras.com</li>
+                        <li itemprop="email">juan@flioh.com</li>
+                    </ul>
+                </div>
         </div>
     </header>
 
@@ -93,10 +105,11 @@
                 <h5>2013 - PRESENT</h5>
             </div>
             <div class="col-9">
-                <h3>Chief Executive Officer</h3>
-                <h4>Flioh!</h4>
+                <h3 itemprop="jobTitle">Chief Executive Officer</h3>
+                <h4 itemprop="brand">Flioh!</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ex venenatis lorem auctor scelerisque. Aenean quis elit nunc. Quisque faucibus lorem in felis venenatis pulvinar. Vestibulum eget porta velit. Etiam congue convallis posuere. Ut a dignissim neque.
+                    Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods
+                    to clients from Canada, England and United States.
                 </p>
             </div>
         </div>
@@ -110,7 +123,7 @@
             </div>
             <div class="col-9">
                 <h3>Information Systems Engineering</h3>
-                <h4>UTN FRSF</h4>
+                <h4 itemprop="alumniOf">UTN FRSF</h4>
                 <p>
                     AVG with/without postponements: 8.26/8.26*
                 </p>
@@ -192,7 +205,7 @@
                         HTML5.1x -  Web Design Fundamentals
                     </a>
                 </h3>
-                <h4>W3Ct</h4>
+                <h4>W3C</h4>
                 <p>
                     Score: 99/100.
                 </p>

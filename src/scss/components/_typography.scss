@@ -1,5 +1,5 @@
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: $color-grey-font;
   font-family: $font-sans-stack;
@@ -22,7 +22,8 @@ a,
 .giant-ampersand,
 blockquote,
 .book-content ul,
-section ul{
+section ul,
+ul.profile{
   font-family: $font-serif-stack;
   font-weight: normal;
 }

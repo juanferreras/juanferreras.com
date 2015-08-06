@@ -29,7 +29,7 @@ $grid-spacing:3%;
 }
 
 //----- Columns
-@media screen and (min-width:992px){
+@media print, (min-width:992px){
   .col-1   { width:(100% / 12) - ($grid-spacing * 11 / 12); }
   .col-2   { width:(100% / 6) - ($grid-spacing * 10 / 12); }
   .col-3   { width:(100% / 4) - ($grid-spacing * 9 / 12); }

@@ -65,10 +65,18 @@
   .modal-close {
     top: 70px;
   }
+  h3>a:focus,
+  h3>a:hover{
+    color: #162836;
+    margin-left:5px;
+  }
 }
-@media screen and (min-width: 992px){
+@media print, screen and (min-width: 992px){
   section > .row > div[class^="col-"]{
     text-align:right;
+  }
+  ul.profile{
+    text-align: right;
   }
 }
 @media screen and (min-width: 1170px) {
@@ -105,5 +113,39 @@
   .phone,
   .plant{
     visibility:visible;
+  }
+}
+
+@media print{
+  @page {
+    margin: .7cm;
+  }
+  body {
+    font-size: 10pt;
+  }
+  .container {
+    width:100%;
+    max-width: 100%;
+  }
+  section p{
+    line-height: 1.7;
+  }
+  section:nth-child(4n){
+    page-break-after: always;
+  }
+  header h1,
+  header h3{
+    color: $color-dark-font;
+  }
+  header.about {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  header.about h1{
+    font-weight: normal;
+  }
+  header.about h1>strong{
+    font-weight:bold;
   }
 }
