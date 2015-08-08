@@ -54,7 +54,6 @@
     <meta property="twitter:url" content="http://juanferreras.com/">
 
     <!--Loading css style-->
-    <link rel="stylesheet" href="css/animate.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 
     <!--Loading typekit-->
@@ -68,7 +67,7 @@
     </script>
     <script src="js/modernizr.custom.js"></script>
 </head>
-<body itemscope itemtype="http://schema.org/Person">
+<body class="animsition" data-animsition-in="zoom-in-sm" data-animsition-out="zoom-out-sm" itemscope itemtype="http://schema.org/Person">
     <header class="about">
         <div class="container">
             <div class="row">
@@ -312,5 +311,10 @@
         </div>
     </section>
 
+    <aside class="return wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="1s">
+        <a href="index.html" class="animsition-link down-arrow" title="Back"></a>
+    </aside>
+
+<script src="js/script.min.js"></script>
 </body>
 </html>

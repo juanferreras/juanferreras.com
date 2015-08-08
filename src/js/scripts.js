@@ -20,7 +20,13 @@ $("document").ready(function() {
 	function refreshClock() {
 	  clock(), setTimeout(refreshClock, 1000)
 	}
-	refreshClock(); 
+	refreshClock();
+
+	$(".animsition").animsition({
+		inClass               :   'fade-in',
+		outClass              :   'fade-out',
+		loading				  :   false
+	});
 
 	cbpFixedScrollLayout.init({
 			// the cbp-fbscroller´s sections

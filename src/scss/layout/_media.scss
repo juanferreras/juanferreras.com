@@ -130,7 +130,8 @@
   section p{
     line-height: 1.7;
   }
-  section:nth-child(4n){
+  section:nth-child(4n),
+  section:nth-child(6n){
     page-break-after: always;
   }
   header h1,
@@ -147,5 +148,8 @@
   }
   header.about h1>strong{
     font-weight:bold;
+  }
+  .down-arrow{
+    display:none;
   }
 }

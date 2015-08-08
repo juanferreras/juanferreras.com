@@ -63,3 +63,61 @@ ul.profile>li{
   display:block;
   margin:0;
 }
+
+.down-arrow {
+  height: 70px;
+  width: 70px;
+  display:block;
+  border: 3px solid #222;
+  border-radius: 100%;
+  transform:  translateZ(0) rotate(90deg);
+  background-color: rgba(255,255,255,0.75);
+}
+
+aside.return{
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}
+
+.down-arrow:before,
+.down-arrow:after {
+  content: '';
+  position: absolute;
+  top: 32px;
+  width: 22px;
+  border: 2px solid #222;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.down-arrow:before {
+  transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  left: 13px;
+}
+
+.down-arrow:after {
+  transform: rotateZ(-45deg);
+  -webkit-transform: rotateZ(-45deg);
+  left: 27px;
+}
+
+.down-arrow:hover {
+  cursor: pointer;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+.down-arrow:hover:before,
+.down-arrow:hover:after {
+  top: 47px;
+}
+
+.down-arrow:hover:before {
+  left: 15px;
+}
+
+.down-arrow:hover:after {
+  left: 29px;
+}
