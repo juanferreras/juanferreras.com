@@ -80,7 +80,7 @@ $("document").ready(function() {
 		counter++;
 		localStorage.setItem("visits", counter);
 
-		if(counter>2){
+		if(counter>4){
 			$('#counter').html(stringifyNumber(counter));
 			$('#sherlockHolmes').show();
 		}
