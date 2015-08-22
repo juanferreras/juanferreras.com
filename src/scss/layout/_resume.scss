@@ -121,3 +121,23 @@ aside.return{
 .down-arrow:hover:after {
   left: 29px;
 }
+
+.profile-picture>img {
+  border-radius: 50%;
+  max-width: 175px;
+  margin: 23px auto;
+  box-shadow: 0 0 0px rgba(0,0,0,0.1);
+  transition: all 0.6s ease;
+  -webkit-filter: grayscale(100%) contrast(110%);
+  filter: grayscale(100%) contrast(110%);
+}
+
+.profile-picture>img:hover{
+  box-shadow: -20px 20px 60px rgba(0,0,0,0.08);
+  transform: perspective(1px) scale(1.05);
+}
+
+.profile-picture {
+  text-align: center !important;
+}
+
