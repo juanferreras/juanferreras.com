@@ -1,6 +1,28 @@
 #sherlockHolmes {
   display: none;
 }
+.modal-action .note::before {
+    display:none;
+}
+.modal-action .note{
+    display: block;
+    font-size: .9em;
+    color: #B0B0B0;
+    text-shadow: 0 0 30px #000;
+    padding: 10px 5px;
+    max-width: 350px;
+    margin: -10px auto;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.modal-action .btn{
+    margin-bottom: .25em;
+}
+.modal-action .btn:hover:nth-child(2)~.note{
+    opacity:1;
+    margin: 0px auto;
+}
 .modal {
   position: fixed;
   top: 0;
