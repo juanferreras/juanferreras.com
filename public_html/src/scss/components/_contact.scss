@@ -145,7 +145,7 @@
 .nl-form {
   width: 100%;
   margin: 0.3em auto 0 auto;
-  font-size: 3em;
+  font-size: 1.75em;
   line-height: 1.5;
 }
 .nl-form ul {
@@ -246,9 +246,12 @@
 .nl-ti-text ul li.nl-ti-input input {
   width: 100%;
   padding: .1em .2em .2em .3em;
-  padding-right: 1.3em;
+  padding-right: 65px;
   border-bottom: none;
   color: #fff;
+}
+.keep-together{
+  display:inline-block;
 }
 .nl-form .nl-field-go {
   position: absolute;
@@ -342,4 +345,19 @@
 }
 .modal span#counter{
   font-weight: bold;
+}
+
+.nl-form input[type=submit] {
+  display: block !important;
+  border: 2px solid #222;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: #222;
+  width: auto;
+  padding: 12px 40px;
+}
+
+.nl-form input[type=submit]:focus,
+.nl-form input[type=submit]:hover{
+  color: #fff;
 }

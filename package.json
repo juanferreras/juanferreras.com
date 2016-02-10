@@ -8,16 +8,20 @@
   },
   "author": "Juan Ferreras",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer-core": "^5.2.1",
+    "body-parser": "^1.14.2",
+    "email-templates": "^2.1.0",
+    "express": "^4.13.4",
     "grunt": "^0.4.5",
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-postcss": "^0.5.5",
     "grunt-sass": "^1.0.0",
-    "grunt-uncss": "^0.4.3"
-  },
-  "dependencies": {
+    "grunt-uncss": "^0.4.3",
+    "jade": "^1.11.0",
+    "nodemailer": "^2.1.0",
+    "nodemailer-ses-transport": "^1.3.0",
     "postcss-discard-comments": "^1.2.0"
   }
 }

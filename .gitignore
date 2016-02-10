@@ -46,3 +46,4 @@ Temporary Items
 Gruntfile.js
 node_modules/
 .idea/
+config.js

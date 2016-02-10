@@ -78,6 +78,9 @@
   ul.profile{
     text-align: right;
   }
+  .nl-form {
+    font-size: 2em;
+  }
 }
 @media screen and (min-width: 1170px) {
   .modal .modal-content {
@@ -86,6 +89,9 @@
   .modal p {
     font-size: 2rem;
     line-height: 2;
+  }
+  .nl-form {
+    font-size: 2.5em;
   }
 }
 @media screen and (min-width:1170px) and (min-height:700px){

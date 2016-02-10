@@ -132,7 +132,7 @@
 		                                <span>m</span>
 		                                <span>e</span>
 	                                </a>
-									<a href="#0" class="btn wow fadeInRight" data-wow-duration="1.6s" data-wow-delay=".9s" data-type="modal-trigger" data-text="Contact" tabindex="2">
+									<button class="btn wow fadeInRight" data-wow-duration="1.6s" data-wow-delay=".9s" data-type="modal-trigger" data-text="Contact" tabindex="2">
 										<span>C</span>
 		                                <span>o</span>
 		                                <span>n</span>
@@ -141,49 +141,55 @@
 		                                <span>c</span>
 		                                <span>t</span>
                                         <span>*</span>
-									</a>
+									</button>
 									<span class="modal-bg"></span>
                                     <span class="note">*Not yet done. Email me at juan@flioh.com</span>
 								</div>
 							 
 								<div class="modal">
 									<div class="modal-content">
-											<form id="nl-form" class="nl-form">
+											<form id="nl-form" class="nl-form" action="/contact" method="post">
 												<span>Hey Juan! My name is  </span>
-												<input type="text" value="" id="formFullName" placeholder="John Doe"/>
-												<span>,</span>
+												<div class="keep-together">
+                                                    <input type="text" name="name" value="" id="formFullName" placeholder="John Doe"/>
+    												<span>,</span>
+                                                </div>
 												<br />
 												<span>I'm in need of </span>
-												<select>
-													<option value="1" selected>a website</option>
-													<option value="2">brand design</option>
-													<option value="4">app development</option>
-                                                    <option value="5">motion design</option>
-                                                    <option value="6">graphic design</option>
-                                                    <option value="7">something else</option>
-												</select>
-												<span>.</span>
+												<div class="keep-together">
+                                                    <select name="project">
+    													<option value="a-website" selected>a website</option>
+    													<option value="brand-design">brand design</option>
+    													<option value="app-development">app development</option>
+                                                        <option value="motion-design">motion design</option>
+                                                        <option value="graphic-design">graphic design</option>
+                                                        <option value="something-else">something else</option>
+    												</select>
+    												<span>.</span>
+                                                </div>
 												<br />
 												<span>I've got a rough budget of  </span>
-												<select>
-													<option value="1" selected>< $500</option>
-													<option value="2">$500 - $2500</option>
-													<option value="3">$2500 - $5000</option>
-													<option value="4">> $5000</option>
-												</select>
-												<span>.</span>
+												<div class="keep-together">
+                                                    <select name="budget">
+    													<option value="1000" selected>< $1000</option>
+    													<option value="1000-3500">$1000 - $3500</option>
+    													<option value="3500-7000">$3500 - $7000</option>
+    													<option value="7000">> $7000</option>
+    												</select>
+    												<span>.</span>
+                                                </div>
 												<br />
 												<span>Please reach out at  </span> 
-												<input type="email" value="" id="formEmail" placeholder="email@domain.com"/>
-												<span>.</span> 
-												<button type="submit" class="btn btn-secondary">Send</button>
+												<div class="keep-together">
+                                                    <input type="email" name="email" value="" id="formEmail" placeholder="email@domain.com"/>
+    												<span>.</span> 
+                                                </div>
+                                                <input type="submit" class="btn btn-secondary" value="Send" />
 												<div class="nl-overlay"></div>
 											</form>
                                         <p id="sherlockHolmes">
                                             <q>The world is full of obvious things which nobody by any chance ever observes.</q>
-                                            — said Sherlock Holmes once.
-                                            That doesn't seem to apply to you now, does it? You don't just see; you observe.
-                                            It's the <span id="counter">first</span> time you visit this section and I take that as a compliment.
+                                            — said Sherlock Holmes once. It's the <span id="counter">first</span> time you visit this section.
                                         </p>
 									</div>
 								</div>
