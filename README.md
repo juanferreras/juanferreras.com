@@ -1,6 +1,8 @@
 # juanferreras.com #
 
-You can see it live at [juanferreras.com](http://juanferreras.com)
+![Screenshot](http://www.juanferreras.com/img/email-header.jpg)
+
+You can see it live at [juanferreras.com](http://juanferreras.com). It uses Express/Node.js with [nodemailer](https://github.com/nodemailer/nodemailer) to process the form and send the e-mails through Amazon's SES.
 
 ### Building ###
 
