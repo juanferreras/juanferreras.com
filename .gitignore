@@ -43,7 +43,6 @@ Temporary Items
 .apdisk
 
 # ignore Gruntfile
-Gruntfile.js
 node_modules/
 .idea/
 config.js
