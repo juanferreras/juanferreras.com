@@ -5,11 +5,11 @@
 	pkg: grunt.file.readJSON('package.json'),
 	watch: {
 		js: {
-			files: ['public_html/src/js/*.js'],
+			files: ['src/js/*.js'],
 			tasks: ['uglify:dev']
 		},
 		css: {
-			files: ['public_html/src/scss/**/*.scss'],
+			files: ['src/scss/**/*.scss'],
 			tasks: ['sass:dev','postcss'],
 			options: {
 				livereload: true
@@ -22,7 +22,7 @@
 				outputStyle: 'compressed'
 			},
 			files: {
-				'public_html/css/style.css' : 'public_html/src/scss/style.scss'
+				'public/css/style.css' : 'src/scss/style.scss'
 			}
 		},
 		dev: {
@@ -30,7 +30,7 @@
 				outputStyle: 'expanded'
 			},
 			files: {
-				'public_html/css/style.css' : 'public_html/src/scss/style.scss'
+				'public/css/style.css' : 'src/scss/style.scss'
 			}
 		}
 	},
@@ -42,13 +42,13 @@
 			]
 		},
 		dist: {
-			src: 'public_html/css/style.css'
+			src: 'public/css/style.css'
 		}
 	},
 	uglify: {
 		build: {
-			src: 'public_html/src/js/*.js',
-			dest: 'public_html/js/script.min.js'
+			src: 'src/js/*.js',
+			dest: 'public/js/script.min.js'
 		},
 		dev: {
 			options: {
@@ -57,8 +57,8 @@
 				compress: false,
 				preserveComments: 'all'
 			},
-			src: 'public_html/src/js/*.js',
-			dest: 'public_html/js/script.min.js'
+			src: 'src/js/*.js',
+			dest: 'public/js/script.min.js'
 		}
 	}
 	});

@@ -1,0 +1,206 @@
+extends layout
+
+block title
+  title Juan Ferreras - Designer & Developer from Argentina | Resume
+
+block body
+  body.animsition(data-animsition-in='zoom-in-sm', itemscope='', itemtype='http://schema.org/Person')
+    header.about
+      .container
+        .row
+          .col-9
+            h1(itemprop='name')
+              | Juan 
+              strong Ferreras
+            h3(itemprop='jobTitle')
+              | Designer 
+              span.amp &
+              |  Front-End Developer
+          .col-3
+            ul.profile
+              li(itemprop='birthDate') 29th of April, 1995
+              li(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+                span(itemprop='addressLocality') Santa Fe
+                | ,
+                span(itemprop='addressCountry') Argentina
+              li(itemprop='url') juanferreras.com
+              li(itemprop='email') juan@flioh.com
+    section.container
+      h2 About me
+      .row
+        .col-3.profile-picture
+          img(src='img/profile-min.jpg', alt='Profile Picture', title='Profile Picture')
+        .col-9
+          p
+            | I'm a 20 years old Information Systems Engineer student from Santa Fe, Argentina. I find myself constantly learning about the latest trends and best practices in both, software development and design. In fact, I believe it is impossible to talk about our profession without highlighting the importance of good design throughout every portion of software that we craft.
+          p
+            q If it's not breaking you down, it's not building you up.
+            |  I'm incredibly passionate about what I do, and I feel really excited towards pushing myself to the edge. I think that we grow and develop ourselves as professionals when we are outside our comfort zone.
+    section.container
+      h2 Experience
+      .row
+        .col-3
+          h5 2013 - PRESENT
+        .col-9
+          h3(itemprop='jobTitle') Chief Executive Officer
+          h4(itemprop='brand') Flioh!
+          p
+            | Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods
+            | to clients from Canada, England and United States.
+    section.container
+      h2 Education
+      .row
+        .col-3
+          h5 2013 - 2018
+        .col-9
+          h3 Information Systems Engineering
+          h4(itemprop='alumniOf') UTN FRSF
+          p
+            | AVG with/without postponements: 8.14/8.14*
+          p.note
+            | (*)Scale: since in the Ratings System of Universidad Tecnológica Nacional 4 points represent 60/100, an 8.14 average is equivalent to a qualification of 91/100.
+      .row
+        .col-3
+          h5 2008 - 2012
+        .col-9
+          h3
+            | Bachelor 
+            span.amp of
+            |  Biology
+          h4 La Salle Jobson
+          p
+            | AVG: 8.47 / 10
+    section.container
+      h2 Certifications
+      .row
+        .col-3
+          h5 2015-08-19
+        .col-9
+          h3
+            a(href='https://verify.edx.org/cert/08a414bf9e504a42979db637faf4a56e')
+              | uINOV8x - User Innovation: A Path To Entrepreneurship
+          h4 MIT - Massachusetts Institute of Technology
+          p
+            | Score: 92/100.
+      .row
+        .col-3
+          h5 2015-08-09
+        .col-9
+          h3
+            | EFSET PLUS 75 Proficient (CEFR C2)
+          h4 EF Education First
+          p
+            | Score: 75/100 - Equivalent to CEFR C2: Proficient.
+      .row
+        .col-3
+          h5 2015-08-01
+        .col-9
+          h3
+            a(href='https://verify.edx.org/cert/887f1921fabd4494afb682ff89affc5c')
+              | TPM1x - Creative Problem Solving and Decision Making
+          h4 TU Delft
+          p
+            | Score: 100/100.
+      .row
+        .col-3
+          h5 2015-07-27
+        .col-9
+          h3
+            a(href='https://verify.edx.org/cert/9d5970d71af44afbb1fdac56516b596a')
+              | HTML5.1x -  Web Design Fundamentals
+          h4 W3C
+          p
+            | Score: 99/100.
+      .row
+        .col-3
+          h5 2015-07-24
+        .col-9
+          h3
+            a(href='https://certs.duolingo.com/jrxmc4yk')
+              | English Proficiency Exam
+          h4 Duolingo
+          p
+            | Score: 9.8/10.
+      .row
+        .col-3
+          h5 2015-05-20
+        .col-9
+          h3
+            a(href='https://verify.edx.org/cert/4becacd7c9794a90b7a6168de09411ed')
+              | DEV203x - Bootstrap
+          h4 Microsoft
+          p
+            | Score: 98/100.
+    section.container
+      h2
+        | Honour 
+        span.amp &
+        |  Awards
+      .row
+        .col-3
+          h5 2006 - 2007
+        .col-9
+          h3 Provintial Representative
+          h4 Olimpíadas Matemáticas Argentina
+      .row
+        .col-3
+          h5 2006
+        .col-9
+          h3 National Representative
+          h4 Olimpíadas Matemáticas Rioplatense
+    section.container
+      h2
+        | Skills 
+        span.amp &
+        |  Knowledge
+      .row
+        .col-3
+          h3 Front-End
+        .col-9
+          ul
+            li HTML5
+            li CSS3
+            li Javascript
+            li jQuery
+            li SASS
+            li AngularJS
+            li Bootstrap/Foundation
+            li Responsive Design
+            li Jade
+            li Grunt
+      .row
+        .col-3
+          h3 Design
+        .col-9
+          ul
+            li Photoshop
+            li Illustrator
+            li After Effects
+      .row
+        .col-3
+          h3 Other
+        .col-9
+          ul
+            li Project Management
+            li Java
+            li NodeJS
+            li MongoDB
+            li SQL
+            li Git
+            li Scrum
+    section.container
+      h2 Languages
+      .row
+        .col-3
+          h3 Spanish
+        .col-9
+          p Native Language
+      .row
+        .col-3
+          h3 English
+        .col-9
+          p Full Professional Proficiency
+    aside.return.wow.fadeInLeft(data-wow-duration='.9s', data-wow-delay='1s')
+      a.animsition-link.down-arrow(href='index.html', title='Back')
+
+    script(src='js/script.min.js')

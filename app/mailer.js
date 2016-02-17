@@ -2,7 +2,7 @@ module.exports = (function() {
   var config = require('../config');
   var nodemailer = require('nodemailer');
   var sesTransport = require('nodemailer-ses-transport');
-  var templatesDir = require('path').resolve(__dirname, '..', 'public_html/email');
+  var templatesDir = require('path').resolve(__dirname, '..', 'public/email');
   var EmailTemplate = require('email-templates').EmailTemplate;
 
   var defaultTransport = nodemailer.createTransport(sesTransport({

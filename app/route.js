@@ -6,21 +6,28 @@ var router = express.Router();
 router.use(bodyParser.json());
 
 router.route('/')
-  .post(function (req, res, next) {
+  .get(function (req, res, next) {
+    res.render('index', {})
+  })
 
+router.route('/resume')
+  .get(function (req, res, next) {
+    res.render('resume', {})
+  })
+
+router.route('/contact')
+  .post(function (req, res, next) {
     var locals = {
       name: req.body.name,
       project: req.body.project,
       budget: req.body.budget,
       email: req.body.email
     };
-
     mailer.prepareFields(locals, function(){
       mailer.sendOne(locals, function(err, info){
         if (err) console.log(err);
       })
     });
-
   })
   .all(function (req, res, next) { 
     res.status(404).send({ error: 'Not found.' });

@@ -1,0 +1,363 @@
+#sherlockHolmes {
+  display: none;
+}
+.modal-action .note::before {
+    display:none;
+}
+.modal-action .note{
+    display: block;
+    font-size: .9em;
+    color: #B0B0B0;
+    text-shadow: 0 0 30px #000;
+    padding: 10px 5px;
+    max-width: 350px;
+    margin: -10px auto;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.modal-action .btn{
+    margin-bottom: .25em;
+}
+.modal-action .btn:hover:nth-child(2)~.note{
+    opacity:1;
+    margin: 0px auto;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
+}
+.modal .modal-content {
+  height: 100%;
+  width: 100%;
+  padding: 3em 5%;
+  text-align: left;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.modal p {
+  color: #222;
+  line-height: 1.6;
+  margin: 2em 0;
+}
+.modal-is-visible .modal {
+  overflow:hidden;
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s;
+}
+.modal .modal-content {
+  -webkit-overflow-scrolling: touch;
+  overflow:hidden;
+}
+.modal-action {
+  position: relative;
+}
+.modal-action .btn, .modal-action .modal-bg {
+  display: inline-block;
+}
+.modal-action .modal-bg{
+  background-color: #fff;
+  height: 4em;
+}
+.modal-action .btn {
+  border-radius:0;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.modal-action .btn.to-circle,
+.modal-action .btn.to-circle>span {
+  width: 4em;
+  color: transparent;
+  padding: .75rem 0rem;
+}
+.modal-action .modal-bg {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 16px;
+  width: 4em;
+  border-radius: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateZ(0);
+  transform: translateX(-2em);
+  transition: visibility 0s 0.5s;
+}
+.modal-action .modal-bg.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-close {
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 5%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #222;
+  padding: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateZ(0);
+  transform: scale(0);
+}
+.modal-close g{
+  fill: none;
+  stroke: #222;
+  stroke-width: 2px;
+  stroke-linecap: square;
+  stroke-miterlimit:10;
+}
+.modal-close:focus,
+.modal-close:hover{
+  background: #222;
+  border-color: #222;
+}
+.modal-close:focus g,
+.modal-close:hover g{
+  stroke: #fff;
+}
+.no-touch .modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-is-visible .modal-close {
+  visibility: visible;
+  opacity: 1;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transform: scale(1);
+}
+
+.nl-form {
+  width: 100%;
+  margin: 0.3em auto 0 auto;
+  font-size: 1.75em;
+  line-height: 1.5;
+}
+.nl-form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nl-form input,
+.nl-form select,
+.nl-form span {
+  border: none;
+  background: transparent;
+  font-family: $font-serif-stack;
+  font-size: 1em;
+  color: #222;
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.nl-field {
+  display: inline-block;
+  position: relative;
+}
+.nl-field.nl-field-open {
+  z-index: 10000;
+}
+.nl-field-toggle,
+.nl-form input,
+.nl-form select  {
+  line-height: inherit;
+  display: inline-block;
+  color: #aaa;
+  font-weight: normal;
+  font-family: $font-sans-stack;
+  font-size: 1.32em;
+  cursor: pointer;
+  border-bottom: 1px dashed #aaa;
+}
+.nl-field-toggle:focus,
+.nl-field-toggle:hover{
+  color: #222;
+  border-color: #222;
+}
+.nl-field ul {
+  position: absolute;
+  visibility: hidden;
+  background: #222;
+  left: -0.5em;
+  top: 50%;
+  font-size: 80%;
+  opacity: 0;
+  transform: translateY(-40%) scale(0.9);
+  transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
+}
+.nl-field.nl-field-open ul {
+  visibility: visible;
+  opacity: 1;
+  padding: 0;
+  transform: translateY(-50%) scale(1);
+  transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
+}
+.nl-field ul{
+  width: auto !important;
+}
+.nl-field ul li:focus,
+.nl-field ul li:hover{
+  background: #333;
+}
+.nl-field ul li {
+  color: #fff;
+  position: relative;
+  margin: 0;
+  transition: all 0.5s ease;
+}
+.nl-dd ul li {
+  margin: 0;
+  padding: .3em 1em;
+  width: 100%;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nl-dd ul li.nl-dd-checked {
+  color: #999;
+}
+.no-touch .nl-dd ul li:hover {
+  background: rgba(0,0,0,0.05);
+}
+.no-touch .nl-dd ul li:hover:active {
+  color: #478982;
+}
+.nl-ti-text ul {
+  min-width: 8em;
+}
+.nl-ti-text ul li.nl-ti-input input {
+  width: 100%;
+  padding: .1em .2em .2em .3em;
+  padding-right: 65px;
+  border-bottom: none;
+  color: #fff;
+}
+.keep-together{
+  display:inline-block;
+}
+.nl-form .nl-field-go {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 97%;
+  margin-top: 1px;
+  cursor: pointer;
+  background: #000 url("../img/arrow.svg") no-repeat center;
+  background-size: 35%;
+  width: 60px;
+  text-align: center;
+  color: transparent;
+  border: 0;
+  outline: 0;
+}
+.nl-ti-text ul li.nl-ti-example {
+  display: none;
+  font-size: 40%;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0.4em 1em;
+  color: rgba(0,0,0,0.2);
+  border-top: 1px dashed rgba(255,255,255,0.7);
+}
+.nl-ti-text ul li.nl-ti-example em {
+  color: #fff
+}
+.nl-submit-wrap {
+  margin-top: 0.4em;
+}
+.nl-form .nl-submit {
+  line-height: 3;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  background: #76C3BD;
+  color: #fff;
+  padding: 0 1em 0 0;
+  font-size: 40%;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.nl-submit:before {
+  content: "\e001";
+  color: #fff;
+  float: left;
+  padding: 0 0.7em;
+  margin: 0 0.8em 0 0;
+  background: #69B1A9;
+}
+.no-touch .nl-form .nl-submit:hover,
+.no-touch .nl-form .nl-submit:active {
+  background: #69B1A9;
+}
+.no-touch .nl-form .nl-submit:hover:before {
+  background: #58a199;
+}
+.nl-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,.6);
+  opacity: 0;
+  z-index: 9999;
+  visibility: hidden;
+  transition: visibility 0s 0.3s, opacity 0.3s;
+}
+.nl-field.nl-field-open ~ .nl-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.modal form+p {
+  font-size: .9rem;
+  color: #aaa;
+  line-height: 1.8;
+  width: 90%;
+  max-width: 700px;
+  margin-top: 120px;
+}
+.modal p::before{
+  content:"";
+  display:block;
+  height:1px;
+  width: 120px;
+  background-color: #aaa;
+  margin-bottom: 25px;
+}
+.modal span#counter{
+  font-weight: bold;
+}
+
+.nl-form input[type=submit] {
+  display: block !important;
+  border: 2px solid #222;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: #222;
+  width: auto;
+  padding: 12px 40px;
+}
+
+.nl-form input[type=submit]:focus,
+.nl-form input[type=submit]:hover{
+  color: #fff;
+}

@@ -1,0 +1,145 @@
+extends layout
+
+block body
+  body.index.loading
+      .main-wrapper
+        main#cbp-fbscroller.main
+          nav
+            .nav-wrapper
+              a.cbp-fbcurrent(href='#landing')
+              a(href='#designer')
+              a(href='#developer')
+          section#landing
+            header.home
+              ul#scene.parallax
+                li.layer(data-depth='0.20')
+                  .gravity.mac
+                li.layer(data-depth='0.30')
+                  .gravity.phone
+                li.layer(data-depth='0.50')
+                  .gravity.book
+                    .book-content
+                      h4 To-do list
+                      ul.to-do
+                        li - Grow a beard (!).
+                        li - Performance testing.
+                        li - Contact form processing.
+                li.layer(data-depth='0.60')
+                  .gravity.clock
+                    .clock-content
+                      .hour
+                      .minute
+                      .second
+                li.layer(data-depth='0.70')
+                  .gravity.cup
+                li.layer(data-depth='0.20')
+                  .invisible-square
+                li.layer(data-depth='0.85')
+                  .gravity.plant
+                li.layer(data-depth='0.90')
+                  .gravity.pen
+                //li.layer.visible(data-depth='0.00')
+                  .background
+                
+                li.layer(data-depth='0.25')
+                  .top-line
+                li.layer(data-depth='0.28')
+                  .top-circle
+                li.layer(data-depth='0.27')
+                  .middle-wave
+                li.layer.visible.main-layer(data-depth='0.15')
+                  .wrapper
+                    h1.wow.fadeInUp(data-wow-duration='1s') JF.
+                    h3#subline.wow.fadeInDown(data-wow-duration='.8s', data-wow-delay='.9s', data-typer-targets='Crafting wonderful things at Flioh., Entrepreneur. Designer and Developer.')
+                    .button-container.section
+                      .modal-action
+                        button.btn.wow.fadeInRight(data-wow-duration='1.6s', data-wow-delay='.9s', data-type='modal-trigger', tabindex='2')
+                          | Contact
+                        span.modal-bg
+                      .modal
+                        .modal-content
+                          form#nl-form.nl-form(action='/contact', method='post')
+                            span Hey Juan! My name is  
+                            .keep-together
+                              input#formFullName(type='text', name='name', value='', placeholder='John Doe')
+                              span ,
+                            br
+                            span I'm in need of 
+                            .keep-together
+                              select(name='project')
+                                option(value='a-website', selected='') a website
+                                option(value='brand-design') brand design
+                                option(value='app-development') app development
+                                option(value='motion-design') motion design
+                                option(value='graphic-design') graphic design
+                                option(value='something-else') something else
+                              span .
+                            br
+                            span I've got a rough budget of  
+                            .keep-together
+                              select(name='budget')
+                                option(value='1000', selected='') < $1000
+                                option(value='1000-3500') $1000 - $3500
+                                option(value='3500-7000') $3500 - $7000
+                                option(value='7000') > $7000
+                              span .
+                            br
+                            span Please reach out at  
+                            .keep-together
+                              input#formEmail(type='email', name='email', value='', placeholder='email@domain.com')
+                              span .
+                            input.btn.btn-secondary(type='submit', value='Send')
+                            .nl-overlay
+                          p#sherlockHolmes
+                            q The world is full of obvious things which nobody by any chance ever observes.
+                            |                                             — said Sherlock Holmes once. It's the 
+                            span#counter first
+                            |  time you visit this section.
+                      a.modal-close(href='#')
+                        svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='44px', height='44px', viewbox='7 -7 44 44', enable-background='new 7 -7 44 44', xml:space='preserve')
+                          g
+                            line(x1='19', y1='5', x2='39', y2='25')
+                            line(x1='39', y1='5', x2='19', y2='25')
+              .mouse-icon
+                svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', viewbox='0 0 64 64', xml:space='preserve')
+                  g#mouse
+                    path(fill='#fff', d='M32,16c-4.971,0-9,4.029-9,9v14c0,4.971,4.029,9,9,9c4.971,0,9-4.029,9-9V25C41,20.029,36.971,16,32,16z M39,39      c0,3.866-3.134,7-7,7s-7-3.134-7-7V25c0-3.866,3.134-7,7-7s7,3.134,7,7V39z M32,21c-0.552,0-1,0.448-1,1v5c0,0.553,0.448,1,1,1      c0.553,0,1-0.447,1-1v-5C33,21.448,32.553,21,32,21z')
+              .loading-spinner
+          section#designer(data-midnight='black')
+            .info
+              .container
+                header.wow.fadeInRight(data-wow-duration='1.5s')
+                  h1.section-title Designer
+                blockquote.wow.fadeInUp(data-wow-duration='2.1s', data-wow-delay='1s')
+                  q
+                    | Good design is obvious.
+                    | Great design is transparent.
+                  footer
+                    cite Joe Sparano
+                .wow.fadeIn(data-wow-duration='2.1s', data-wow-delay='2.3s')
+                  p
+                    em I'm a multi-disciplinary designer
+                    |  who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.
+                  p
+                    | Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.
+              span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
+          section#developer
+            .info
+              span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
+              .container
+                header.wow.fadeInLeft(data-wow-duration='1.5s')
+                  h1.section-title Developer
+                blockquote.wow.fadeInUp(data-wow-duration='2.1s', data-wow-delay='1s')
+                  q
+                    | Any fool can write code that a computer can understand.
+                    | Good programmers write code that humans can understand.
+                  footer
+                    cite Martin Fowler
+                .wow.fadeIn(data-wow-duration='2.1s', data-wow-delay='2.3s')
+                  p
+                    em A brand is only as successful
+                    |  as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.
+                  p
+                    | However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.
+
+      script(src='js/script.min.js')

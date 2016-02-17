@@ -1,0 +1,216 @@
+body {
+  color: $color-grey-font;
+  font-family: $font-sans-stack;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+h1{
+  font-family: $font-primary-stack;
+}
+
+h2,
+h5,
+.btn,
+p>rem,
+.book-content>h4{
+  font-family: $font-sans-stack;
+}
+
+h3,
+h4,
+p,
+a,
+.amp,
+.giant-ampersand,
+blockquote,
+.book-content ul,
+section ul,
+ul.profile{
+  font-family: $font-serif-stack;
+  font-weight: normal;
+}
+
+h1{
+  color: $color-white-font;
+  font-weight: bold;
+  font-size: 3.5rem;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+h2{
+  color: $color-dark-font;
+  font-size: 1.7rem;
+  margin-bottom: 0;
+}
+
+h3{
+  color: $color-dark-font;
+}
+
+a,
+header h3{
+  color: $color-white-font;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: $color-white-font;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  border-bottom: 1px solid $color-dark-font;
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-bottom: .2rem;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+h3{
+  font-size: 1.35rem;
+  font-weight: normal;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.amp{
+  font-style: italic;
+}
+
+.amp {
+  font-size: 1rem;
+}
+
+h4 {
+  color: $color-dark-font;
+  display: block;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: .25rem;
+}
+
+p.item{
+  color: $color-grey-font;
+  font-size: .9rem;
+  letter-spacing: .6px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.item h4, .item p {
+  color: $color-grey-font;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: .4rem;
+}
+
+section p{
+  line-height:1.8;
+}
+
+p>rem {
+  color: $color-white-font;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+blockquote>q {
+  color: $color-grey-font;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+cite{
+  color: $color-grey-font;
+  font-style: normal;
+}
+
+q,
+blockquote,
+blockquote>q {
+  quotes: "\201C" "\201D";
+}
+
+blockquote>footer {
+  margin-right: 0px;
+  text-align: right;
+}
+
+blockquote {
+  margin: 20px 0;
+}
+
+p > q{
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.section-title{
+  font-weight:bold;
+}
+
+.section-title:after {
+  background: $color-white-font;
+  content: "";
+  display: block;
+  height: 4px;
+  margin: 10px 0;
+  max-width: 90px;
+  width: 90%;
+}
+
+.item {
+  margin: 20px 0;
+}
+
+.rule {
+  background: $color-dark-font;
+  box-sizing: border-box;
+  height: 1px;
+}
+
+.layer h1{
+  font-size: 8rem;
+  letter-spacing: -.85rem;
+  line-height: 1;
+  padding-bottom: 1.2rem;
+}
+
+section#designer h1,
+section#designer p>rem {
+  color: $color-dark-font;
+}
+section#designer blockquote>q,
+section#designer footer>cite,
+section#designer p{
+  color: $color-grey-font;
+}
+section#developer blockquote>q,
+section#developer footer>cite,
+section#developer p{
+  color: $color-grey-lighter-font;
+}
+section#designer h1::after{
+  background: $color-dark-font;
+}
