@@ -199,13 +199,13 @@ ul.parallax>li{
 }
 
 .invisible-square {
-  width: 230px;
-  height: 230px;
-  border: 15px solid rgba(255,255,255,0.2);
+  width: 150px;
+  height: 150px;
+  bottom: 75px;
+  border: 12px solid rgba(255,255,255,0.2);
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 15px;
   left: 0;
   margin: auto;
 }
@@ -217,7 +217,7 @@ ul.parallax>li{
   position: absolute;
   top: 0;
   bottom: 185px;
-  right: 230px;
+  right: 144px;
   left: 0;
   margin: auto;
 }
@@ -229,7 +229,7 @@ ul.parallax>li{
   top: 0;
   right: 0;
   bottom: 212px;
-  left: 210px;
+  left: 143px;
   margin: auto;
   border: 5px solid #fff;
   border-radius: 50%;
@@ -240,8 +240,8 @@ ul.parallax>li{
   width: 35px;
   position: absolute;
   top: 0;
-  right: 225px;
-  bottom: 40px;
+  right: 140px;
+  bottom: 84px;
   left: 0;
   margin: auto;
   background: url("../img/wave.png");

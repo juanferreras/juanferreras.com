@@ -10,7 +10,8 @@
   display: none;
   width: 70%;
   max-width: 600px;
-  margin-top: 150px;
+  margin-top: 50px;
+  opacity: 0;
 }
 #sherlockHolmes a{
   color: $color-dark-font;
@@ -160,6 +161,7 @@
   width: 100%;
   margin: 0.3em auto 0 auto;
   line-height: 1.5;
+  font-size: 1.25rem;
 }
 .nl-form ul {
   list-style: none;
@@ -341,7 +343,7 @@
 }
 
 .nl-field-toggle{
-  margin-left: 1rem;
+  margin-left: .5rem;
 }
 
 .nl-form input[type=submit] {

@@ -1,3 +1,8 @@
+@media screen and (min-width: 548px){
+  .nl-form{
+    font-size: 1.5rem;
+  }
+}
 @media screen and (min-width: 768px){
   body{
     font-size:16px;
@@ -79,6 +84,33 @@
     color: #162836;
     margin-left:5px;
   }
+  .invisible-square {
+    width: 230px;
+    height: 230px;
+    border: 15px solid rgba(255,255,255,0.2);
+    bottom: 15px;
+  }
+  .top-line {
+    right: 230px;
+  }
+  .top-circle{
+    left: 210px;
+  }
+  .middle-wave {
+    right: 225px;
+    bottom: 40px;
+  }
+  #sherlockHolmes{
+    opacity:1;
+    margin-top: 100px;
+  }
+  .nl-form{
+    font-size: 1.75rem;
+  }
+  .nl-field-toggle{
+    margin-left: .85rem;
+  }
+
 }
 @media print, screen and (min-width: 992px){
   section > .row > div[class^="col-"]{

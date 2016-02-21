@@ -1,9 +1,9 @@
 section#designer>.info{
-  background: rgba(255,255,255,1);
+  background: $color-white-font;
 }
 
 section#developer>.info{
-  background: rgba(4, 5, 7, 1);
+  background: $color-dark-font;
 }
 
 section>.info{
