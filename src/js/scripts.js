@@ -6,7 +6,7 @@ $("document").ready(function() {
     
     var $scene = $('#scene').parallax();
 
-    $('#cbp-fbscroller > nav').midnight();
+    $('#cbp-fbscroller > #dots').midnight();
     
     function clock() { 
 	  var t = moment(),
@@ -96,8 +96,10 @@ $("document").ready(function() {
 			actionBtn.addClass('to-circle');
 			actionBtn.next('.modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 				animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
-				$scene.parallax('disable');
-				$('.main-layer').css("transform","");
+				setTimeout(function(){
+					$scene.parallax('disable');
+					$('.main-layer').css("transform","");
+				}, 300);
 			});
 
 			if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
@@ -172,5 +174,11 @@ $("document").ready(function() {
 		//if browser doesn't support transitions...
 		if(section.parents('.no-csstransitions').length > 0 ) animateLayer(section.find('.modal-bg'), 1, false);
 	}
+
+	$('#flag').change(function(e){
+		var lang = $(this).is(':checked') ? "en" : "es";
+		window.location.search = "?lang="+lang;
+		console.log(window.location.search);
+	})
 
 });

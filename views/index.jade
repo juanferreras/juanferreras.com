@@ -4,7 +4,15 @@ block body
   body.index.loading
       .main-wrapper
         main#cbp-fbscroller.main
-          nav
+          nav#flags
+            .flag-switch(data-first-lang='EN', data-second-lang='ES')
+              if lang == "en"
+                input#flag(type='checkbox', checked='')
+                label(for='flag')
+              else
+                input#flag(type='checkbox')
+                label(for='flag')
+          nav#dots
             .nav-wrapper
               a.cbp-fbcurrent(href='#landing')
               a(href='#designer')
@@ -19,11 +27,11 @@ block body
                 li.layer(data-depth='0.50')
                   .gravity.book
                     .book-content
-                      h4 To-do list
+                      h4 #{ __("To-do list") }
                       ul.to-do
-                        li - Grow a beard (!).
-                        li - Performance testing.
-                        li - Contact form processing.
+                        li - #{ __("Grow a beard") }.
+                        li - #{ __("Performance Testing") }.
+                        li - #{ __("Contact form processing") }.
                 li.layer(data-depth='0.60')
                   .gravity.clock
                     .clock-content
@@ -49,11 +57,11 @@ block body
                 li.layer.visible.main-layer(data-depth='0.15')
                   .wrapper
                     h1.wow.fadeInUp(data-wow-duration='1s') JF.
-                    h3#subline.wow.fadeInDown(data-wow-duration='.8s', data-wow-delay='.9s', data-typer-targets='Crafting wonderful things at Flioh., Entrepreneur. Designer and Developer.')
+                    h3#subline.wow.fadeInDown(data-wow-duration='.8s', data-wow-delay='.9s', data-typer-targets='#{ __("Crafting wonderful") }, #{ __("Entrepreneur") }')
                     .button-container.section
                       .modal-action
                         button.btn.wow.fadeInRight(data-wow-duration='1.6s', data-wow-delay='.9s', data-type='modal-trigger', tabindex='2')
-                          | Contact
+                          | #{ __("Contact") }
                         span.modal-bg
                       .modal
                         .modal-content

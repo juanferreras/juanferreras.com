@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/juanferreras/juanferreras.com.git"
   },
-  "scripts" : {
+  "scripts": {
     "imagemin": "imagemin src/img public/img",
     "start": "parallelshell \"node index.js\" grunt",
     "build": "grunt build && npm run imagemin",
@@ -27,6 +27,7 @@
     "grunt-postcss": "^0.5.5",
     "grunt-sass": "^1.0.0",
     "grunt-uncss": "^0.4.3",
+    "i18n-2": "^0.6.3",
     "imagemin-cli": "^2.1.0",
     "jade": "^1.11.0",
     "nodemailer": "^2.1.0",

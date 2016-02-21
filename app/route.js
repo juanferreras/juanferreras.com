@@ -7,7 +7,7 @@ router.use(bodyParser.json());
 
 router.route('/')
   .get(function (req, res, next) {
-    res.render('index', {})
+    res.render('index', {lang: req.i18n.getLocale()})
   })
 
 router.route('/resume')
