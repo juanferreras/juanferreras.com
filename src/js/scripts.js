@@ -60,21 +60,12 @@ $("document").ready(function() {
 		counter = 0;
 	}
 
-	var special = ['zeroth','first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelvth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth'];
-	var deca = ['twent', 'thirt', 'fourt', 'fift', 'sixt', 'sevent', 'eight', 'ninet'];
-
-	function stringifyNumber(n) {
-		if (n < 20) return special[n];
-		if (n%10 === 0) return deca[Math.floor(n/10)-2] + 'ieth';
-		return deca[Math.floor(n/10)-2] + 'y-' + special[n%10];
-	}
-
 	$('[data-type="modal-trigger"]').on('click', function(){
 		counter++;
 		localStorage.setItem("visits", counter);
 
 		if(counter>4){
-			$('#counter').html(stringifyNumber(counter));
+			$('#counter').html(counter);
 			$('#sherlockHolmes').show();
 		}
 
