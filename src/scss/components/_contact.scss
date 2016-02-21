@@ -198,7 +198,7 @@
   color: $color-grey-font;
   font-weight: normal;
   font-family: $font-sans-stack;
-  font-size: 1.1em;
+  font-size: 1.15em;
   cursor: pointer;
   border-bottom: 1px dashed $color-grey-font;
 }
@@ -317,7 +317,7 @@
   visibility: hidden;
   transition: visibility 0s 0.3s, opacity 0.3s;
 }
-.nl-field.nl-field-open ~ .nl-overlay {
+.nl-field-open ~ .nl-overlay{
   opacity: 1;
   visibility: visible;
   transition-delay: 0s;

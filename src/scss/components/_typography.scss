@@ -75,7 +75,7 @@ h2 {
 }
 
 h3{
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: normal;
   line-height: 1.7;
   margin: 0;
@@ -211,14 +211,18 @@ section#designer footer>cite,
 section#designer p>em {
   color: $color-dark-font;
 }
-section#designer blockquote>q,
 section#designer p{
   color: $color-grey-font;
 }
-section#developer blockquote>q,
 section#developer p{
   color: $color-grey-lighter-font;
 }
 section#designer h1::after{
   background: $color-dark-font;
+}
+section#designer blockquote > q {
+  color: $color-dark-font;
+}
+section#developer blockquote > q {
+  color: $color-white-font;
 }

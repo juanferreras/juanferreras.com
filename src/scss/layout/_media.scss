@@ -10,6 +10,9 @@
   h1{
     font-size: 5rem;
   }
+  h3{
+    font-size: 1.35rem;
+  }
   .layer h1{
     font-size: 12.5rem;
   }
@@ -22,9 +25,8 @@
     margin: 0 auto;
   }
   .book,
-  .cup,
-  .mac,
-  .pen{
+  .plant,
+  .mac{
     visibility:visible;
   }
   #designer{
@@ -41,13 +43,7 @@
   section#developer>.info{
     background: rgba(31,20,47,0.9);
   }
-  section#designer blockquote > q {
-    color: $color-dark-font;
-  }
-  section#developer blockquote > q {
-    color: $color-white-font;
-  }
-
+  
   section>.info>.container{
     max-width: 600px;
     position:absolute;
@@ -85,7 +81,7 @@
     width: 230px;
     height: 230px;
     border: 15px solid rgba(255,255,255,0.2);
-    bottom: 15px;
+    bottom: 80px;
   }
   .top-line {
     right: 230px;
@@ -95,7 +91,7 @@
   }
   .middle-wave {
     right: 225px;
-    bottom: 40px;
+    bottom: 105px;
   }
   #sherlockHolmes{
     opacity:1;
@@ -110,6 +106,9 @@
 
 }
 @media print, screen and (min-width: 992px){
+  .clock{
+    visibility: visible;
+  }
   section > .row > div[class^="col-"]{
     text-align:right;
   }
@@ -133,7 +132,8 @@
   }
 }
 @media screen and (min-width:1170px) and (min-height:700px){
-  .clock{
+  .pen,
+  .cup{
     visibility:visible;
   }
   section>.info{
@@ -154,8 +154,7 @@
   }
 }
 @media screen and (min-width:1170px) and (min-height:900px){
-  .phone,
-  .plant{
+  .phone{
     visibility:visible;
   }
 }

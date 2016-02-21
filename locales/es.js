@@ -7,7 +7,7 @@
 	"Entrepreneur": "Emprendedor. Diseñador y Desarrollador.",
 	"Contact": "Contacto",
 	"Hey Juan": "¡Hola Juan! Mi nombre es ",
-	"in need of": "Estoy interesado en ",
+	"in need of": "Estoy interesado/a en ",
 	"a website": "una página web",
 	"brand design": "identidad corporativa",
 	"app development": "desarrollo de apps",

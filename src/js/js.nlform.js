@@ -146,6 +146,12 @@
 			this.form.fldOpen = this.pos;
 			var self = this;
 			this.fld.className += ' nl-field-open';
+			this.toggle.parentElement.parentElement.className += ' nl-field-open';
+			if (typeof self.getinput != "undefined"){
+				setTimeout(function(){
+					self.getinput.focus();
+				}, 100);
+			}
 		},
 		close : function( opt, idx ) {
 			if( !this.open ) {
@@ -154,6 +160,7 @@
 			this.open = false;
 			this.form.fldOpen = -1;
 			this.fld.className = this.fld.className.replace(/\b nl-field-open\b/,'');
+			this.toggle.parentElement.parentElement.className = this.toggle.parentElement.parentElement.className.replace(/\b nl-field-open\b/,'');
 
 			if( this.type === 'dropdown' ) {
 				if( opt ) {
