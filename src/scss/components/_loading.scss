@@ -32,11 +32,11 @@
   border-right-color: #fff;
   border-radius: 50%;
   display: inline-block;
-  transition: border-color 0.5s ease;
 }
 .loading .loading-spinner {
   z-index: 9999;
 }
 .loading-spinner{
+  transition: border-color 0.5s ease;
   border-color: #fff;
 }

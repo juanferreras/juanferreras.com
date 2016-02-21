@@ -47,3 +47,5 @@ node_modules/
 .idea/
 config.js
 update
+public/css/*
+public/js/*

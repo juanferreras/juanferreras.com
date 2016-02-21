@@ -71,18 +71,18 @@ block body
                               input#formFullName(type='text', name='name', value='', placeholder='John Doe')
                               span ,
                             br
-                            span I'm in need of 
+                            span #{ __("in need of") }
                             .keep-together
                               select(name='project')
-                                option(value='a-website', selected='') a website
-                                option(value='brand-design') brand design
-                                option(value='app-development') app development
-                                option(value='motion-design') motion design
-                                option(value='graphic-design') graphic design
-                                option(value='something-else') something else
+                                option(value='a-website', selected='') #{ __("a website") }
+                                option(value='brand-design') #{ __("brand design") }
+                                option(value='app-development') #{ __("app development") } 
+                                option(value='motion-design') #{ __("motion design") }
+                                option(value='graphic-design') #{ __("graphic design") }
+                                option(value='something-else') #{ __("something else") }
                               span .
                             br
-                            span I've got a rough budget of  
+                            span #{ __("rough budget of") }
                             .keep-together
                               select(name='budget')
                                 option(value='1000', selected='') < $1000
@@ -91,19 +91,19 @@ block body
                                 option(value='7000') > $7000
                               span .
                             br
-                            span Please reach out at  
+                            span #{ __("Please reach out at") } 
                             .keep-together
                               input#formEmail(type='email', name='email', value='', placeholder='email@domain.com')
                               span .
                             input.btn.btn-secondary(type='submit', value='Send')
                             .nl-overlay
                           #sherlockHolmes
-                            q The world is full of obvious things which nobody by any chance ever observes.
-                            | — said Sherlock Holmes once. It's the 
+                            q #{ __("The world is full") }
+                            | #{ __("said Sherlock Holmes once") } 
                             span#counter first
-                            |  time you visit this section. If you need any help, please feel free to 
+                            | #{ __("time you visit this section") }
                             a(href="mailto:juan@flioh.com")
-                              | email me.
+                              | #{ __("email me") }
                       a.modal-close(href='#')
                         svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='44px', height='44px', viewbox='7 -7 44 44', enable-background='new 7 -7 44 44', xml:space='preserve')
                           g

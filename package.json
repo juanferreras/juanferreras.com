@@ -8,7 +8,7 @@
   },
   "scripts": {
     "imagemin": "imagemin src/img public/img",
-    "start": "parallelshell \"node index.js\" grunt",
+    "start": "grunt build && parallelshell \"node index.js\" grunt",
     "build": "grunt build && npm run imagemin",
     "postinstall": "npm run build"
   },
