@@ -10,7 +10,7 @@
     "imagemin": "imagemin src/img public/img",
     "start": "parallelshell \"node index.js\" grunt",
     "build": "grunt build && npm run imagemin",
-    "postinstall": "npm start"
+    "postinstall": "npm run build"
   },
   "main": "index.html",
   "author": "Juan Ferreras",
