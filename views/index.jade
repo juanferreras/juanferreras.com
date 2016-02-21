@@ -95,7 +95,7 @@ block body
                             .keep-together
                               input#formEmail(type='email', name='email', value='', placeholder='email@domain.com')
                               span .
-                            input.btn.btn-secondary(type='submit', value='Send')
+                            input.btn.btn-secondary(type='submit', value='#{ __("Send") }')
                             .nl-overlay
                           #sherlockHolmes
                             q #{ __("The world is full") }
@@ -116,38 +116,36 @@ block body
           section#designer(data-midnight='black')
             .info
               .container
-                header.wow.fadeInRight(data-wow-duration='1.5s')
-                  h1.section-title Designer
-                blockquote.wow.fadeInUp(data-wow-duration='2.1s', data-wow-delay='1s')
+                header.wow.fadeInRight(data-wow-duration='1.2s')
+                  h1.section-title #{ __("Designer") }
+                blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
                   q
-                    | Good design is obvious.
-                    | Great design is transparent.
+                    | #{ __("Good design is obvious. Great design is transparent.") }
                   footer
-                    cite Joe Sparano
-                .wow.fadeIn(data-wow-duration='2.1s', data-wow-delay='2.3s')
+                    cite #{ __("Joe Sparano") }
+                .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
                   p
-                    em I'm a multi-disciplinary designer
-                    |  who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.
+                    em #{ __("I'm a multi-disciplinary designer") } 
+                    | #{ __("who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.") }
                   p
-                    | Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.
+                    | #{ __("Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.") }
               span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
           section#developer(data-midnight='black')
             .info
               span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
               .container
-                header.wow.fadeInLeft(data-wow-duration='1.5s')
-                  h1.section-title Developer
-                blockquote.wow.fadeInUp(data-wow-duration='2.1s', data-wow-delay='1s')
+                header.wow.fadeInLeft(data-wow-duration='1.2s')
+                  h1.section-title #{ __("Developer") }
+                blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
                   q
-                    | Any fool can write code that a computer can understand.
-                    | Good programmers write code that humans can understand.
+                    | #{ __("Any fool can write code that a computer can understand. Good programmers write code that humans can understand.") }
                   footer
-                    cite Martin Fowler
-                .wow.fadeIn(data-wow-duration='2.1s', data-wow-delay='2.3s')
+                    cite #{ __("Martin Fowler") }
+                .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
                   p
-                    em A brand is only as successful
-                    |  as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.
+                    em #{ __("A brand is only as successful") } 
+                    | #{ __("as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.") }
                   p
-                    | However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.
+                    | #{ __("However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.") }
 
       script(src='js/scripts.js')
