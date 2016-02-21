@@ -157,13 +157,22 @@ blockquote>footer {
   text-align: right;
 }
 
+blockquote>footer>cite{
+  font-style: italic;
+  color: $color-white-font;
+}
+
 blockquote {
   margin: 20px 0;
 }
 
-p > q{
-  font-size: 1.05rem;
-  font-style: italic;
+.info p > em{
+  font-weight: bold;
+  font-style: normal;
+  font-family: $font-sans-stack;
+  letter-spacing: .15rem;
+  text-transform: uppercase;
+  color: $color-white-font;
 }
 
 .section-title{
@@ -174,8 +183,8 @@ p > q{
   background: $color-white-font;
   content: "";
   display: block;
-  height: 4px;
-  margin: 10px 0;
+  height: 6px;
+  margin: 5px 0 10px;
   max-width: 90px;
   width: 90%;
 }
@@ -198,16 +207,15 @@ p > q{
 }
 
 section#designer h1,
-section#designer p>rem {
+section#designer footer>cite,
+section#designer p>em {
   color: $color-dark-font;
 }
 section#designer blockquote>q,
-section#designer footer>cite,
 section#designer p{
   color: $color-grey-font;
 }
 section#developer blockquote>q,
-section#developer footer>cite,
 section#developer p{
   color: $color-grey-lighter-font;
 }

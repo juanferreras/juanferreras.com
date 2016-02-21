@@ -32,20 +32,19 @@ block body
                       .second
                 li.layer(data-depth='0.70')
                   .gravity.cup
-                li.layer(data-depth='0.20')
+                li.layer(data-depth='0.90')
+                  .gravity.pen
+                li.layer.visible(data-depth='0.00')
+                  .background
+                li.layer.visible(data-depth='0.20')
                   .invisible-square
                 li.layer(data-depth='0.85')
                   .gravity.plant
-                li.layer(data-depth='0.90')
-                  .gravity.pen
-                //li.layer.visible(data-depth='0.00')
-                  .background
-                
-                li.layer(data-depth='0.25')
+                li.layer.visible(data-depth='0.25')
                   .top-line
-                li.layer(data-depth='0.28')
+                li.layer.visible(data-depth='0.28')
                   .top-circle
-                li.layer(data-depth='0.27')
+                li.layer.visible(data-depth='0.27')
                   .middle-wave
                 li.layer.visible.main-layer(data-depth='0.15')
                   .wrapper
@@ -90,11 +89,13 @@ block body
                               span .
                             input.btn.btn-secondary(type='submit', value='Send')
                             .nl-overlay
-                          p#sherlockHolmes
+                          #sherlockHolmes
                             q The world is full of obvious things which nobody by any chance ever observes.
-                            |                                             — said Sherlock Holmes once. It's the 
+                            | — said Sherlock Holmes once. It's the 
                             span#counter first
-                            |  time you visit this section.
+                            |  time you visit this section. If you need any help, please feel free to 
+                            a(href="mailto:juan@flioh.com")
+                              | email me.
                       a.modal-close(href='#')
                         svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='44px', height='44px', viewbox='7 -7 44 44', enable-background='new 7 -7 44 44', xml:space='preserve')
                           g
@@ -123,7 +124,7 @@ block body
                   p
                     | Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.
               span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
-          section#developer
+          section#developer(data-midnight='black')
             .info
               span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
               .container
@@ -142,4 +143,4 @@ block body
                   p
                     | However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.
 
-      script(src='js/script.min.js')
+      script(src='js/scripts.js')

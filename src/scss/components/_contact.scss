@@ -1,27 +1,40 @@
+#sherlockHolmes::before{
+  display:block;
+  content:"";
+  background:$color-grey-font;
+  width: 100px;
+  height: 1px;
+  margin-bottom: 1rem;
+}
 #sherlockHolmes {
   display: none;
+  width: 70%;
+  max-width: 600px;
+  margin-top: 150px;
 }
-.modal-action .note::before {
-    display:none;
+#sherlockHolmes a{
+  color: $color-dark-font;
 }
-.modal-action .note{
-    display: block;
-    font-size: .9em;
-    color: #B0B0B0;
-    text-shadow: 0 0 30px #000;
-    padding: 10px 5px;
-    max-width: 350px;
-    margin: -10px auto;
-    opacity: 0;
-    transition: all 0.5s ease;
+.modal .note::before {
+  display:none;
+}
+.modal .note{
+  display: block;
+  color: #B0B0B0;
+  text-shadow: 0 0 30px $color-dark-font;
+  padding: 10px 5px;
+  max-width: 350px;
+  margin: -10px auto;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 .modal-action .btn{
-    margin-bottom: .25em;
+  margin-bottom: .25em;
 }
 .modal-action .btn:hover:nth-child(2)~.note{
-    opacity:1;
-    margin: 0px auto;
+  opacity:1;
+  margin: 0px auto;
 }
 .modal {
   position: fixed;
@@ -44,7 +57,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .modal p {
-  color: #222;
+  color: $color-dark-font;
   line-height: 1.6;
   margin: 2em 0;
 }
@@ -67,7 +80,7 @@
   display: inline-block;
 }
 .modal-action .modal-bg{
-  background-color: #fff;
+  background-color: $color-white-font;
   height: 4em;
 }
 .modal-action .btn {
@@ -86,7 +99,7 @@
   position: absolute;
   z-index: 1;
   left: 50%;
-  top: 16px;
+  top: 4px;
   width: 4em;
   border-radius: 0;
   opacity: 0;
@@ -107,30 +120,32 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 1px solid #222;
-  padding: 2px;
+  border: 2px solid $color-dark-font;
+  padding: 1px;
   overflow: hidden;
   white-space: nowrap;
   visibility: hidden;
   opacity: 0;
-  transform: translateZ(0);
-  transform: scale(0);
+  background: transparent;
+  transition: all 0.4s ease;
+  transform: translateZ(0) scale(0);
 }
 .modal-close g{
   fill: none;
-  stroke: #222;
+  stroke: $color-dark-font;
   stroke-width: 2px;
   stroke-linecap: square;
   stroke-miterlimit:10;
 }
 .modal-close:focus,
 .modal-close:hover{
-  background: #222;
-  border-color: #222;
+  background: $color-dark-font;
+  border-color: $color-dark-font;
+  transform: scale(1.1) rotate(-90deg) !important;
 }
 .modal-close:focus g,
 .modal-close:hover g{
-  stroke: #fff;
+  stroke: $color-white-font;
 }
 .no-touch .modal-close:hover {
   background-color: rgba(0, 0, 0, 0.5);
@@ -138,14 +153,12 @@
 .modal-is-visible .modal-close {
   visibility: visible;
   opacity: 1;
-  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
   transform: scale(1);
 }
 
 .nl-form {
   width: 100%;
   margin: 0.3em auto 0 auto;
-  font-size: 1.75em;
   line-height: 1.5;
 }
 .nl-form ul {
@@ -159,8 +172,7 @@
   border: none;
   background: transparent;
   font-family: $font-serif-stack;
-  font-size: 1em;
-  color: #222;
+  color: $color-dark-font;
   font-weight: inherit;
   line-height: inherit;
   display: inline-block;
@@ -181,25 +193,25 @@
 .nl-form select  {
   line-height: inherit;
   display: inline-block;
-  color: #aaa;
+  color: $color-grey-font;
   font-weight: normal;
   font-family: $font-sans-stack;
-  font-size: 1.32em;
+  font-size: 1.1em;
   cursor: pointer;
-  border-bottom: 1px dashed #aaa;
+  border-bottom: 1px dashed $color-grey-font;
 }
 .nl-field-toggle:focus,
 .nl-field-toggle:hover{
-  color: #222;
-  border-color: #222;
+  color: $color-dark-font;
+  border-color: $color-dark-font;
 }
 .nl-field ul {
   position: absolute;
   visibility: hidden;
-  background: #222;
-  left: -0.5em;
+  background: desaturate(lighten($color-dark-font, 10%), 10%);
+  left: -0.5rem;
   top: 50%;
-  font-size: 80%;
+  font-size: .8em;
   opacity: 0;
   transform: translateY(-40%) scale(0.9);
   transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
@@ -216,10 +228,10 @@
 }
 .nl-field ul li:focus,
 .nl-field ul li:hover{
-  background: #333;
+  background: $color-dark-font;
 }
 .nl-field ul li {
-  color: #fff;
+  color: $color-white-font;
   position: relative;
   margin: 0;
   transition: all 0.5s ease;
@@ -232,7 +244,7 @@
   white-space: nowrap;
 }
 .nl-dd ul li.nl-dd-checked {
-  color: #999;
+  color: $color-grey-lighter-font;
 }
 .no-touch .nl-dd ul li:hover {
   background: rgba(0,0,0,0.05);
@@ -248,7 +260,7 @@
   padding: .1em .2em .2em .3em;
   padding-right: 65px;
   border-bottom: none;
-  color: #fff;
+  color: $color-white-font;
 }
 .keep-together{
   display:inline-block;
@@ -260,7 +272,7 @@
   height: 97%;
   margin-top: 1px;
   cursor: pointer;
-  background: #000 url("../img/arrow.svg") no-repeat center;
+  background: darken($color-dark-font,5%) url("../img/arrow.svg") no-repeat center;
   background-size: 35%;
   width: 60px;
   text-align: center;
@@ -278,31 +290,12 @@
   border-top: 1px dashed rgba(255,255,255,0.7);
 }
 .nl-ti-text ul li.nl-ti-example em {
-  color: #fff
+  color: $color-white-font
 }
 .nl-submit-wrap {
   margin-top: 0.4em;
 }
-.nl-form .nl-submit {
-  line-height: 3;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  background: #76C3BD;
-  color: #fff;
-  padding: 0 1em 0 0;
-  font-size: 40%;
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-.nl-submit:before {
-  content: "\e001";
-  color: #fff;
-  float: left;
-  padding: 0 0.7em;
-  margin: 0 0.8em 0 0;
-  background: #69B1A9;
-}
+
 .no-touch .nl-form .nl-submit:hover,
 .no-touch .nl-form .nl-submit:active {
   background: #69B1A9;
@@ -329,7 +322,7 @@
 }
 .modal form+p {
   font-size: .9rem;
-  color: #aaa;
+  color: $color-grey-font;
   line-height: 1.8;
   width: 90%;
   max-width: 700px;
@@ -340,24 +333,34 @@
   display:block;
   height:1px;
   width: 120px;
-  background-color: #aaa;
+  background-color: $color-grey-font;
   margin-bottom: 25px;
 }
 .modal span#counter{
   font-weight: bold;
 }
 
+.nl-field-toggle{
+  margin-left: 1rem;
+}
+
 .nl-form input[type=submit] {
   display: block !important;
-  border: 2px solid #222;
-  font-size: 0.5em;
   font-weight: bold;
-  color: #222;
+  font-size: 1rem;
+  margin: 15px 0 15px;
   width: auto;
   padding: 12px 40px;
 }
 
-.nl-form input[type=submit]:focus,
-.nl-form input[type=submit]:hover{
-  color: #fff;
+.nl-form input[type=submit].btn{
+  color: $color-dark-font;
+  border: 2px solid $color-grey-lighter-font;
+  background: transparent;
+}
+.nl-form input[type=submit].btn:focus,
+.nl-form input[type=submit].btn:hover{
+  color: $color-white-font;
+  border-color: $color-dark-font;
+  background: $color-dark-font;
 }

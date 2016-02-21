@@ -19,21 +19,21 @@ main > nav a::after {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid $color-white-font;
   transition: all 0.4s ease;
 }
 main > nav a:hover:after,
 main > nav a:focus:after,
 main > nav a.cbp-fbcurrent:after{
-  background: #fff;
+  background: $color-white-font;
 }
 .black a::after{
-  border: 2px solid #222 !important;
+  border: 2px solid $color-dark-font !important;
 }
 .black a:hover:after,
 .black a:focus:after,
 .black a.cbp-fbcurrent:after {
-  background: #222 !important;
+  background: $color-dark-font !important;
 }
 main > nav{
   display:none;

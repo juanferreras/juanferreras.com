@@ -48,7 +48,7 @@
 	uglify: {
 		build: {
 			src: 'src/js/*.js',
-			dest: 'public/js/script.min.js'
+			dest: 'public/js/scripts.js'
 		},
 		dev: {
 			options: {
@@ -58,18 +58,34 @@
 				preserveComments: 'all'
 			},
 			src: 'src/js/*.js',
-			dest: 'public/js/script.min.js'
+			dest: 'public/js/scripts.js'
 		}
-	}
+	},
+	browserSync: {
+  	dev: {
+      bsFiles: {
+        src : [
+            'public/css/style.css',
+            'public/js/scripts.js'
+        ]
+      },
+      options: {
+        watchTask: true,
+        proxy: "localhost:8080"
+      }
+    }
+  }
 	});
 
 	// Load the plugins.
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-sass');
 
-	// Default task(s).
-	grunt.registerTask('default', ['uglify:dev','sass:dev','postcss']);
+	// Task(s).
+	grunt.registerTask('default', ['browserSync','watch']);
+	grunt.registerTask('dev', ['uglify:dev','sass:dev','postcss']);
 	grunt.registerTask('build', ['uglify:build','sass:build', 'postcss']);
 	};

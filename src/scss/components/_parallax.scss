@@ -61,10 +61,22 @@ ul.parallax>li{
   height: 250px;
   width: 250px;
   position: relative;
-  opacity: 0.4;
+  opacity: .7;
+  filter: blur(1px);
+}
+.clock-content::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top:25px;bottom:0;right:0;left:5px;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(31,20,47,1);
 }
 .clock-content>.hour {
-  background: rgba(0,0,0,0.95);
+  background: rgba(31,20,47,0.95);
   border-radius: 10px 10px 0 0;
   height: 0;
   left: 50%;
@@ -76,7 +88,7 @@ ul.parallax>li{
   padding: 53px 3px 0;
 }
 .clock-content>.minute {
-  background: rgba(0,0,0,0.75);
+  background: rgba(31,20,47,0.75);
   height: 0;
   left: 49%;
   position: absolute;
@@ -87,7 +99,7 @@ ul.parallax>li{
   padding: 65px 2px 0;
 }
 .clock-content>.second {
-  background: rgba(0,0,0,0.75);
+  background: rgba(31,20,47,0.75);
   height: 0;
   left: 51%;
   position: absolute;
@@ -115,9 +127,6 @@ ul.parallax>li{
 
 .gravity {
   position: absolute;
-  /*filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);*/
 }
 .gravity div {
   transform: translate3d(0,0,0);
@@ -189,33 +198,6 @@ ul.parallax>li{
   left: 35%;
 }
 
-.mac{
-  visibility:visible;
-}
-
-.mouse-icon{
-  display:none;
-  height: 64px;
-  width: 64px;
-  position: absolute;
-  z-index:99999;
-  bottom:20px;right:0;left:0;
-  margin:auto;
-}
-
-g#mouse {
-  animation: movement .8s ease infinite alternate;
-  opacity: 0.4;
-}
-
-li.layer{
-  pointer-events: none;
-}
-
-li.layer:last-child{
-  pointer-events: auto;
-}
-
 .invisible-square {
   width: 230px;
   height: 230px;
@@ -246,8 +228,8 @@ li.layer:last-child{
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 215px;
-  left: 216px;
+  bottom: 212px;
+  left: 210px;
   margin: auto;
   border: 5px solid #fff;
   border-radius: 50%;
@@ -258,13 +240,40 @@ li.layer:last-child{
   width: 35px;
   position: absolute;
   top: 0;
-  right: 215px;
-  bottom: 45px;
+  right: 225px;
+  bottom: 40px;
   left: 0;
   margin: auto;
   background: url("../img/wave.png");
   background-size: 35px 24px;
   background-repeat: no-repeat;
+}
+
+.mac{
+  visibility:visible;
+}
+
+.mouse-icon{
+  display:none;
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  z-index:99999;
+  bottom:20px;right:0;left:0;
+  margin:auto;
+}
+
+g#mouse {
+  animation: movement .8s ease infinite alternate;
+  opacity: 0.4;
+}
+
+li.layer{
+  pointer-events: none;
+}
+
+li.layer:last-child{
+  pointer-events: auto;
 }
 
 @keyframes movement{
