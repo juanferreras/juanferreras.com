@@ -11997,7 +11997,6 @@ $("document").ready(function() {
     });
     images.imagesLoaded(function() {
         $("body").removeClass("loading");
-        $(".loading-spinner").fadeOut("slow");
     });
     var form = $("#nl-form").clone();
     var counter = localStorage.getItem("visits");

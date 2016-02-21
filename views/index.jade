@@ -30,7 +30,7 @@ block body
                       h4 #{ __("To-do list") }
                       ul.to-do
                         li - #{ __("Grow a beard") }.
-                        li - #{ __("Performance Testing") }.
+                        li - #{ __("Translate content") }.
                         li - #{ __("Contact form processing") }.
                 li.layer(data-depth='0.60')
                   .gravity.clock
@@ -51,7 +51,7 @@ block body
                 li.layer.visible(data-depth='0.25')
                   .top-line
                 li.layer.visible(data-depth='0.28')
-                  .top-circle
+                  .top-circle.loading-spinner
                 li.layer.visible(data-depth='0.27')
                   .middle-wave
                 li.layer.visible.main-layer(data-depth='0.15')
@@ -66,7 +66,7 @@ block body
                       .modal
                         .modal-content
                           form#nl-form.nl-form(action='/contact', method='post')
-                            span Hey Juan! My name is  
+                            span #{ __("Hey Juan") }
                             .keep-together
                               input#formFullName(type='text', name='name', value='', placeholder='John Doe')
                               span ,
@@ -113,7 +113,6 @@ block body
                 svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', viewbox='0 0 64 64', xml:space='preserve')
                   g#mouse
                     path(fill='#fff', d='M32,16c-4.971,0-9,4.029-9,9v14c0,4.971,4.029,9,9,9c4.971,0,9-4.029,9-9V25C41,20.029,36.971,16,32,16z M39,39      c0,3.866-3.134,7-7,7s-7-3.134-7-7V25c0-3.866,3.134-7,7-7s7,3.134,7,7V39z M32,21c-0.552,0-1,0.448-1,1v5c0,0.553,0.448,1,1,1      c0.553,0,1-0.447,1-1v-5C33,21.448,32.553,21,32,21z')
-              .loading-spinner
           section#designer(data-midnight='black')
             .info
               .container
