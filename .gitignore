@@ -49,3 +49,4 @@ config.js
 update
 public/css/*
 public/js/*
+public/img/*

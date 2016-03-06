@@ -24,7 +24,7 @@ main > nav a::after {
 }
 main > nav a:hover:after,
 main > nav a:focus:after,
-main > nav a.cbp-fbcurrent:after{
+main > nav a.current:after{
   background: $color-white-font;
 }
 .black a::after{
@@ -32,7 +32,7 @@ main > nav a.cbp-fbcurrent:after{
 }
 .black a:hover:after,
 .black a:focus:after,
-.black a.cbp-fbcurrent:after {
+.black a.current:after {
   background: $color-dark-font !important;
 }
 main > nav{

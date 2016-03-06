@@ -9,13 +9,6 @@ router.route('/')
   .get(function (req, res, next) {
     res.render('index', {lang: req.i18n.getLocale()})
   })
-
-router.route('/resume')
-  .get(function (req, res, next) {
-    res.render('resume', {})
-  })
-
-router.route('/contact')
   .post(function (req, res, next) {
     var locals = {
       name: req.body.name,
@@ -23,11 +16,27 @@ router.route('/contact')
       budget: req.body.budget,
       email: req.body.email
     };
+    console.log(locals);
     mailer.prepareFields(locals, function(){
       mailer.sendOne(locals, function(err, info){
-        if (err) console.log(err);
+        if (err) {
+          console.log("error", err);
+          res.send({ error: err });
+        }
+        else {
+          console.log("success", info);
+          res.send({ success: info });
+        }
       })
     });
+  })
+  .all(function (req, res, next) { 
+    res.status(404).send({ error: 'Not found.' });
+  });
+
+router.route('/resume')
+  .get(function (req, res, next) {
+    res.render('resume', {})
   })
   .all(function (req, res, next) { 
     res.status(404).send({ error: 'Not found.' });

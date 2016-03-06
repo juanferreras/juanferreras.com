@@ -3,7 +3,7 @@ extends layout
 block body
   body.index.loading
       .main-wrapper
-        main#cbp-fbscroller.main
+        main#fixedScroller.main
           nav#flags
             .flag-switch(data-first-lang='EN', data-second-lang='ES')
               if lang == "en"
@@ -14,7 +14,7 @@ block body
                 label(for='flag')
           nav#dots
             .nav-wrapper
-              a.cbp-fbcurrent(href='#landing')
+              a.current(href='#landing')
               a(href='#designer')
               a(href='#developer')
           section#landing
@@ -65,7 +65,7 @@ block body
                         span.modal-bg
                       .modal
                         .modal-content
-                          form#nl-form.nl-form(action='/contact', method='post')
+                          form#nl-form.nl-form(action='/', method='post')
                             span #{ __("Hey Juan") }
                             .keep-together
                               input#formFullName(type='text', name='name', value='', placeholder='John Doe')
@@ -85,17 +85,36 @@ block body
                             span #{ __("rough budget of") }
                             .keep-together
                               select(name='budget')
-                                option(value='1000', selected='') < $1000
-                                option(value='1000-3500') $1000 - $3500
-                                option(value='3500-7000') $3500 - $7000
-                                option(value='7000') > $7000
+                                option(value='1000', selected='') < $1000 USD
+                                option(value='1000-3500') $1000 - $3500 USD
+                                option(value='3500-7000') $3500 - $7000 USD
+                                option(value='7000') > $7000 USD
                               span .
                             br
                             span #{ __("Please reach out at") } 
                             .keep-together
                               input#formEmail(type='email', name='email', value='', placeholder='email@domain.com')
                               span .
-                            input.btn.btn-secondary(type='submit', value='#{ __("Send") }')
+                            .submit-wrapper
+                              #progress-button.progress-button
+                                button
+                                  span.
+                                    #{ __("Send") }
+                                svg.progress-circle(width='70', height='70')
+                                  path(d='m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z')
+                                    
+                                // checkmark to show on success
+                                svg.checkmark(width='70', height='70')
+                                  path(d='m31.5,46.5l15.3,-23.2')
+                                  path(d='m31.5,46.5l-8.5,-7.1')
+                                // cross to show on error
+                                svg.cross(width='70', height='70')
+                                  path(d='m35,35l-9.3,-9.3')
+                                  path(d='m35,35l9.3,9.3')
+                                  path(d='m35,35l-9.3,9.3')
+                                  path(d='m35,35l9.3,-9.3')
+                              p#formMessage Nothing to see here. Perhaps you should try submitting?
+
                             .nl-overlay
                           #sherlockHolmes
                             q #{ __("The world is full") }

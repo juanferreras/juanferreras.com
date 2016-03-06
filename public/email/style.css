@@ -26,7 +26,13 @@ body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:1
 * @theme page
 */
 body, #bodyTable{
-  /*@editable*/ background-color:#DEE0E2;
+  /*@editable*/ background-color:#eee;
+}
+
+a,
+a:hover,
+a:focus{
+  color: #1f142f !important;
 }
 
 /**
@@ -36,7 +42,7 @@ body, #bodyTable{
 * @theme page
 */
 #bodyCell{
-  /*@editable*/ border-top:4px solid #eee;
+  /*@editable*/ border-top:0px solid #eee;
 }
 
 /**
@@ -45,7 +51,7 @@ body, #bodyTable{
 * @tip Set the border for your email.
 */
 #templateContainer{
-  /*@editable*/ border:1px solid #BBBBBB;
+  /*@editable*/ border:0px solid #BBBBBB;
 }
 
 /**
@@ -57,7 +63,7 @@ body, #bodyTable{
 h1{
   /*@editable*/ color:#202020 !important;
   display:block;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:26px;
   /*@editable*/ font-style:normal;
   /*@editable*/ font-weight:bold;
@@ -79,7 +85,7 @@ h1{
 h2{
   /*@editable*/ color:#404040 !important;
   display:block;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:20px;
   /*@editable*/ font-style:normal;
   /*@editable*/ font-weight:bold;
@@ -101,7 +107,7 @@ h2{
 h3{
   /*@editable*/ color:#606060 !important;
   display:block;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:16px;
   /*@editable*/ font-weight:normal;
   padding-bottom: 16px;
@@ -124,7 +130,7 @@ h3{
 h4{
   /*@editable*/ color:#808080 !important;
   display:block;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:14px;
   /*@editable*/ font-style:italic;
   /*@editable*/ font-weight:normal;
@@ -157,7 +163,7 @@ h4{
 */
 .preheaderContent{
   /*@editable*/ color:#808080;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:10px;
   /*@editable*/ line-height:125%;
   /*@editable*/ text-align:left;
@@ -182,8 +188,8 @@ h4{
 */
 #templateHeader{
   /*@editable*/ background-color:#FFFFFF;
-  /*@editable*/ border-top:1px solid #FFFFFF;
-  /*@editable*/ border-bottom:1px solid #CCCCCC;
+  /*@editable*/ border-top:0px solid #FFFFFF;
+  /*@editable*/ border-bottom:0px solid #CCCCCC;
 }
 
 /**
@@ -193,7 +199,7 @@ h4{
 */
 .headerContent{
   /*@editable*/ color:#505050;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:20px;
   /*@editable*/ font-weight:bold;
   /*@editable*/ line-height:100%;
@@ -230,8 +236,8 @@ h4{
 */
 #templateBody{
   /*@editable*/ background-color:#FFFFFF;
-  /*@editable*/ border-top:1px solid #FFFFFF;
-  /*@editable*/ border-bottom:1px solid #CCCCCC;
+  /*@editable*/ border-top:0px solid #FFFFFF;
+  /*@editable*/ border-bottom:0px solid #CCCCCC;
 }
 
 /**
@@ -242,7 +248,7 @@ h4{
 */
 .bodyContent{
   /*@editable*/ color:#505050;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:14px;
   /*@editable*/ line-height:150%;
   padding-top:20px;
@@ -279,7 +285,7 @@ h4{
 */
 #templateFooter{
   /*@editable*/ background-color:#FFFFFF;
-  /*@editable*/ border-top:1px solid #FFFFFF;
+  /*@editable*/ border-top:0px solid #FFFFFF;
 }
 
 /**
@@ -290,7 +296,7 @@ h4{
 */
 .footerContent{
   /*@editable*/ color:#808080;
-  /*@editable*/ font-family:Helvetica;
+  /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:10px;
   /*@editable*/ line-height:150%;
   padding-top:20px;

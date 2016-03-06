@@ -8,7 +8,7 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-var cbpFixedScrollLayout = (function() {
+var fixedScrollLayout = (function() {
 
 	// cache and initialize some values
 	function init(config) {
@@ -43,11 +43,11 @@ var cbpFixedScrollLayout = (function() {
 
 	// update the current navigation link
 	function changeNav( $section, config ) {
-		config.$navlinks.eq( config.currentLink ).removeClass( 'cbp-fbcurrent' );
-		config.$navlinksBlack.eq( config.currentLink ).removeClass( 'cbp-fbcurrent' );
+		config.$navlinks.eq( config.currentLink ).removeClass( 'current' );
+		config.$navlinksBlack.eq( config.currentLink ).removeClass( 'current' );
 		config.currentLink = $section.index( 'section' );
-		config.$navlinks.eq( config.currentLink ).addClass( 'cbp-fbcurrent' );
-		config.$navlinksBlack.eq( config.currentLink ).addClass( 'cbp-fbcurrent' );
+		config.$navlinks.eq( config.currentLink ).addClass( 'current' );
+		config.$navlinksBlack.eq( config.currentLink ).addClass( 'current' );
 	}
 
 	// function to scroll / animate the body
