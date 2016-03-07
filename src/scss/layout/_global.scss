@@ -187,3 +187,30 @@ svg g{
   border-color: $color-dark-font;
   background: $color-dark-font;
 }
+.or{
+  display: block;
+  font-family: $font-sans-stack;
+  font-style: italic;
+  color: $color-white-font;
+  font-size: 1rem;
+}
+.or::before,
+.or::after{
+  content:"";
+  width: 70px;
+  position: relative;
+  display: inline-block;
+  height: 2px;
+  bottom: 3px;
+  background: rgba(255,255,255,0.3)
+}
+.or::before{
+  margin-right: .75rem;
+}
+.or::after{
+  margin-left: .75rem;
+}
+.btn-link{
+  font-family: $font-serif-stack;
+  display: inline-block;
+}

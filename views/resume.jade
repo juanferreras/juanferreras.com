@@ -4,7 +4,7 @@ block title
   title Juan Ferreras - Designer & Developer from Argentina | Resume
 
 block body
-  body(itemscope='', itemtype='http://schema.org/Person')
+  body.resume(itemscope='', itemtype='http://schema.org/Person')
     header.about
       .container
         .row
@@ -56,7 +56,7 @@ block body
           h3 Information Systems Engineering
           h4(itemprop='alumniOf') UTN FRSF
           p
-            | AVG with/without postponements: 8.14/8.14*
+            | AVG with/without postponements: 8.15/8.15*
           p.note
             | (*)Scale: since in the Ratings System of Universidad Tecnológica Nacional 4 points represent 60/100, an 8.14 average is equivalent to a qualification of 91/100.
       .row
@@ -167,7 +167,8 @@ block body
             li Bootstrap/Foundation
             li Responsive Design
             li Jade
-            li Grunt
+            li Grunt/Gulp
+            li Ionic
       .row
         .col-3
           h3 Design
@@ -184,11 +185,12 @@ block body
             li Project Management
             li Java
             li NodeJS
+            li Express
             li MongoDB
             li SQL
             li Git
             li Scrum
-    section.container
+    section.container.padding-bottom
       h2 Languages
       .row
         .col-3
@@ -201,6 +203,6 @@ block body
         .col-9
           p Full Professional Proficiency
     aside.return.wow.fadeInLeft(data-wow-duration='.9s', data-wow-delay='1s')
-      a.down-arrow(href='index.html', title='Back')
+      a.down-arrow(href='/', title='Back')
 
     script(src='js/scripts.js')

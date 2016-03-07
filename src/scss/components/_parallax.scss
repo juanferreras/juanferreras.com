@@ -276,6 +276,46 @@ li.layer:last-child{
   pointer-events: auto;
 }
 
+.rotated-wrapper {
+  height: 80px;
+  width: 170px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 322px;
+  bottom: 35px;
+  margin: auto;
+  transform: rotate(-90deg);
+  text-align: left;
+}
+
+.rotated-wrapper > p{
+  color: #fff;
+  font-family: $font-sans-stack;
+  line-height: 1.4;
+}
+
+.rotated-wrapper > p.name{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.rotated-wrapper > p.location{
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+.rotated-wrapper > p.location::after{
+  content: "";
+  width: 40px;
+  height: 2px;
+  margin-left: .5rem;
+  position: relative;
+  display: inline-block;
+  bottom: 3px;
+  background: rgba(255,255,255,0.3)
+}
+
+
 @keyframes movement{
   0%{
     transform: translateY(0px);

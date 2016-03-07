@@ -54,15 +54,22 @@ block body
                   .top-circle.loading-spinner
                 li.layer.visible(data-depth='0.27')
                   .middle-wave
+                li.layer(data-depth='0.23')
+                  .gravity.rotated-wrapper
+                    p.name Juan Ferreras
+                    p.location Argentina
                 li.layer.visible.main-layer(data-depth='0.15')
                   .wrapper
                     h1.wow.fadeInUp(data-wow-duration='1s') JF.
                     h3#subline.wow.fadeInDown(data-wow-duration='.8s', data-wow-delay='.9s', data-typer-targets='#{ __("Crafting wonderful") }, #{ __("Entrepreneur") }')
                     .button-container.section
                       .modal-action
-                        button.btn.wow.fadeInRight(data-wow-duration='1.6s', data-wow-delay='.9s', data-type='modal-trigger', tabindex='2')
+                        button.btn.wow.fadeInDown(data-wow-duration='1.6s', data-wow-delay='.9s', data-type='modal-trigger', tabindex='2')
                           | #{ __("Contact") }
                         span.modal-bg
+                        span.or.wow.fadeInLeft(data-wow-duration='1.3s', data-wow-delay='1.5s') or
+                        a.btn-link.wow.fadeInRight(href="/resume", title="Resume", data-wow-duration='1.3s', data-wow-delay='1.75s', tabindex='3')
+                          | Resumé
                       .modal
                         .modal-content
                           form#nl-form.nl-form(action='/', method='post')

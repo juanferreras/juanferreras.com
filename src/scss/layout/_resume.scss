@@ -1,11 +1,22 @@
 header.about {
-  background: #151515;
+  background: $color-dark-font;
   padding: 30px 0;
   margin-bottom: 16px;
 }
+.resume h2{
+  font-family: $font-primary-stack;
+}
+.resume .about h3{
+  font-weight: normal;
+}
+.resume h3,
+.resume h3>a{
+  font-family: $font-sans-stack;
+  font-weight: bold;
+}
 h3>a{
-  color: #162836;
-  border-bottom: 1px solid #162836;
+  color: $color-dark-font;
+  border-bottom: 1px solid $color-dark-font;
   padding-bottom: 0;
   margin-left: 0;
 }
@@ -34,13 +45,12 @@ section .row p.note{
 
 section .row p{
   line-height:1.5;
-  color: $color-grey-lighter-font;
+  color: $color-grey-font;
   font-size: 1em;
-  margin-top: .3em;
 }
 
 section .row h4+p{
-  line-height:1.6;
+  line-height: 1.6;
   font-size: .9em;
 }
 
@@ -48,7 +58,8 @@ section ul{
   margin-top: .2em;
 }
 section ul li{
-  line-height: 1.7;
+  line-height: 1.8;
+  margin: 2px 10px;
 }
 
 ul.profile {
@@ -56,8 +67,8 @@ ul.profile {
   text-align: left;
   line-height: 1.7;
   margin:0;
-  margin-top: 1em;
-  color: $color-grey-lighter-font;
+  margin-top: 1.35rem;
+  color: $color-grey-font;
 }
 ul.profile>li{
   display:block;
@@ -68,10 +79,10 @@ ul.profile>li{
   height: 70px;
   width: 70px;
   display:block;
-  border: 3px solid #222;
+  border: 3px solid $color-dark-font;
   border-radius: 100%;
   transform:  translateZ(0) rotate(90deg);
-  background-color: rgba(255,255,255,0.75);
+  background-color: rgba(255,255,255,0.9);
 }
 
 aside.return{
@@ -86,9 +97,9 @@ aside.return{
   position: absolute;
   top: 32px;
   width: 22px;
-  border: 2px solid #222;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
+  border: 2px solid $color-dark-font;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
 }
 
 .down-arrow:before {
@@ -141,3 +152,6 @@ aside.return{
   text-align: center !important;
 }
 
+.padding-bottom{
+  padding-bottom: 150px;
+}
