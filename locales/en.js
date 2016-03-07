@@ -6,6 +6,8 @@
 	"Crafting wonderful": "Crafting wonderful things at Flioh!",
 	"Entrepreneur": "Entrepreneur. Designer and Developer.",
 	"Contact": "Contact",
+	"or": "or",
+	"Resumé": "Resumé",
 	"Hey Juan": "Hey Juan! My name is ",
 	"in need of": "I'm in need of ",
 	"a website": "a website",

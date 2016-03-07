@@ -13,7 +13,15 @@ i18n.expressBind(app, {
 });
 
 app.use(function(req, res, next) {
-  req.i18n.setLocaleFromQuery();
+  if (req.query.lang){
+    req.i18n.setLocaleFromQuery();
+  } else{
+    var languages = req.headers['accept-language'];
+    if (typeof languages !== "undefined"){
+      if(languages.indexOf("es")>-1) req.i18n.setLocale("es")
+      else req.i18n.setLocale("en")
+    }
+  }
   next();
 });
 
