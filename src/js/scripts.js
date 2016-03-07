@@ -188,7 +188,7 @@ function initFormSubmission(){
 				var $formMessage = $('#formMessage'),
 						$sherlockHolmes = $('#sherlockHolmes');
 
-				$formMessage.slideUp();
+				$formMessage.slideUp("fast");
 				$formMessage.removeClass("error");
 
 				isValid = validateForm(data);
@@ -246,9 +246,9 @@ function initFormSubmission(){
 				  .success(function(data){
 				  	$formMessage.text("Perfect! I'll be in touch soon.")
 				  	$formMessage.slideDown("slow");
-				  	$sherlockHolmes.slideUp("slow");
-				  	instance.stop(1);
+				  	$sherlockHolmes.fadeOut("slow");
 				  	localStorage.setItem("visits", 0);
+				  	instance.stop(1);
 				  });
 			  } else{
 			  	$formMessage.text("Did you complete all the fields?");

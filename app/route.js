@@ -16,15 +16,12 @@ router.route('/')
       budget: req.body.budget,
       email: req.body.email
     };
-    console.log(locals);
     mailer.prepareFields(locals, function(){
       mailer.sendOne(locals, function(err, info){
         if (err) {
-          console.log("error", err);
           res.send({ error: err });
         }
         else {
-          console.log("success", info);
           res.send({ success: info });
         }
       })
