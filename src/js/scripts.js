@@ -277,7 +277,8 @@ function initFormSubmission(){
 			callback : function( instance ) {
 				var data = form.serializeArray();
 				var $formMessage = $('.formMessage'),
-					$errorMessage = $('#error'),
+					$errorValues = $('#errorValues'),
+					$errorServer = $('#errorServer'),
 					$successMessage = $('#success'),
 					$sherlockHolmes = $('#sherlockHolmes');
 
@@ -314,7 +315,7 @@ function initFormSubmission(){
 			      type: 'POST'
 			    })
 				  .error(function(jqXHR, exception) {
-				  	$errorMessage.slideDown("slow");
+				  	$errorServer.slideDown("slow");
 				    instance.stop(-1);
 				  })
 				  .success(function(data){
@@ -324,7 +325,7 @@ function initFormSubmission(){
 				  	instance.stop(1);
 				  });
 			  } else{
-			  	$errorMessage.slideDown("slow");
+			  	$errorValues.slideDown("slow");
 			  	instance.stop(-1);
 			  }
 			}

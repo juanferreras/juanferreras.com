@@ -74,5 +74,6 @@
 	"English": "Inglés",
 	"Full Professional Proficiency": "Competencia Profesional Completa",
 	"There's been an error. Did you fill all the fields?": "Hubo un error. ¿Llenaste todos los campos?",
-	"Perfect! I'll be in touch soon.": "¡Gracias! Me voy a contactar pronto."
+	"Perfect! I'll be in touch soon.": "¡Gracias! Me voy a contactar pronto.",
+	"There's been an error. Please try again later.": "There's been an error. Please try again later."
 }

@@ -120,8 +120,10 @@ block body
                                   path(d='m35,35l9.3,9.3')
                                   path(d='m35,35l-9.3,9.3')
                                   path(d='m35,35l9.3,-9.3')
-                              p.formMessage.error#error.
+                              p.formMessage.error#errorValues.
                                 #{ __("There's been an error. Did you fill all the fields?") }
+                              p.formMessage.error#errorServer.
+                                #{ __("There's been an error. Please try again later.") }
                               p.formMessage.success#success.
                                 #{ __("Perfect! I'll be in touch soon.") }
 
