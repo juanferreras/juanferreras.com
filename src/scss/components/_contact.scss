@@ -8,15 +8,13 @@
 }
 #sherlockHolmes {
   display: none;
-  width: 70%;
-  max-width: 600px;
   margin-top: 50px;
   opacity: 0;
 }
 #sherlockHolmes a{
   color: $color-dark-font;
 }
-#formMessage {
+.submit-wrapper > .formMessage {
   display: none;
   position: absolute;
   top: 0;
@@ -25,16 +23,18 @@
   margin: 0;
   width: 100%;
   text-align: center;
-  background: #1ECD97;
   font-size: 1rem;
   padding: .5rem;
   color: #fff;
 }
-#formMessage::before{
+.submit-wrapper > .formMessage::before{
   display:none;
 }
-#formMessage.error{
+.formMessage.error{
   background: #FB797E;
+}
+.formMessage.success{
+  background: #1ECD97;
 }
 .modal .note::before {
   display:none;
@@ -71,7 +71,7 @@
 .modal .modal-content {
   height: 100%;
   width: 100%;
-  padding: 3em 5%;
+  padding: 5em 5% 3em;
   text-align: left;
   overflow-y: auto;
   -webkit-font-smoothing: antialiased;
@@ -167,9 +167,6 @@
 .modal-close:focus g,
 .modal-close:hover g{
   stroke: $color-white-font;
-}
-.no-touch .modal-close:hover {
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-is-visible .modal-close {
   visibility: visible;
@@ -267,6 +264,10 @@
 }
 .nl-dd ul li.nl-dd-checked {
   color: $color-grey-lighter-font;
+}
+.nl-dd ul li.nl-dd-focus{
+  color: $color-dark-font;
+  background: $color-white-font;
 }
 .no-touch .nl-dd ul li:hover {
   background: rgba(0,0,0,0.05);

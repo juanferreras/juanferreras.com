@@ -49,7 +49,7 @@
   }
   
   section>.info>.container{
-    max-width: 600px;
+    max-width: 95%;
     position:absolute;
     top:0;bottom:0;
     right: 0;
@@ -99,10 +99,7 @@
   }
   #sherlockHolmes{
     opacity:1;
-    margin-top: 100px;
-  }
-  .nl-form{
-    font-size: 1.75rem;
+    margin-top: 50px;
   }
   .nl-field-toggle{
     margin-left: .85rem;
@@ -110,6 +107,9 @@
 
 }
 @media print, screen and (min-width: 992px){
+  section>.info>.container{
+    max-width: 80%;
+  }
   .clock{
     visibility: visible;
   }
@@ -120,35 +120,28 @@
     text-align: right;
   }
   .nl-form {
-    font-size: 2rem;
+    font-size: 1.85rem;
+  }
+  .nl-field.nl-field-open ul {
+    transform: translateY(-45%) scale(1);
   }
 }
 @media screen and (min-width: 1170px) {
+  section>.info>.container{
+    max-width: 600px;
+  }
   .modal .modal-content {
-    padding: 6em 20%;
+    padding: 5em 12%;
   }
   .modal p {
     font-size: 2rem;
     line-height: 2;
-  }
-  .nl-form {
-    font-size: 2.25rem;
   }
 }
 @media screen and (min-width:1170px) and (min-height:700px){
   .pen,
   .cup{
     visibility:visible;
-  }
-  section>.info{
-    width: 50%;
-    float: right;
-  }
-  span.giant-ampersand {
-    display:block;
-  }
-  blockquote>q {
-    font-size: 1.6rem;
   }
   main section {
     overflow: hidden;
@@ -160,6 +153,24 @@
 @media screen and (min-width:1170px) and (min-height:900px){
   .phone{
     visibility:visible;
+  }
+  #sherlockHolmes{
+    margin-top: 100px;
+    width: 70%;
+    max-width: 600px;
+  }
+  section>.info{
+    width: 50%;
+    float: right;
+  }
+  span.giant-ampersand {
+    display:block;
+  }
+  blockquote>q {
+    font-size: 1.6rem;
+  }
+  .nl-form {
+    font-size: 2rem;
   }
 }
 

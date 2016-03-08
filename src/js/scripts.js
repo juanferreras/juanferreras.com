@@ -71,6 +71,8 @@ function initNaturalLanguageForm(){
 		$('#formEmail').attr("placeholder",formEmail);
 
 		var nlform = new NLForm(document.getElementById( 'nl-form'));
+		handleFormUsingTabs();
+		$('.nl-field-toggle').on("click", updateTab);
 
 		var actionBtn = $(this);
 		var body = $("body");
@@ -99,6 +101,94 @@ function initNaturalLanguageForm(){
 		//on window resize - update cover layer dimention and position
 		if($('.section.modal-is-visible').length > 0) window.requestAnimationFrame(updateLayer);
 	});
+}
+
+window.currentTab = -1;
+
+function updateTab(){
+	var $inputs = $('.nl-field');
+	currentTab = findIndexWithClass($inputs, 'nl-field-open');
+}
+
+function findIndexWithClass($inputs, hasClass){
+	for (var i = 0; i<$inputs.length; i++){
+		var $input = $($inputs[i]);
+		if ($input.hasClass(hasClass)) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+function handleFormUsingTabs(){
+	var $inputs = $('.nl-field');
+	updateTab();
+
+	$('body').on('keydown.tabs', function(e) {
+	    if (e.keyCode == 9) {
+	        e.preventDefault();
+
+	        if (!e.shiftKey){
+	        	currentTab++;
+	        	if (currentTab > $inputs.length+1) currentTab = 0;
+	        } else{
+	        	currentTab--;
+	        	if (currentTab < 0) currentTab = $inputs.length+1;
+	        }
+
+	        // emit event to close all fields
+	        $('.nl-overlay')[0].click();
+
+	        if (currentTab >= $inputs.length){
+	        	if (currentTab == 4){
+	        		$('#progress-button > button')[0].focus();
+	        	}
+	        	if (currentTab == 5){
+	        		$('.modal-close')[0].focus();
+	        	}
+	        } else{
+	        	// emit event to open current tab input
+		        var $inputToOpen = $($inputs[currentTab]);
+		        var $inputToToggle = $inputToOpen.find('.nl-field-toggle');
+		        $inputToToggle[0].click();
+
+		        // if dropdown bind new event listeners for arrows
+		        var isDropdown = $inputToOpen.hasClass("nl-dd");
+		        if (isDropdown) handleFormUsingArrows($inputToOpen)
+		       	else $('body').off('.arrows');
+	        } 
+	    }
+	    if (e.keyCode == 27){
+	    	$('.nl-overlay')[0].click();
+	    }
+	});
+}
+
+function handleFormUsingArrows(input){
+	$('body').off('.arrows');
+	var $li = $(input).find("ul > li");
+	var selectedIndex = findIndexWithClass($li, 'nl-dd-checked');
+
+	$('body').on('keydown.arrows', function(e) {
+		if ( e.keyCode == 40 ) {
+			selectedIndex++;
+			if (selectedIndex>$li.length-1) selectedIndex = 0;
+			$li.removeClass("nl-dd-focus");
+			$($li[selectedIndex]).addClass("nl-dd-focus");
+		}
+		if ( e.keyCode == 38 ) {
+			selectedIndex--;
+			if (selectedIndex<0) selectedIndex = $li.length-1;
+			$li.removeClass("nl-dd-focus");
+			$($li[selectedIndex]).addClass("nl-dd-focus");
+		}
+		if ( e.keyCode == 13 ) {
+			$($li[selectedIndex])[0].click();
+		}
+		if ( e.keyCode == 27 || e.keyCode == 9) {
+			$li.removeClass("nl-dd-focus");
+		}
+	})
 }
 
 function retrieveScale(btn) {
@@ -147,6 +237,7 @@ function updateLayer() {
 
 function closeModal() {
 	var section = $('.section.modal-is-visible');
+	$('body').off('.tabs');
 	section.removeClass('modal-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 		$scene.parallax('enable');
 		$scene.parallax('updateLayers');
@@ -185,11 +276,12 @@ function initFormSubmission(){
 		new UIProgressButton( btn, {
 			callback : function( instance ) {
 				var data = form.serializeArray();
-				var $formMessage = $('#formMessage'),
-						$sherlockHolmes = $('#sherlockHolmes');
+				var $formMessage = $('.formMessage'),
+					$errorMessage = $('#error'),
+					$successMessage = $('#success'),
+					$sherlockHolmes = $('#sherlockHolmes');
 
 				$formMessage.slideUp("fast");
-				$formMessage.removeClass("error");
 
 				isValid = validateForm(data);
 				if (isValid){
@@ -222,38 +314,17 @@ function initFormSubmission(){
 			      type: 'POST'
 			    })
 				  .error(function(jqXHR, exception) {
-		        var msg = '';
-		        if (jqXHR.status === 0) {
-		            msg = 'Not connected.\n Verify Network.';
-		        } else if (jqXHR.status == 404) {
-		            msg = 'Requested page not found. [404]';
-		        } else if (jqXHR.status == 500) {
-		            msg = 'Internal Server Error [500].';
-		        } else if (exception === 'parsererror') {
-		            msg = 'Requested JSON parse failed.';
-		        } else if (exception === 'timeout') {
-		            msg = 'Time out error.';
-		        } else if (exception === 'abort') {
-		            msg = 'Ajax request aborted.';
-		        } else {
-		            msg = 'Uncaught Error.\n' + jqXHR.responseText;
-		        }
-				  	$formMessage.text(msg);
-				  	$formMessage.addClass("error");
-				  	$formMessage.slideDown("slow");
+				  	$errorMessage.slideDown("slow");
 				    instance.stop(-1);
 				  })
 				  .success(function(data){
-				  	$formMessage.text("Perfect! I'll be in touch soon.")
-				  	$formMessage.slideDown("slow");
+				  	$successMessage.slideDown("slow");
 				  	$sherlockHolmes.fadeOut("slow");
 				  	localStorage.setItem("visits", 0);
 				  	instance.stop(1);
 				  });
 			  } else{
-			  	$formMessage.text("Did you complete all the fields?");
-			  	$formMessage.addClass("error");
-			  	$formMessage.slideDown("slow");
+			  	$errorMessage.slideDown("slow");
 			  	instance.stop(-1);
 			  }
 			}
