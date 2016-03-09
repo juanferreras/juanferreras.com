@@ -2,7 +2,7 @@ function initPlugins(){
 	new WOW().init();
 	$('[data-typer-targets]').typer();
   window.$scene = $('#scene').parallax();
-  $('#cbp-fbscroller > #dots').midnight();
+  $('#fixedScroller > #dots').midnight();
 }
 
 /* Sets the time for the clock on the header */
