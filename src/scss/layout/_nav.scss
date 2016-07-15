@@ -1,52 +1,3 @@
-nav{
-  pointer-events: none;
-}
-.nav-wrapper>a{
-  pointer-events: auto;
-}
-main > nav {
-  position: fixed;
-  z-index: 9999;
-}
-main > nav a {
-  display: block;
-  position: relative;
-  height: 30px;
-}
-main > nav a::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid $color-white-font;
-  transition: all 0.4s ease;
-}
-main > nav a:hover:after,
-main > nav a:focus:after,
-main > nav a.current:after{
-  background: $color-white-font;
-}
-.black a::after{
-  border: 2px solid $color-dark-font !important;
-}
-.black a:hover:after,
-.black a:focus:after,
-.black a.current:after {
-  background: $color-dark-font !important;
-}
-main > nav{
-  display:none;
-}
-.nav-wrapper{
-  width: 50px;
-  position: absolute;
-  right: 0;
-  top: 45%;
-}
-.midnightInner{
-  position:relative;
-}
 nav,
 .midnightHeader,
 .midnightInner {
@@ -54,14 +5,53 @@ nav,
   height: 100%;
   overflow: hidden !important;
 }
-.overflow-hidden nav#flags {
-  opacity: 0;
-  visibility: hidden;
+nav{
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  display:none;
 }
-nav#flags {
+.midnightInner{
+  position: relative;
+}
+.nav__list{
+  width: 50px;
   position: absolute;
-  top: 10px;
-  right: 40px;
+  right: 0;
+  top: 45%;
+}
+.nav__element{
+  pointer-events: auto;
+  display: block;
+  position: relative;
+  height: 30px;
+}
+.nav__element::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid map-get($colors, white);
+  transition: all 0.4s ease;
+}
+.nav__element:hover:after,
+.nav__element:focus:after,
+.nav__element.nav__element--current:after{
+  background: map-get($colors, white);
+}
+.nav--black .nav__element::after{
+  border: 2px solid map-get($colors, purple) !important;
+}
+.nav--black .nav__element:hover:after,
+.nav--black .nav__element:focus:after,
+.nav--black .nav__element.nav__element--current:after {
+  background: map-get($colors, purple) !important;
+}
+.nav--flags {
+  position: absolute;
+  top: 23px;
+  right: 60px;
   width: initial;
   height: initial;
   display: block;
@@ -70,7 +60,11 @@ nav#flags {
   pointer-events: auto;
   transition: opacity 0.3s ease;
 }
-.flag-switch {
+.body--frozen .nav--flags{
+  opacity: 0;
+  visibility: hidden;
+}
+.nav__switch {
   position: relative;
   outline: 0;
   -webkit-appearance: none;
@@ -84,24 +78,25 @@ nav#flags {
   height: 30px;
   margin: 5px auto;
 }
-.flag-switch:before, .flag-switch:after {
+.nav__switch:before, .nav__switch:after {
   position: absolute;
-  color: $color-white-font;
+  color: map-get($colors, white);
+  font-family: map-get($typography, proxima-nova);
   top: 8px;
   font-size: 0.8rem;
 }
-.flag-switch:before {
+.nav__switch:before {
   left: -24px;
   content: attr(data-first-lang);
 }
-.flag-switch:after {
+.nav__switch:after {
   right: -22px;
   content: attr(data-second-lang);
 }
-.flag-switch input {
+.nav__input {
   display: none;
 }
-.flag-switch input + label {
+.nav__input + .nav__label {
   display: block;
   position: absolute;
   cursor: pointer;
@@ -111,19 +106,19 @@ nav#flags {
           user-select: none;
   width: 60px;
 }
-.flag-switch input + label:before, .flag-switch input + label:after {
+.nav__input + .nav__label:before, .nav__input + .nav__label:after {
   content: "";
   position: absolute;
   border-radius: 30px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-.flag-switch input + label:before {
+.nav__input + .nav__label:before {
   height: 30px;
   width: 60px;
   background-color: rgba(255,255,255,0.1);
 }
-.flag-switch input + label:after {
+.nav__input + .nav__label:after  {
   top: 3px;
   left: 3px;
   border: 2px solid #fff;
@@ -133,13 +128,13 @@ nav#flags {
   transform: translate(30px, 0);
   -webkit-transform: translate(30px, 0);
 }
-.flag-switch input:checked + label:after {
+.nav__input:checked + .nav__label:after {
   background: #000233 url('../img/flags.jpg') -2px center;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-.flag-switch input:checked + label:before {
+.nav__input:checked + .nav__label:before {
   background-color: rgba(255,255,255,0.1);
 }

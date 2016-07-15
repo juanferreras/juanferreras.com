@@ -1,0 +1,354 @@
+#landing .parallax{
+  background-color: map-get($colors, purple);
+  background-image: url("../img/bg.jpg");
+  filter: contrast(115%);
+  min-height: 460px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+.parallax,
+.parallax__content {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.parallax__layer{
+  width:100%;
+  height:100%;
+  margin: 0;
+  pointer-events: none;
+}
+.parallax__layer:last-child{
+  pointer-events: auto;
+}
+.parallax__content {
+  position: absolute;
+  background-repeat: no-repeat;
+  visibility: hidden;
+}
+.parallax__content,
+.parallax__layer > *{
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  transform: translateZ(0);
+}
+.hero {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 0;
+  height: 265px;
+  width: 100%;
+  z-index: 2;
+  @include sm-width{
+    width: 530px;
+  }
+}
+.hero__title{
+  font-size: 8rem;
+  letter-spacing: -.85rem;
+  line-height: 1;
+  padding-bottom: 1.2rem;
+  @include sm-width{
+    font-size: 12rem;
+  }
+}
+.hero__subtitle {
+  min-height: 33px;
+  padding: .5rem;
+}
+.hero__subtitle>span::before,
+.hero__subtitle::after {
+  content: "";
+  width: 3px;
+  height: 25px;
+  top: 5px;
+  left: 3px;
+  position: relative;
+  background: map-get($colors, light-grey);
+  display: inline-block;
+  -webkit-animation: pulsing 1s ease infinite;
+  animation: pulsing 1s ease infinite
+}
+.hero__subtitle>span::before{
+  left:-3px;
+  top:5px;
+}
+.hero__subtitle.hero__subtitle--span::after{
+  display:none;
+}
+
+@keyframes pulsing {
+  0%,
+  100%{
+    opacity:0;
+    filter: alpha(opacity=0);
+  }
+  50%{
+    opacity:1;
+    filter: alpha(opacity=100);
+  }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, map-get($colors, light-red) 0%, rgba(map-get($colors, light-purple),0.0) 75%);
+  //background: linear-gradient(45deg, #ce4e57 25%, #0f091a 100%);
+  opacity: 0.75;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+.book {
+  background-image: url("../img/book.png");
+  width: 324px;
+  height: 360px;
+  top: 15%;
+  left: 15%;
+}
+.book__content{
+  position: relative;
+  top: 35px;
+  max-width: 179px;
+  transform: rotateZ(-20deg) rotateY(-10deg);
+  left: 45px;
+  text-align: left;
+  color: map-get($colors, purple);
+}
+.book__title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.book__list{
+  margin-top:4px;
+}
+.book__element--completed{
+  text-decoration: line-through;
+}
+.clock {
+  background-image: url("../img/clock.png");
+  width: 333px;
+  height: 459px;
+  left: 10%;
+  bottom: 4%;
+}
+.clock__content {
+  transform: rotateY(40deg) rotate(28deg) !important;
+  border-radius: 100%;
+  top: 130px;
+  display: block;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  opacity: .7;
+}
+.clock__content::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top:25px;bottom:0;right:0;left:5px;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(31,20,47,1);
+}
+.clock__hour {
+  background: rgba(31,20,47,0.95);
+  border-radius: 10px 10px 0 0;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 54%;
+  width: 0;
+  transform-origin: 50% 100%;
+  margin: -50px -3px 0;
+  padding: 53px 3px 0;
+}
+.clock__minute {
+  background: rgba(31,20,47,0.75);
+  height: 0;
+  left: 49%;
+  position: absolute;
+  top: 56%;
+  width: 0;
+  transform-origin: 50% 100%;
+  margin: -65px -2px 0;
+  padding: 65px 2px 0;
+}
+.clock__second {
+  background: rgba(31,20,47,0.75);
+  height: 0;
+  left: 51%;
+  position: absolute;
+  top: 56%;
+  width: 0;
+  transform-origin: 50% 100%;
+  margin: -80px -1px 0;
+  padding: 80px 1px 0;
+}
+.cup {
+  background-image: url("../img/cup.png");
+  width: 299px;
+  height: 463px;
+  top: 2%;
+  right: 9%;
+}
+.mac {
+  background-image: url("../img/mac.png");
+  width: 742px;
+  height: 687px;
+  top: 18%;
+  left: 5%;
+  @include md-width{
+    left: 28%;
+  }
+}
+.pen {
+  background-image: url("../img/pen.png");
+  width: 884px;
+  height: 328px;
+  top: 8%;
+  left: 7%;
+}
+.phone {
+  background-image: url("../img/phone.png");
+  width: 240px;
+  height: 407px;
+  top: 15%;
+  right:15%;
+}
+.plant {
+  background-image: url("../img/plant.png");
+  width: 1028px;
+  height: 878px;
+  bottom: -25%;
+  right: -25%;
+  @include xlg-width{
+    right: -5%;
+  }
+}
+.invisible-square {
+  width: 150px;
+  height: 150px;
+  bottom: 140px;
+  border: 12px solid rgba(255,255,255,0.2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+
+  @include sm-width{
+    width: 230px;
+    height: 230px;
+    border: 15px solid rgba(255,255,255,0.2);
+    bottom: 80px;
+  }
+}
+.top-line {
+  width: 90px;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 250px;
+  right: 144px;
+  left: 0;
+  margin: auto;
+
+  @include sm-width{
+    right: 230px;
+  }
+}
+.top-circle {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 280px;
+  left: 143px;
+  margin: auto;
+  border: 5px solid #fff;
+  border-radius: 50%;
+
+  @include sm-width{
+    left: 210px;
+  }
+}
+.middle-wave{
+  height: 24px;
+  width: 35px;
+  position: absolute;
+  top: 0;
+  right: 140px;
+  bottom: 150px;
+  left: 0;
+  margin: auto;
+  background: url("../img/wave.png");
+  background-size: 35px 24px;
+  background-repeat: no-repeat;
+
+  @include sm-width{
+    right: 225px;
+    bottom: 105px;
+  }
+}
+
+.scroll-icon{
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  z-index:99999;
+  bottom:20px;
+  right:0;
+  left:0;
+  margin:auto;
+}
+.scroll-icon__mouse {
+  animation: movement .8s ease infinite alternate;
+}
+
+@keyframes movement{
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(10px);
+  }
+}
+
+.mac{
+  @include sm-width{
+    visibility: visible;
+  }
+}
+
+.cup,
+.pen,
+.plant{
+  @include md-width{
+    visibility: visible;
+  }
+}
+
+.clock{
+  @include lg-width{
+    visibility: visible;
+  }
+}
+
+.book{
+  @include xlg-width{
+    visibility: visible;
+  }
+}

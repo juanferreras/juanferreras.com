@@ -1,25 +1,25 @@
 header.about {
-  background: $color-dark-font;
+  background: map-get($colors, purple);
   padding: 30px 0;
   margin-bottom: 16px;
 }
 .resume h2{
-  font-family: $font-primary-stack;
+  font-family: map-get($typography, futura);
 }
 .resume .about h3{
   font-weight: normal;
 }
 .resume h3,
 .resume h3>a{
-  font-family: $font-sans-stack;
+  font-family: map-get($typography, proxima-nova);
   font-weight: bold;
 }
 .resume q {
   font-style: italic;
 }
 h3>a{
-  color: $color-dark-font;
-  border-bottom: 1px solid $color-dark-font;
+  color: map-get($colors, purple);
+  border-bottom: 1px solid map-get($colors, purple);
   padding-bottom: 0;
   margin-left: 0;
 }
@@ -39,7 +39,7 @@ section > .row blockquote{
   height: 1px;
   margin-top: 1em;
   margin-bottom: .5em;
-  background: $color-base-font;
+  background: map-get($colors, grey);
 }
 
 section .row p.note{
@@ -48,7 +48,7 @@ section .row p.note{
 
 section .row p{
   line-height:1.5;
-  color: $color-grey-font;
+  color: map-get($colors, grey);
   font-size: 1em;
 }
 
@@ -71,7 +71,7 @@ ul.profile {
   line-height: 1.7;
   margin:0;
   margin-top: 1.35rem;
-  color: $color-grey-font;
+  color: map-get($colors, grey);
 }
 ul.profile>li{
   display:block;
@@ -82,7 +82,7 @@ ul.profile>li{
   height: 70px;
   width: 70px;
   display:block;
-  border: 3px solid $color-dark-font;
+  border: 3px solid map-get($colors, purple);
   border-radius: 100%;
   transform:  translateZ(0) rotate(90deg);
   background-color: rgba(255,255,255,0.9);
@@ -100,7 +100,7 @@ aside.return{
   position: absolute;
   top: 32px;
   width: 22px;
-  border: 2px solid $color-dark-font;
+  border: 2px solid map-get($colors, purple);
   transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
 }

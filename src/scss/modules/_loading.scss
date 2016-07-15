@@ -1,0 +1,42 @@
+.loading .button-container,
+.loading .scroll-icon,
+.loading .parallax__layer{
+  display: none !important;
+}
+.loading .parallax__layer.visible{
+  display: block !important;
+}
+.loading nav{
+  visibility:hidden;
+}
+.loading .background{
+  opacity: 0.2;
+}
+.loading{
+  overflow:hidden;
+}
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading .top-circle--loading {
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-name: rotate-forever;
+  animation-timing-function: linear;
+  border: 6px solid map-get($colors, grey);
+  border-right-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.loading .top-circle--loading {
+  z-index: 9999;
+}
+.top-circle--loading {
+  transition: border-color 0.5s ease;
+  border-color: #fff;
+}

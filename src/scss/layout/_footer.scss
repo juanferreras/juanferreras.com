@@ -1,0 +1,141 @@
+main{
+  margin-bottom: 38rem;
+  @include lg-width{
+    margin-bottom: 32rem;
+  }
+}
+#footer{
+  height: 38rem;
+  @include lg-width{
+    height: 32rem;
+  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -2;
+  background: map-get($colors, light-purple);
+}
+.footer{
+  @include container;
+  padding: 4rem 0;
+  text-align: center;
+}
+.footer__background{
+  background: #241833 url("../img/roll.gif") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  opacity: 0;
+  filter: grayscale(100%) contrast(115%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: perspective(1px) scale(1.25);
+  transition: opacity .5s ease, transform 5s ease;
+}
+.footer__background--active {
+  opacity: 0.25;
+  transform: perspective(1px) scale(1);
+  transition: opacity .5s ease, transform 2s ease;
+}
+.footer__title{
+  color: map-get($colors, white);
+  font-size: 5rem;
+  font-family: map-get($typography, futura);
+  text-transform: none;
+  border-bottom: 0;
+}
+.footer__title span.merriweather{
+  font-family: map-get($typography, merriweather);
+  font-size: 4.375rem;
+  font-style: italic;
+}
+.footer__subtitle{
+  font-size: 1.375rem;
+  text-transform: uppercase;
+  font-family: map-get($typography, proxima-nova);
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.footer__description{
+  color: map-get($colors, light-grey);
+  max-width: 40rem;
+  margin: 1rem auto;
+}
+.footer__description a.underline{
+  color: map-get($colors, red);
+  font-size: 1.1rem;
+  margin: 0 .45rem;
+  white-space: nowrap;
+}
+.footer__description a.underline::after{
+  background: map-get($colors, red);
+}
+.footer__description span.roll{
+  font-style: italic;
+  cursor: help;
+  border-bottom: 1px dotted map-get($colors, light-grey);
+  //margin: 0 .5rem;
+}
+
+.footer__copyright{
+  background: map-get($colors, dark-purple);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  @include lg-width{
+    padding: 1rem 0;
+  }
+}
+.footer__row{
+  @include container;
+}
+.footer__column{
+  width: 100%;
+  margin: 1rem 0;
+  @include md-width{
+    margin: 0 0;
+    @include span(4);
+  }
+  text-align: center;
+  color: map-get($colors, dark-grey);
+  font-family: map-get($typography, proxima-nova);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.footer__column--left{
+  @include md-width{
+    text-align: left;
+  }
+}
+.footer__column--right{
+  width: 100%;
+  margin: 1rem 0;
+  @include md-width{
+    margin: 0 0;
+    text-align: right;
+    @include span(4 last);
+  }
+}
+.footer__column svg{
+  fill: #fff;
+  max-width: 50px;
+  vertical-align: middle;
+  margin: 0 .5rem;
+}
+.footer__column .heart-icon svg{
+  fill: map-get($colors, red);
+  max-width: 1rem;
+  margin-left: 0;
+  margin-bottom: 4px;
+}
+.footer__column a{
+  margin-top: .5rem;
+}
+.footer__column p > a{
+  margin-left: .5rem;
+}

@@ -43,8 +43,8 @@ String.prototype.rightChars = function(n){
       color = 'rgb(0, 0, 0)';
     }
 
-    var $h3 = $('h3#subline');
-    $h3.addClass("hasSpan");
+    var $h3 = $('h3#typer');
+    $h3.addClass("hero__subtitle--span");
     
     return $('<span></span>')
       .css('color', color)
@@ -105,7 +105,7 @@ String.prototype.rightChars = function(n){
 
   clearText = function ($e) {
     $e.find('span').remove();
-    $e.removeClass("hasSpan");
+    $e.removeClass("hero__subtitle--span");
 
     setTimeout(function () {
       type($e);

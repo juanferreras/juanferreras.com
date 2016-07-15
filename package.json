@@ -35,5 +35,8 @@
     "nodemailer-ses-transport": "^1.3.0",
     "parallelshell": "^2.0.0",
     "postcss-discard-comments": "^1.2.0"
+  },
+  "devDependencies": {
+    "susy": "^2.2.12"
   }
 }

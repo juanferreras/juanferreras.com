@@ -9,18 +9,34 @@
 }
 html,
 body,
-.main-wrapper,
-main,
-main #landing{
-  height: 100%;
+main{
+  min-height: 100%;
+  height: auto;
 }
 body{
   overflow-x:hidden;
   overflow-y: auto;
-  -webkit-font-smoothing: antialiased;
+  webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width:100%;
+  -webkit-font-feature-settings: "kern", "liga";
+  font-feature-settings: "kern", "liga";
+  width: 100%;
+  position: relative;
+  z-index: 0;
 }
+.body--frozen {
+  overflow:hidden;
+}
+main{
+  position: relative;
+  z-index: 1;
+}
+main section{
+  height: 100vh;
+  min-height: 800px;
+  position: relative;
+}
+
 .wow{
   visibility:hidden;
 }
@@ -40,24 +56,6 @@ img {
   max-width: 100%;
   height: auto !important;
 }
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.wrapper {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  padding: 0;
-  height: 265px;
-  width: 100%;
-  z-index: 2;
-}
 main section{
   width: 100%;
 }
@@ -70,8 +68,7 @@ main section {
 *:focus {
   outline: none !important;
 }
-
-::-moz-selection { /* Code for Firefox */
+::-moz-selection { 
   color: white;
   background: rgba(31,20,47,0.99);
 }
@@ -103,39 +100,33 @@ input:focus::-ms-input-placeholder {
   color: rgba(255,255,255,0.2);
 }
 
-.overflow-hidden{
-  overflow:hidden;
+a {
+  color: map-get($colors, white);
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
 }
 
-.section {
-  text-align: center;
-}
-.section p {
-  margin: 2em 0;
-  line-height: 1.6;
-  color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-header.home{
-  text-align: center;
+a.underline::after{
   width: 100%;
-  height: 100%;
-  padding:0;
-  margin:0;
-}
-header.home h3 {
-  margin: 3px 0 6px;
-}
-a {
-  text-decoration: none;
-  padding-bottom: 5px;
-  border-bottom: 1px solid transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  top: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease, top 0.3s ease;
 }
 
 a:focus,
 a:hover{
-  color: #fff;
+  color: map-get($colors, white);
+}
+a.underline:focus::after,
+a.underline:hover::after{
+  top: -1px;
+  opacity: 1;
 }
 
 a,
@@ -152,46 +143,44 @@ svg g{
   width: 180px;
   display: inline-block;
   margin: .5em .1em;
-  border: 2px solid rgba(255,255,255,0.3);
-  background: none;
+  border: 2px solid map-get($colors, transparent-red);
+  background: map-get($colors, transparent-red);
   vertical-align: middle;
   position: relative;
   z-index: 1;
   -webkit-backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
-  color: $color-white-font;
+  color: map-get($colors, white);
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: .75rem 1rem;
-  background: transparent;
-  color: #fff;
+  color: map-get($colors, white);
   overflow: hidden;
   transition: border-color 0.3s ease, color 0.5s ease, background-color 0.6s ease, all 0.6s ease;
 }
 .btn:focus,
 .btn:hover {
-  background-color: $color-white-font;
-  color: $color-dark-font;
-  border-color: $color-white-font;
+  background-color: map-get($colors, red);
+  border-color: map-get($colors, red);
 }
 .btn-secondary{
-  color: $color-dark-font;
-  border-color: $color-grey-lighter-font;
+  color: map-get($colors, purple);
+  border-color: map-get($colors, light-grey);
   background: transparent;
 }
 .btn-secondary:focus,
 .btn-secondary:hover{
-  color: $color-white-font;
-  border-color: $color-dark-font;
-  background: $color-dark-font;
+  color: map-get($colors, white);
+  border-color: map-get($colors, purple);
+  background: map-get($colors, purple);
 }
 .or{
   display: block;
-  font-family: $font-sans-stack;
+  font-family: map-get($typography, proxima-nova);
   font-style: italic;
-  color: $color-white-font;
+  color: map-get($colors, white);
   font-size: 1rem;
 }
 .or::before,
@@ -211,6 +200,5 @@ svg g{
   margin-left: .75rem;
 }
 .btn-link{
-  font-family: $font-serif-stack;
   display: inline-block;
 }

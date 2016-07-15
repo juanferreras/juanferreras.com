@@ -1,38 +1,9 @@
 @media screen and (min-width: 548px){
-  .section h1{
-    font-size: 2.5rem;
-  }
   .nl-form{
     font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 768px){
-  body{
-    font-size:16px;
-  }
-  h1{
-    font-size: 5rem;
-  }
-  h3{
-    font-size: 1.35rem;
-  }
-  .layer h1{
-    font-size: 12.5rem;
-  }
-  .wrapper {
-    width: 530px;
-  }
-  .container {
-    width: 85%;
-    max-width:950px;
-    margin: 0 auto;
-  }
-  .book,
-  .plant,
-  .mac,
-  .rotated-wrapper{
-    visibility:visible;
-  }
   #designer{
     background-image: url("../img/bg-designer.jpg");
   }
@@ -57,19 +28,6 @@
     margin:auto;
     height: 690px;
   }
-  section>.info{
-    width: 100%;
-    min-height: 100%;
-    position: relative;
-  }
-  main section {
-    min-height: 800px;
-    height: 100%;
-  }
-  .section p {
-    font-size: 1.8rem;
-    line-height: 2;
-  }
   .modal .modal-content {
     padding: 4rem 10%;
   }
@@ -81,22 +39,6 @@
     color: #162836;
     margin-left:5px;
   }
-  .invisible-square {
-    width: 230px;
-    height: 230px;
-    border: 15px solid rgba(255,255,255,0.2);
-    bottom: 80px;
-  }
-  .top-line {
-    right: 230px;
-  }
-  .top-circle{
-    left: 210px;
-  }
-  .middle-wave {
-    right: 225px;
-    bottom: 105px;
-  }
   #sherlockHolmes{
     opacity:1;
     margin-top: 50px;
@@ -104,18 +46,8 @@
   .nl-field-toggle{
     margin-left: .85rem;
   }
-
 }
 @media print, screen and (min-width: 992px){
-  section>.info>.container{
-    max-width: 80%;
-  }
-  .clock{
-    visibility: visible;
-  }
-  section > .row > div[class^="col-"]{
-    text-align:right;
-  }
   ul.profile{
     text-align: right;
   }
@@ -127,9 +59,6 @@
   }
 }
 @media screen and (min-width: 1170px) {
-  section>.info>.container{
-    max-width: 600px;
-  }
   .modal .modal-content {
     padding: 5em 12%;
   }
@@ -139,10 +68,6 @@
   }
 }
 @media screen and (min-width:1170px) and (min-height:700px){
-  .pen,
-  .cup{
-    visibility:visible;
-  }
   main section {
     overflow: hidden;
   }
@@ -151,9 +76,6 @@
   }
 }
 @media screen and (min-width:1170px) and (min-height:900px){
-  .phone{
-    visibility:visible;
-  }
   #sherlockHolmes{
     margin-top: 100px;
     width: 70%;
@@ -181,10 +103,6 @@
   body {
     font-size: 10pt;
   }
-  .container {
-    width:100%;
-    max-width: 100%;
-  }
   section p{
     line-height: 1.7;
   }
@@ -194,7 +112,7 @@
   }
   header h1,
   header h3{
-    color: $color-dark-font;
+    color: map-get($colors, purple);
   }
   header.about {
     background: transparent;

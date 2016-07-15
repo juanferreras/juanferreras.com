@@ -1,0 +1,127 @@
+#about{
+  background-color: map-get($colors, red);
+  overflow: auto;
+  overflow-x: hidden;
+  height: auto;
+  @include lg-width{
+    overflow: hidden;
+  }
+}
+.about{
+  @include container;
+  position: relative;
+  z-index: 1;
+  padding: 8rem;
+  @include lg-width{
+    padding: 8rem 0
+  }
+}
+.about__background{
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  @include lg-width{
+    height: 100vh;
+  }
+  background: url("../img/bg-about.jpg") no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.about__profile{
+  width: 100%;
+  @include lg-width{
+    @include span(6);
+  }
+}
+.about__biography{
+  width: 100%;
+  margin: 3rem 0;
+  @include lg-width{
+    margin: 0;
+    @include span(6 last);
+  }
+}
+.profile__name{
+  color: map-get($colors, light-purple);
+  font-size: 5rem;
+  line-height: 0.9;
+  margin: 0;
+  padding: 0;
+
+  @include md-width{
+    font-size: 8rem;
+  }
+}
+.profile__firstname{
+  font-weight: normal;
+}
+.profile__line{
+  display: inline-block;
+  width: 150px;
+  margin: .5rem;
+  background: map-get($colors, light-purple);
+  height: 5px;
+  vertical-align: middle;
+}
+.profile__role{
+  color: map-get($colors, white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  position: relative;
+  top: 240px;
+  font-family: map-get($typography, futura);
+}
+.profile__role h5,
+.profile__role svg{
+  display: inline-block;
+}
+.profile__role h5{
+  font-weight: bold;
+}
+.profile__role svg{
+  fill: #fff;
+  max-width: 50px;
+  vertical-align: middle;
+  margin: 0 .5rem;
+}
+.profile__picture {
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+  margin: 0;
+  margin-left: 4.25rem;
+  font-size: 0;
+  z-index: -1;
+  position: relative;
+  max-width: 500px;
+  top: 0;
+}
+
+.biography__title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 4px;
+  font-family: map-get($typography, futura);
+  color: map-get($colors, light-purple);
+}
+.biography__intro{
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.5;
+  color: map-get($colors, light-purple);
+}
+.biography__body{
+  margin-top: 2rem;
+}
+.biography__line{
+  @include span(3);
+  display: inline-block;
+  background: map-get($colors, light-purple);
+  height: 3px;
+  margin-top: 1rem;
+}
+.biography__text{
+  color: map-get($colors, white);
+  @include span(9 last);
+}

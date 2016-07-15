@@ -1,8 +1,8 @@
 function initPlugins(){
 	new WOW().init();
+	window.$parallax = $('.parallax').parallax();
 	$('[data-typer-targets]').typer();
-  window.$scene = $('#scene').parallax();
-  $('#fixedScroller > #dots').midnight();
+  $('.nav--dots').midnight();
 }
 
 /* Sets the time for the clock on the header */
@@ -11,9 +11,9 @@ function clock() {
 	    s = t.seconds() * 6,
 	    m = t.minutes() * 6 + s / 60,
 	    h = t.hours() % 12 / 12 * 360 + (m / 12);
-	$(".hour").css("transform", "rotate(" + h + "deg)");
-	$(".minute").css("transform", "rotate(" + m + "deg)");
-	$(".second").css("transform", "rotate(" + s + "deg)");
+	$(".clock__hour").css("transform", "rotate(" + h + "deg)");
+	$(".clock__minute").css("transform", "rotate(" + m + "deg)");
+	$(".clock__second").css("transform", "rotate(" + s + "deg)");
 }
 function refreshClock() {
   clock(), setTimeout(refreshClock, 1000)
@@ -21,9 +21,9 @@ function refreshClock() {
 
 function initLayout(){
 	fixedScrollLayout.init({
-		$sections : $( '#fixedScroller > section' ),
-		$navlinks : $( '#fixedScroller .default a' ),
-		$navlinksBlack : $( '#fixedScroller .black a' ),
+		$sections : $( '#main > section' ),
+		$navlinks : $( '#main .default a' ),
+		$navlinksBlack : $( '#main .nav--black a' ),
 		currentLink : 0,
 		$body : $( 'html, body' ),
 		animspeed : 650,
@@ -83,8 +83,8 @@ function initNaturalLanguageForm(){
 				function(){
 				animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
 					setTimeout(function(){
-						$scene.parallax('disable');
-						$('.main-layer').css("transform","");
+						$parallax.parallax('disable');
+						$('.parallax__layer--main').css("transform","");
 					}, 300);
 				});
 			if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
@@ -214,7 +214,7 @@ function scaleValue( topValue, leftValue, radiusValue, windowW, windowH) {
 
 function animateLayer(layer, scaleVal, bool) {
 	layer.velocity({ scale: scaleVal }, 400, function(){
-		$('body').toggleClass('overflow-hidden', bool);
+		$('body').toggleClass('body--frozen', bool);
 		(bool)
 			? layer.parents('.section').addClass('modal-is-visible').end().off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend')
 			: layer.removeClass('is-visible').removeAttr( 'style' ).siblings('[data-type="modal-trigger"]').removeClass('to-circle');
@@ -239,8 +239,8 @@ function closeModal() {
 	var section = $('.section.modal-is-visible');
 	$('body').off('.tabs');
 	section.removeClass('modal-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-		$scene.parallax('enable');
-		$scene.parallax('updateLayers');
+		$parallax.parallax('enable');
+		$parallax.parallax('updateLayers');
 		animateLayer(section.find('.modal-bg'), 1, false);
 		setTimeout(function(){
 			$('#nl-form').replaceWith(window.form.clone());
@@ -333,6 +333,12 @@ function initFormSubmission(){
 	});
 }
 
+function rollFooter(){
+	$('#roll').hover(function(e){
+		$('#footerBackground').toggleClass("footer__background--active");
+	})
+}
+
 function printMessage(){
 	var message = "<---- \n" +
 								"Hey! This website is open source, feel free to check the source code at https://github.com/juanferreras/juanferreras.com" +
@@ -355,6 +361,7 @@ $("document").ready(function() {
 	initNaturalLanguageForm();
 	initFormSubmission();
 	toggleFlag();
+	rollFooter();
 
 	printMessage();
 });

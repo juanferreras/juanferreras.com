@@ -1,183 +1,242 @@
 extends layout
 
 block body
-  body.index.loading
-      .main-wrapper
-        main#fixedScroller.main
-          nav#flags
-            .flag-switch(data-first-lang='EN', data-second-lang='ES')
-              if lang == "en"
-                input#flag(type='checkbox', checked='')
-                label(for='flag')
-              else
-                input#flag(type='checkbox')
-                label(for='flag')
-          nav#dots
-            .nav-wrapper
-              a.current(href='#landing')
-              a(href='#designer')
-              a(href='#developer')
-          section#landing
-            header.home
-              ul#scene.parallax
-                li.layer(data-depth='0.20')
-                  .gravity.mac
-                li.layer(data-depth='0.30')
-                  .gravity.phone
-                li.layer(data-depth='0.50')
-                  .gravity.book
-                    .book-content
-                      h4 #{ __("To-do list") }
-                      ul.to-do
-                        li - #{ __("Grow a beard") }.
-                        li - #{ __("Translate content") }.
-                        li - #{ __("Contact form processing") }.
-                li.layer(data-depth='0.60')
-                  .gravity.clock
-                    .clock-content
-                      .hour
-                      .minute
-                      .second
-                li.layer(data-depth='0.70')
-                  .gravity.cup
-                li.layer(data-depth='0.90')
-                  .gravity.pen
-                li.layer.visible(data-depth='0.00')
-                  .background
-                li.layer.visible(data-depth='0.20')
-                  .invisible-square
-                li.layer(data-depth='0.85')
-                  .gravity.plant
-                li.layer.visible(data-depth='0.25')
-                  .top-line
-                li.layer.visible(data-depth='0.28')
-                  .top-circle.loading-spinner
-                li.layer.visible(data-depth='0.27')
-                  .middle-wave
-                li.layer(data-depth='0.23')
-                  .gravity.rotated-wrapper
-                    p.name Juan Ferreras
-                    p.location Argentina
-                li.layer.visible.main-layer(data-depth='0.15')
-                  .wrapper
-                    h1.wow.fadeInUp(data-wow-duration='1s') JF.
-                    h3#subline.wow.fadeInDown(data-wow-duration='.8s', data-wow-delay='.9s', data-typer-targets='#{ __("Crafting wonderful") }, #{ __("Entrepreneur") }')
-                    .button-container.section
-                      .modal-action
-                        button.btn.wow.fadeInDown(data-wow-duration='1.6s', data-wow-delay='.9s', data-type='modal-trigger', tabindex='2')
-                          | #{ __("Contact") }
-                        span.modal-bg
-                        span.or.wow.fadeInDown(data-wow-duration='1.3s', data-wow-delay='1.5s') #{ __("or") }
-                        a.btn-link.wow.fadeInUp(href="/resume", title="Resume", data-wow-duration='1.3s', data-wow-delay='1.75s', tabindex='3')
-                          | #{ __("Resumé") }
-                      .modal
-                        .modal-content
-                          form#nl-form.nl-form(action='/', method='post')
-                            span #{ __("Hey Juan! My name is ") }
-                            .keep-together
-                              input#formFullName(type='text', name='name', value='', placeholder='John Doe')
-                              span ,
-                            br
-                            span #{ __("I'm in need of ") }
-                            .keep-together
-                              select(name='project')
-                                option(value='a-website', selected='') #{ __("a website") }
-                                option(value='brand-design') #{ __("brand design") }
-                                option(value='app-development') #{ __("app development") } 
-                                option(value='motion-design') #{ __("motion design") }
-                                option(value='graphic-design') #{ __("graphic design") }
-                                option(value='something-else') #{ __("something else") }
-                              span .
-                            br
-                            span #{ __("I've got a rough budget of ") }
-                            .keep-together
-                              select(name='budget')
-                                option(value='1000', selected='') < $1000 USD
-                                option(value='1000-3500') $1000 - $3500 USD
-                                option(value='3500-7000') $3500 - $7000 USD
-                                option(value='7000') > $7000 USD
-                              span .
-                            br
-                            span #{ __("Please reach out at") } 
-                            .keep-together
-                              input#formEmail(type='email', name='email', value='', placeholder='email@domain.com')
-                              span .
-                            .submit-wrapper
-                              #progress-button.progress-button
-                                button
-                                  span.
-                                    #{ __("Send") }
-                                svg.progress-circle(width='70', height='70')
-                                  path(d='m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z')
-                                    
-                                // checkmark to show on success
-                                svg.checkmark(width='70', height='70')
-                                  path(d='m31.5,46.5l15.3,-23.2')
-                                  path(d='m31.5,46.5l-8.5,-7.1')
-                                // cross to show on error
-                                svg.cross(width='70', height='70')
-                                  path(d='m35,35l-9.3,-9.3')
-                                  path(d='m35,35l9.3,9.3')
-                                  path(d='m35,35l-9.3,9.3')
-                                  path(d='m35,35l9.3,-9.3')
-                              p.formMessage.error#errorValues.
-                                #{ __("There's been an error. Did you fill all the fields?") }
-                              p.formMessage.error#errorServer.
-                                #{ __("There's been an error. Please try again later.") }
-                              p.formMessage.success#success.
-                                #{ __("Perfect! I'll be in touch soon.") }
+  body.loading
+    main#main
+      nav.nav--flags
+        .nav__switch(data-first-lang='EN', data-second-lang='ES')
+          if lang == "en"
+            input.nav__input#flag(type='checkbox', checked='')
+            label.nav__label(for='flag')
+          else
+            input.nav__input#flag(type='checkbox')
+            label.nav__label(for='flag')
+      nav.nav--dots
+        .nav__list
+          a.nav__element.nav__element--current(href='#landing')
+          a.nav__element(href='#about')
+          a.nav__element(href='#designer')
+          a.nav__element(href='#developer')
+      section#landing
+        ul.parallax
+          li.parallax__layer(data-depth='0.20')
+            .parallax__content.mac
+          li.parallax__layer(data-depth='0.50')
+            .parallax__content.book
+              .book__content
+                h4.book__title #{ __("To-do list") }
+                ul.book__list
+                  li.book_element - #{ __("Grow a beard") }.
+                  li.book_element.book__element--completed - #{ __("Translate content") }.
+          li.parallax__layer(data-depth='0.25')
+            .parallax__content.cup
+          li.parallax__layer(data-depth='0.60')
+            .parallax__content.clock
+              .clock__content
+                .clock__hour
+                .clock__minute
+                .clock__second
+          li.parallax__layer(data-depth='0.99')
+            .parallax__content.pen
+          li.parallax__layer.visible(data-depth='0.20')
+            .invisible-square
+          li.parallax__layer(data-depth='0.55')
+            .parallax__content.plant
+          li.parallax__layer.visible(data-depth='0.00')
+            .background
+          li.parallax__layer.visible(data-depth='0.25')
+            .top-line
+          li.parallax__layer.visible(data-depth='0.28')
+            .top-circle.top-circle--loading
+          li.parallax__layer.visible(data-depth='0.27')
+            .middle-wave
+          li.parallax__layer.visible.parallax__layer--main(data-depth='0.15')
+            .hero
+              h1.hero__title.wow.fadeInUp(data-wow-duration='1s') JF.
+              h3.hero__subtitle#typer.wow.fadeInDown(data-wow-duration='.8s', data-wow-delay='.9s', data-typer-targets='#{ __("Crafting wonderful") }, #{ __("Entrepreneur") }')
+              .button-container
+                .modal-action
+                  button.btn.wow.fadeInDown(data-wow-duration='1.6s', data-wow-delay='.9s', data-type='modal-trigger', tabindex='2')
+                    | #{ __("Contact") }
+                  span.modal-bg
+                  span.or.wow.fadeInDown(data-wow-duration='1.3s', data-wow-delay='1.5s') #{ __("or") }
+                  a.underline.btn-link.wow.fadeInUp(href="/resume", title="Resume", data-wow-duration='1.3s', data-wow-delay='1.75s', tabindex='3')
+                    | #{ __("Resumé") }
+                .modal
+                  .modal-content
+                    form#nl-form.nl-form(action='/', method='post')
+                      span #{ __("Hey Juan! My name is ") }
+                      .keep-together
+                        input#formFullName(type='text', name='name', value='', placeholder='John Doe')
+                        span ,
+                      br
+                      span #{ __("I'm in need of ") }
+                      .keep-together
+                        select(name='project')
+                          option(value='a-website', selected='') #{ __("a website") }
+                          option(value='brand-design') #{ __("brand design") }
+                          option(value='app-development') #{ __("app development") } 
+                          option(value='motion-design') #{ __("motion design") }
+                          option(value='graphic-design') #{ __("graphic design") }
+                          option(value='something-else') #{ __("something else") }
+                        span .
+                      br
+                      span #{ __("I've got a rough budget of ") }
+                      .keep-together
+                        select(name='budget')
+                          option(value='1000', selected='') < $1000 USD
+                          option(value='1000-3500') $1000 - $3500 USD
+                          option(value='3500-7000') $3500 - $7000 USD
+                          option(value='7000') > $7000 USD
+                        span .
+                      br
+                      span #{ __("Please reach out at") } 
+                      .keep-together
+                        input#formEmail(type='email', name='email', value='', placeholder='email@domain.com')
+                        span .
+                      .submit-wrapper
+                        #progress-button.progress-button
+                          button
+                            span.
+                              #{ __("Send") }
+                          svg.progress-circle(width='70', height='70')
+                            path(d='m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z')
+                              
+                          // checkmark to show on success
+                          svg.checkmark(width='70', height='70')
+                            path(d='m31.5,46.5l15.3,-23.2')
+                            path(d='m31.5,46.5l-8.5,-7.1')
+                          // cross to show on error
+                          svg.cross(width='70', height='70')
+                            path(d='m35,35l-9.3,-9.3')
+                            path(d='m35,35l9.3,9.3')
+                            path(d='m35,35l-9.3,9.3')
+                            path(d='m35,35l9.3,-9.3')
+                        p.formMessage.error#errorValues.
+                          #{ __("There's been an error. Did you fill all the fields?") }
+                        p.formMessage.error#errorServer.
+                          #{ __("There's been an error. Please try again later.") }
+                        p.formMessage.success#success.
+                          #{ __("Perfect! I'll be in touch soon.") }
 
-                            .nl-overlay
-                          #sherlockHolmes
-                            q #{ __("The world is full of obvious things which nobody by any chance ever observes.") }
-                            | #{ __("— said Sherlock Holmes once. ") } 
-                            | </br>
-                            span#counter 4
-                            | #{ __(" times you have visited this section yet you haven't contacted me. If you need any help, please feel free to ") }
-                            a(href="mailto:juan@flioh.com")
-                              | #{ __("email me.") }
-                      a.modal-close(href='#')
-                        svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='44px', height='44px', viewbox='7 -7 44 44', enable-background='new 7 -7 44 44', xml:space='preserve')
-                          g
-                            line(x1='19', y1='5', x2='39', y2='25')
-                            line(x1='39', y1='5', x2='19', y2='25')
-              .mouse-icon
-                svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', viewbox='0 0 64 64', xml:space='preserve')
-                  g#mouse
-                    path(fill='#fff', d='M32,16c-4.971,0-9,4.029-9,9v14c0,4.971,4.029,9,9,9c4.971,0,9-4.029,9-9V25C41,20.029,36.971,16,32,16z M39,39      c0,3.866-3.134,7-7,7s-7-3.134-7-7V25c0-3.866,3.134-7,7-7s7,3.134,7,7V39z M32,21c-0.552,0-1,0.448-1,1v5c0,0.553,0.448,1,1,1      c0.553,0,1-0.447,1-1v-5C33,21.448,32.553,21,32,21z')
-          section#designer(data-midnight='black')
-            .info
-              .container
-                header.wow.fadeInRight(data-wow-duration='1.2s')
-                  h1.section-title #{ __("Designer") }
-                blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
-                  q
-                    | #{ __("Good design is obvious. Great design is transparent.") }
-                  footer
-                    cite #{ __("Joe Sparano") }
-                .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
-                  p
-                    em #{ __("I'm a multi-disciplinary designer") } 
-                    | #{ __("who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.") }
-                  p
-                    | #{ __("Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.") }
-              span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
-          section#developer(data-midnight='black')
-            .info
-              span.giant-ampersand.wow.zoomIn(data-wow-duration='1s', data-wow-delay='1.5s') &
-              .container
-                header.wow.fadeInLeft(data-wow-duration='1.2s')
-                  h1.section-title #{ __("Developer") }
-                blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
-                  q
-                    | #{ __("Any fool can write code that a computer can understand. Good programmers write code that humans can understand.") }
-                  footer
-                    cite #{ __("Martin Fowler") }
-                .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
-                  p
-                    em #{ __("A brand is only as successful") } 
-                    | #{ __("as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.") }
-                  p
-                    | #{ __("However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.") }
-
+                      .nl-overlay
+                    #sherlockHolmes
+                      q #{ __("The world is full of obvious things which nobody by any chance ever observes.") }
+                      | #{ __("— said Sherlock Holmes once. ") } 
+                      | </br>
+                      span#counter 4
+                      | #{ __(" times you have visited this section yet you haven't contacted me. If you need any help, please feel free to ") }
+                      a(href="mailto:juan@flioh.com")
+                        | #{ __("email me.") }
+                a.modal-close(href='#')
+                  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='44px', height='44px', viewbox='7 -7 44 44', enable-background='new 7 -7 44 44', xml:space='preserve')
+                    g
+                      line(x1='19', y1='5', x2='39', y2='25')
+                      line(x1='39', y1='5', x2='19', y2='25')
+        .scroll-icon
+          include ../src/img/mouse.svg
+      section#about(data-midnight='nav--black')
+        .about__background
+        .about
+          .about__profile.parallax
+            .parallax__layer(data-depth='0.30')
+              figure.profile__picture
+                img(src="img/profile.jpg")
+            .parallax__layer(data-depth='0.50')
+              h1.profile__name
+                span.profile__firstname #{ __("Juan") }
+                span.profile__line
+                br
+                span.profile__surname #{ __("Ferreras") }
+            .parallax__layer(data-depth='0.65')
+              .profile__role
+                h5 #{ __("CHIEF EXECUTIVE OFFICER @ ") }
+                a(href="https://flioh.com" target="_BLANK")
+                  include ../src/img/flioh.svg
+          .about__biography
+            h3.biography__title #{ __("WHO THE F!@#?") }
+            p.biography__intro 
+              | #{ __("A 21 years old Information Systems Engineer Student based in Santa Fe, Argentina.") }
+            .biography__body
+              span.biography__line
+              .biography__text
+                p
+                  span.smallcaps #{ __("My background however") }
+                  | #{ __("has always been design-driven; ever since I created my first website at the age of 15 I’ve always been excited with the idea of crafting something that people can interact with.") }
+                p
+                  | #{ __("I went on to study an Information Engineer career because I believe great products are more than just good ideas carefully executed through good design. Software still is and will always be the engine powering them. ") }
+                  q #{ __("Great web design without functionality is like a sports car with no engine.") }
+                  | #{ __(", said Paul Cookson once.") }
+                p
+                  | 
+                  q #{ __("If it's not breaking you down, it's not building you up.") }
+                  |  #{ __("Okay, enough with the quotes. I'm incredibly passionate about what I do, and I feel really excited towards pushing myself to the edge. I think that we grow and develop ourselves as professionals when we are outside our comfort zone.") }
+      section#designer(data-midnight='nav--black')
+        .split.split--designer
+          .container.container--small.container--center
+            header.wow.fadeInRight(data-wow-duration='1.2s')
+              h1.split__title #{ __("Designer") }
+            blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
+              q
+                | #{ __("Good design is obvious. Great design is transparent.") }
+              footer
+                cite #{ __("Joe Sparano") }
+            .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
+              p
+                span.smallcaps #{ __("I'm a multi-disciplinary designer") }
+                | #{ __("who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.") }
+              p
+                | #{ __("Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.") }
+          span.split__ampersand &
+      section#developer(data-midnight='nav--black')
+        .split.split--developer
+          .container.container--small.container--center
+            header.wow.fadeInLeft(data-wow-duration='1.2s')
+              h1.split__title #{ __("Developer") }
+            blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
+              q
+                | #{ __("Any fool can write code that a computer can understand. Good programmers write code that humans can understand.") }
+              footer
+                cite #{ __("Martin Fowler") }
+            .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
+              p
+                span.smallcaps #{ __("A brand is only as successful") }
+                | #{ __("as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.") }
+              p
+                | #{ __("However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.") }
+          span.split__ampersand &
+    footer#footer
+      .footer__background#footerBackground
+      .footer
+        h2.footer__title 
+          | #{ __("Say ") }
+          span.merriweather #{ __("hi! ") }
+        h3.footer__subtitle #{ __("Don't be shy.") }
+        p.footer__description 
+          | #{ __("You may use the") }
+          a.underline.btn-link(href="#0") #{ __("contact form ") }
+          | #{ __("on the top, or") }
+          a.underline.btn-link(href="mailto:juan@flioh.com") #{ __("e-mail me ") }
+          | #{ __("directly if that's how you") }
+          span.roll#roll #{ __(" roll. ") }
+          | #{ __("While you're at it, feel free to") }
+          a.underline.btn-link(href="#0") #{ __("check out my resumé ") }
+          | #{ __("to know more about my employment and education history or even") }
+          a.underline.btn-link(href="https://ar.linkedin.com/in/ferrerasjuan" target="_BLANK") #{ __("add me on linkedin.") }
+      .footer__copyright
+        .footer__row
+          .footer__column.footer__column--left
+            p 
+              | #{ __("Crafted with") }
+              span.heart-icon
+                include ../src/img/heart.svg
+              | #{ __("by") }
+              a(href="https://flioh.com" target="_BLANK")
+                include ../src/img/flioh.svg
+          .footer__column
+            a.underline.btn-link(href="mailto:juan@flioh.com") juan@flioh.com
+          .footer__column.footer__column--right
+            p
+              | #{ __("Code available on") }
+              a.underline.btn-link(href="https://github.com/juanferreras/juanferreras.com" target="_BLANK") Github
       script(src='js/scripts.js')
