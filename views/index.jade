@@ -51,19 +51,19 @@ block body
           li.parallax__layer.visible(data-depth='0.27')
             .middle-wave
           li.parallax__layer.visible.parallax__layer--main(data-depth='0.15')
-            .hero
-              h1.hero__title.wow.fadeInUp(data-wow-duration='1s') JF.
-              h3.hero__subtitle#typer.wow.fadeInDown(data-wow-duration='.8s', data-wow-delay='.9s', data-typer-targets='#{ __("Crafting wonderful") }, #{ __("Entrepreneur") }')
-              .button-container
-                .modal-action
-                  button.btn.wow.fadeInDown(data-wow-duration='1.6s', data-wow-delay='.9s', data-type='modal-trigger', tabindex='2')
+            .hero.parallax__no-translate
+              h1.hero__title JF.
+              h3.hero__subtitle#typer(data-typer-targets='#{ __("Crafting wonderful") }, #{ __("Entrepreneur") }')
+              .modal
+                .modal__action
+                  button.btn(data-type='modal-trigger', tabindex='2')
                     | #{ __("Contact") }
-                  span.modal-bg
-                  span.or.wow.fadeInDown(data-wow-duration='1.3s', data-wow-delay='1.5s') #{ __("or") }
-                  a.underline.btn-link.wow.fadeInUp(href="/resume", title="Resume", data-wow-duration='1.3s', data-wow-delay='1.75s', tabindex='3')
+                  span.modal__bg
+                  span.or #{ __("or") }
+                  a.underline.underline--active(href="/404", title="Resume", tabindex='3')
                     | #{ __("Resumé") }
-                .modal
-                  .modal-content
+                .modal__container
+                  .modal__content
                     form#nl-form.nl-form(action='/', method='post')
                       span #{ __("Hey Juan! My name is ") }
                       .keep-together
@@ -99,19 +99,11 @@ block body
                           button
                             span.
                               #{ __("Send") }
-                          svg.progress-circle(width='70', height='70')
-                            path(d='m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z')
-                              
+                          include ../src/img/progress-circle.svg
                           // checkmark to show on success
-                          svg.checkmark(width='70', height='70')
-                            path(d='m31.5,46.5l15.3,-23.2')
-                            path(d='m31.5,46.5l-8.5,-7.1')
+                          include ../src/img/checkmark.svg
                           // cross to show on error
-                          svg.cross(width='70', height='70')
-                            path(d='m35,35l-9.3,-9.3')
-                            path(d='m35,35l9.3,9.3')
-                            path(d='m35,35l-9.3,9.3')
-                            path(d='m35,35l9.3,-9.3')
+                          include ../src/img/cross.svg
                         p.formMessage.error#errorValues.
                           #{ __("There's been an error. Did you fill all the fields?") }
                         p.formMessage.error#errorServer.
@@ -126,13 +118,10 @@ block body
                       | </br>
                       span#counter 4
                       | #{ __(" times you have visited this section yet you haven't contacted me. If you need any help, please feel free to ") }
-                      a(href="mailto:juan@flioh.com")
+                      a.underline(href="mailto:juan@flioh.com")
                         | #{ __("email me.") }
-                a.modal-close(href='#')
-                  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='44px', height='44px', viewbox='7 -7 44 44', enable-background='new 7 -7 44 44', xml:space='preserve')
-                    g
-                      line(x1='19', y1='5', x2='39', y2='25')
-                      line(x1='39', y1='5', x2='19', y2='25')
+                a.modal__close(href='#')
+                  include ../src/img/x.svg
         .scroll-icon
           include ../src/img/mouse.svg
       section#about(data-midnight='nav--black')
@@ -140,7 +129,7 @@ block body
         .about
           .about__profile.parallax
             .parallax__layer(data-depth='0.30')
-              figure.profile__picture
+              figure.profile__picture.parallax__no-translate
                 img(src="img/profile.jpg")
             .parallax__layer(data-depth='0.50')
               h1.profile__name
@@ -174,36 +163,34 @@ block body
       section#designer(data-midnight='nav--black')
         .split.split--designer
           .container.container--small.container--center
-            header.wow.fadeInRight(data-wow-duration='1.2s')
+            header
               h1.split__title #{ __("Designer") }
-            blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
+            blockquote
               q
                 | #{ __("Good design is obvious. Great design is transparent.") }
               footer
                 cite #{ __("Joe Sparano") }
-            .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
-              p
-                span.smallcaps #{ __("I'm a multi-disciplinary designer") }
-                | #{ __("who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.") }
-              p
-                | #{ __("Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.") }
+            p
+              span.smallcaps #{ __("I'm a multi-disciplinary designer") }
+              | #{ __("who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.") }
+            p
+              | #{ __("Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.") }
           span.split__ampersand &
       section#developer(data-midnight='nav--black')
         .split.split--developer
           .container.container--small.container--center
-            header.wow.fadeInLeft(data-wow-duration='1.2s')
+            header
               h1.split__title #{ __("Developer") }
-            blockquote.wow.fadeInUp(data-wow-duration='1.3s', data-wow-delay='.7s')
+            blockquote
               q
                 | #{ __("Any fool can write code that a computer can understand. Good programmers write code that humans can understand.") }
               footer
                 cite #{ __("Martin Fowler") }
-            .wow.fadeIn(data-wow-duration='1.5s', data-wow-delay='1.5s')
-              p
-                span.smallcaps #{ __("A brand is only as successful") }
-                | #{ __("as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.") }
-              p
-                | #{ __("However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.") }
+            p
+              span.smallcaps #{ __("A brand is only as successful") }
+              | #{ __("as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.") }
+            p
+              | #{ __("However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.") }
           span.split__ampersand &
     footer#footer
       .footer__background#footerBackground
@@ -214,15 +201,15 @@ block body
         h3.footer__subtitle #{ __("Don't be shy.") }
         p.footer__description 
           | #{ __("You may use the") }
-          a.underline.btn-link(href="#0") #{ __("contact form ") }
+          a.underline(href="#0") #{ __("contact form ") }
           | #{ __("on the top, or") }
-          a.underline.btn-link(href="mailto:juan@flioh.com") #{ __("e-mail me ") }
+          a.underline(href="mailto:juan@flioh.com") #{ __("e-mail me ") }
           | #{ __("directly if that's how you") }
           span.roll#roll #{ __(" roll. ") }
           | #{ __("While you're at it, feel free to") }
-          a.underline.btn-link(href="#0") #{ __("check out my resumé ") }
+          a.underline(href="/404") #{ __("check out my resumé ") }
           | #{ __("to know more about my employment and education history or even") }
-          a.underline.btn-link(href="https://ar.linkedin.com/in/ferrerasjuan" target="_BLANK") #{ __("add me on linkedin.") }
+          a.underline(href="https://ar.linkedin.com/in/ferrerasjuan" target="_BLANK") #{ __("add me on linkedin.") }
       .footer__copyright
         .footer__row
           .footer__column.footer__column--left
@@ -234,9 +221,9 @@ block body
               a(href="https://flioh.com" target="_BLANK")
                 include ../src/img/flioh.svg
           .footer__column
-            a.underline.btn-link(href="mailto:juan@flioh.com") juan@flioh.com
+            a.underline(href="mailto:juan@flioh.com") juan@flioh.com
           .footer__column.footer__column--right
             p
               | #{ __("Code available on") }
-              a.underline.btn-link(href="https://github.com/juanferreras/juanferreras.com" target="_BLANK") Github
+              a.underline(href="https://github.com/juanferreras/juanferreras.com" target="_BLANK") Github
       script(src='js/scripts.js')

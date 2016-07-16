@@ -28,7 +28,7 @@ router.route('/')
     });
   })
   .all(function (req, res, next) { 
-    res.status(404).send({ error: 'Not found.' });
+    res.status(404).render('404', {})
   });
 
 router.route('/resume')
@@ -36,7 +36,12 @@ router.route('/resume')
     res.render('resume', {})
   })
   .all(function (req, res, next) { 
-    res.status(404).send({ error: 'Not found.' });
+    res.status(404).render('404', {})
+  });
+
+router.route('*')
+  .all(function (req, res, next) { 
+    res.status(404).render('404', {})
   });
 
 module.exports = router;

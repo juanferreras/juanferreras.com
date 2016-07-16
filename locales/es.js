@@ -102,5 +102,12 @@
 	"add me on linkedin.": "agregame en linkedin.",
 	"Crafted with": "Hecho con",
 	"by": "por",
-	"Code available on": "Código disponible en"
+	"Code available on": "Código disponible en",
+	"404.": "404.",
+	"Oh boy, that's awkward.": "Oh boy, that's awkward.",
+	"Take me home": "Take me home",
+	"Rest assured, our team of highly trained experts is working really hard to fix it.": "Rest assured, our team of highly trained experts is working really hard to fix it.",
+	"Not found.": "Not found.",
+	"Rest assured, our team of highly trained experts is": "Rest assured, our team of highly trained experts is",
+	"working really hard to fix it.": "working really hard to fix it."
 }

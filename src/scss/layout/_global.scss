@@ -14,6 +14,7 @@ main{
   height: auto;
 }
 body{
+  background: map-get($colors, purple);
   overflow-x:hidden;
   overflow-y: auto;
   webkit-font-smoothing: antialiased;
@@ -31,15 +32,36 @@ main{
   position: relative;
   z-index: 1;
 }
-main section{
+main section#landing{
   height: 100vh;
-  min-height: 800px;
+  min-height: 600px;
+  @include sm-height{
+    min-height: 800px;
+  }
+}
+main section{
+  min-height: 100vh;
+  height: 100%;
   position: relative;
+  width: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  @include xs-width{
+    height: 100vh;
+    min-height: 800px;
+  }
+  @include lg-width-sm-height{
+    overflow: hidden;
+  }
+}
+main nav{
+  @include lg-width-sm-height{
+    display: block;
+  }
 }
 
-.wow{
-  visibility:hidden;
-}
 ul {
   list-style: none;
   margin: 0;
@@ -55,15 +77,6 @@ img {
   width: auto;
   max-width: 100%;
   height: auto !important;
-}
-main section{
-  width: 100%;
-}
-main section {
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 *:focus {
   outline: none !important;
@@ -105,6 +118,7 @@ a {
   font-weight: bold;
   text-decoration: none;
   position: relative;
+  display: inline-block;
 }
 
 a.underline::after{
@@ -116,17 +130,24 @@ a.underline::after{
   position: relative;
   top: 5px;
   opacity: 0;
-  transition: opacity 0.5s ease, top 0.3s ease;
+  transition: opacity 0.5s ease, top 0.3s ease, background 0.4s ease;
 }
 
 a:focus,
 a:hover{
-  color: map-get($colors, white);
+  color: map-get($colors, red);
 }
 a.underline:focus::after,
 a.underline:hover::after{
   top: -1px;
   opacity: 1;
+  background: map-get($colors, red)
+}
+
+a.underline--active::after{
+  top: -1px;
+  opacity: 1;
+  background: map-get($colors, white);
 }
 
 a,
@@ -162,8 +183,9 @@ svg g{
 }
 .btn:focus,
 .btn:hover {
-  background-color: map-get($colors, red);
-  border-color: map-get($colors, red);
+  background-color: map-get($colors, white);
+  border-color: map-get($colors, white);
+  color: map-get($colors, purple);
 }
 .btn-secondary{
   color: map-get($colors, purple);
@@ -198,7 +220,4 @@ svg g{
 }
 .or::after{
   margin-left: .75rem;
-}
-.btn-link{
-  display: inline-block;
 }

@@ -73,6 +73,10 @@ p{
 }
 section p{
   line-height: 1.8;
+  margin-bottom: 1rem;
+}
+section p:last-child{
+  margin-bottom: 0;
 }
 
 blockquote > q {

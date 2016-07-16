@@ -9,9 +9,10 @@
 }
 .about{
   @include container;
+  width: 90%;
   position: relative;
   z-index: 1;
-  padding: 8rem;
+  padding: 6rem 2rem;
   @include lg-width{
     padding: 8rem 0
   }
@@ -20,15 +21,17 @@
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  @include lg-width{
-    height: 100vh;
-  }
   background: url("../img/bg-about.jpg") no-repeat;
   background-size: cover;
   position: absolute;
 }
 .about__profile{
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  @include sm-width{
+    width: 100%;
+  }
   @include lg-width{
     @include span(6);
   }
@@ -36,6 +39,7 @@
 .about__biography{
   width: 100%;
   margin: 3rem 0;
+  max-width: 50rem;
   @include lg-width{
     margin: 0;
     @include span(6 last);
@@ -43,12 +47,17 @@
 }
 .profile__name{
   color: map-get($colors, light-purple);
-  font-size: 5rem;
+  font-size: 3rem;
   line-height: 0.9;
   margin: 0;
   padding: 0;
-
+  @include xs-width{
+    font-size: 5rem;
+  }
   @include md-width{
+    font-size: 6rem;
+  }
+  @include xlg-width{
     font-size: 8rem;
   }
 }
@@ -56,12 +65,15 @@
   font-weight: normal;
 }
 .profile__line{
-  display: inline-block;
+  display: none;
   width: 150px;
   margin: .5rem;
   background: map-get($colors, light-purple);
   height: 5px;
   vertical-align: middle;
+  @include sm-width{
+    display: inline-block;
+  }
 }
 .profile__role{
   color: map-get($colors, white);
@@ -69,8 +81,17 @@
   font-weight: bold;
   letter-spacing: 4px;
   position: relative;
-  top: 240px;
+  top: 100px;
   font-family: map-get($typography, futura);
+  @include xs-width{
+    top: 150px;
+  }
+  @include md-width{
+    top: 190px;
+  }
+  @include xlg-width{
+    top: 240px;
+  }
 }
 .profile__role h5,
 .profile__role svg{
@@ -78,6 +99,9 @@
 }
 .profile__role h5{
   font-weight: bold;
+}
+.profile__role a{
+  display: inline;
 }
 .profile__role svg{
   fill: #fff;
@@ -87,13 +111,20 @@
 }
 .profile__picture {
   box-shadow: 0 0 50px rgba(0,0,0,0.1);
-  margin: 0;
-  margin-left: 4.25rem;
+  width: 100%;
   font-size: 0;
   z-index: -1;
-  position: relative;
   max-width: 500px;
+  position: relative;
+  margin: auto;
   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @include lg-width{
+    width: 85%;
+    position: absolute;
+  }
 }
 
 .biography__title{
@@ -115,13 +146,18 @@
   margin-top: 2rem;
 }
 .biography__line{
-  @include span(3);
-  display: inline-block;
   background: map-get($colors, light-purple);
   height: 3px;
-  margin-top: 1rem;
+  margin-top: .5rem;
+  display: none;
+  @include sm-width{
+    @include span(3);
+    display: inline-block;
+  }
 }
 .biography__text{
   color: map-get($colors, white);
-  @include span(9 last);
+  @include sm-width{
+    @include span(9 last);
+  }
 }

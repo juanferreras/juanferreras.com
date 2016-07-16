@@ -30,7 +30,7 @@
   visibility: hidden;
 }
 .parallax__content,
-.parallax__layer > *{
+.parallax__layer > *:not(.parallax__no-translate){
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
   transform: translateZ(0);
@@ -43,9 +43,14 @@
   left: 0;
   margin: auto;
   padding: 0;
-  height: 265px;
+  height: 390px;
   width: 100%;
   z-index: 2;
+  @include xs-width{
+    @include sm-height{
+      height: 265px;
+    }
+  }
   @include sm-width{
     width: 530px;
   }
@@ -100,7 +105,6 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(45deg, map-get($colors, light-red) 0%, rgba(map-get($colors, light-purple),0.0) 75%);
-  //background: linear-gradient(45deg, #ce4e57 25%, #0f091a 100%);
   opacity: 0.75;
   transition: opacity 1s ease;
   z-index: 1;
@@ -176,9 +180,9 @@
 .clock__minute {
   background: rgba(31,20,47,0.75);
   height: 0;
-  left: 49%;
+  left: 50%;
   position: absolute;
-  top: 56%;
+  top: 54%;
   width: 0;
   transform-origin: 50% 100%;
   margin: -65px -2px 0;
@@ -239,18 +243,23 @@
 .invisible-square {
   width: 150px;
   height: 150px;
-  bottom: 140px;
+  bottom: 262px;
   border: 12px solid rgba(255,255,255,0.2);
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   margin: auto;
-
+  @include sm-height{
+    bottom: 252px;
+  }
   @include sm-width{
     width: 230px;
     height: 230px;
+    bottom: 200px;
     border: 15px solid rgba(255,255,255,0.2);
+  }
+  @include sm-width-sm-height{
     bottom: 80px;
   }
 }
@@ -260,13 +269,17 @@
   background: #fff;
   position: absolute;
   top: 0;
-  bottom: 250px;
+  bottom: 360px;
   right: 144px;
   left: 0;
   margin: auto;
-
   @include sm-width{
     right: 230px;
+  }
+  @include xs-width{
+    @include sm-height{
+      bottom: 250px;
+    }
   }
 }
 .top-circle {
@@ -275,14 +288,18 @@
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 280px;
+  bottom: 390px;
   left: 143px;
   margin: auto;
   border: 5px solid #fff;
   border-radius: 50%;
-
   @include sm-width{
     left: 210px;
+  }
+  @include xs-width{
+    @include sm-height{
+      bottom: 280px;
+    }
   }
 }
 .middle-wave{
@@ -291,7 +308,7 @@
   position: absolute;
   top: 0;
   right: 140px;
-  bottom: 150px;
+  bottom: 250px;
   left: 0;
   margin: auto;
   background: url("../img/wave.png");
@@ -300,7 +317,11 @@
 
   @include sm-width{
     right: 225px;
-    bottom: 105px;
+  }
+  @include xs-width{
+    @include sm-height{
+      bottom: 150px;
+    }
   }
 }
 
@@ -334,21 +355,26 @@
 }
 
 .cup,
-.pen,
-.plant{
+.pen{
   @include md-width{
     visibility: visible;
   }
 }
 
 .clock{
-  @include lg-width{
+  @include lg-width-sm-height{
+    visibility: visible;
+  }
+}
+
+.plant{
+  @include xlg-width-md-height{
     visibility: visible;
   }
 }
 
 .book{
-  @include xlg-width{
+  @include xlg-width-md-height{
     visibility: visible;
   }
 }

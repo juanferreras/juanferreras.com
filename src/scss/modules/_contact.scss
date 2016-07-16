@@ -1,7 +1,7 @@
 #sherlockHolmes::before{
   display:block;
   content:"";
-  background:map-get($colors, grey);
+  background: map-get($colors, grey);
   width: 100px;
   height: 1px;
   margin-bottom: 1rem;
@@ -10,9 +10,18 @@
   display: none;
   margin-top: 50px;
   opacity: 0;
+  max-width: 35rem;
+  color: map-get($colors, grey);
+  @include xs-width{
+    opacity: 1;
+  }
 }
 #sherlockHolmes a{
   color: map-get($colors, purple);
+  font-size: 1.1em;
+}
+#sherlockHolmes a.underline::after{
+  background: map-get($colors, purple);
 }
 .submit-wrapper > .formMessage {
   display: none;
@@ -22,9 +31,10 @@
   right: 0;
   margin: 0;
   width: 100%;
+  height: auto;
   text-align: center;
   font-size: 1rem;
-  padding: .5rem;
+  padding: 1rem;
   color: #fff;
 }
 .submit-wrapper > .formMessage::before{
@@ -36,10 +46,10 @@
 .formMessage.success{
   background: #1ECD97;
 }
-.modal .note::before {
+.modal__container .note::before {
   display:none;
 }
-.modal .note{
+.modal__container .note{
   display: block;
   color: #B0B0B0;
   text-shadow: 0 0 30px map-get($colors, purple);
@@ -50,14 +60,14 @@
   transition: all 0.5s ease;
 }
 
-.modal-action .btn{
+.modal__action .btn{
   margin-bottom: .25em;
 }
-.modal-action .btn:hover:nth-child(2)~.note{
+.modal__action .btn:hover:nth-child(2)~.note{
   opacity:1;
   margin: 0px auto;
 }
-.modal {
+.modal__container {
   position: fixed;
   top: -5px;
   left: 0;
@@ -68,7 +78,7 @@
   pointer-events: none;
   transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
 }
-.modal .modal-content {
+.modal__container .modal__content {
   height: 100%;
   width: 100%;
   padding: 5em 5% 3em;
@@ -77,12 +87,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.modal p {
+.modal__container p {
   color: map-get($colors, purple);
   line-height: 1.6;
   margin: 2em 0;
 }
-.modal-is-visible .modal {
+.modal--visible .modal__container {
   overflow:hidden;
   z-index: 1;
   visibility: visible;
@@ -90,33 +100,47 @@
   pointer-events: auto;
   transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s;
 }
-.modal .modal-content {
+.modal__container .modal__content {
   -webkit-overflow-scrolling: touch;
   overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include lg-width{
+    padding: 5em 12%;
+  }
 }
-.modal-action {
+
+.nl-form {
+  align-self: center;
+  height: auto;
+}
+.modal__action {
   position: relative;
 }
-.modal-action .btn, .modal-action .modal-bg {
+.modal__action .btn, .modal__action .modal__bg {
   display: inline-block;
 }
-.modal-action .modal-bg{
-  background-color: map-get($colors, red);
+.modal__action .modal__bg{
+  background-color: map-get($colors, white);
   height: 4em;
 }
-.modal-action .btn {
+.modal__action .btn {
   border-radius:0;
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.modal-action .btn.to-circle,
-.modal-action .btn.to-circle>span {
+.modal__action .btn.to-circle,
+.modal__action .btn.to-circle>span {
   width: 4em;
   color: transparent;
   padding: .75rem 0rem;
 }
-.modal-action .modal-bg {
+.modal__action .modal__bg {
   position: absolute;
   z-index: 1;
   left: 50%;
@@ -129,46 +153,50 @@
   transform: translateX(-2em);
   transition: visibility 0s 0.5s;
 }
-.modal-action .modal-bg.is-visible {
+.modal__action .modal__bg.modal__bg--visible {
   opacity: 1;
   visibility: visible;
 }
-.modal-close {
+.modal__close {
   position: fixed;
   z-index: 1;
-  top: 20px;
-  right: 5%;
+  top: 1.5rem;
+  right: 1.5rem;
+  @include md-width{
+    top: 3rem;
+    right: 3rem;
+  }
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  background: map-get($colors, white);
   border: 2px solid map-get($colors, purple);
   padding: 1px;
   overflow: hidden;
   white-space: nowrap;
   visibility: hidden;
   opacity: 0;
-  background: transparent;
   transition: all 0.4s ease;
   transform: translateZ(0) scale(0);
 }
-.modal-close g{
+.modal__close g{
   fill: none;
   stroke: map-get($colors, purple);
   stroke-width: 2px;
   stroke-linecap: square;
   stroke-miterlimit:10;
 }
-.modal-close:focus,
-.modal-close:hover{
+.modal__close:focus,
+.modal__close:hover{
   background: map-get($colors, purple);
   border-color: map-get($colors, purple);
   transform: scale(1.1) rotate(-90deg) !important;
 }
-.modal-close:focus g,
-.modal-close:hover g{
+.modal__close:focus g,
+.modal__close:hover g{
   stroke: map-get($colors, white);
 }
-.modal-is-visible .modal-close {
+.modal--visible .modal__close {
   visibility: visible;
   opacity: 1;
   transform: scale(1);
@@ -179,6 +207,15 @@
   margin: 0.3em auto 0 auto;
   line-height: 1.5;
   font-size: 1.25rem;
+  @include xs-width{
+    font-size: 1.5rem;
+  }
+  @include sm-width{
+    font-size: 1.85rem;
+  }
+  @include md-width{
+    font-size: 2rem;
+  }
 }
 .nl-form ul {
   list-style: none;
@@ -230,7 +267,6 @@
   background: desaturate(lighten(map-get($colors, purple), 10%), 10%);
   left: -0.5rem;
   top: 50%;
-  font-size: .8em;
   opacity: 0;
   transform: translateY(-40%) scale(0.9);
   transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
@@ -240,6 +276,9 @@
   opacity: 1;
   padding: 0;
   transform: translateY(-50%) scale(1);
+  @include sm-width{
+    transform: translateY(-45%) scale(1);
+  }
   transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
 }
 .nl-field ul{
@@ -276,7 +315,7 @@
   color: #478982;
 }
 .nl-ti-text ul {
-  min-width: 8em;
+  min-width: 12em;
 }
 .nl-ti-text ul li.nl-ti-input input {
   width: 100%;
@@ -287,6 +326,10 @@
 }
 .keep-together{
   display:inline-block;
+  margin-bottom: 1rem;
+  @include md-width{
+    margin-bottom: .5rem;
+  }
 }
 .nl-form .nl-field-go {
   position: absolute;
@@ -343,7 +386,7 @@
   visibility: visible;
   transition-delay: 0s;
 }
-.modal form+p {
+.modal__container form+p {
   font-size: .9rem;
   color: map-get($colors, grey);
   line-height: 1.8;
@@ -351,7 +394,7 @@
   max-width: 700px;
   margin-top: 120px;
 }
-.modal p::before{
+.modal__container p::before{
   content:"";
   display:block;
   height:1px;
@@ -359,12 +402,15 @@
   background-color: map-get($colors, grey);
   margin-bottom: 25px;
 }
-.modal span#counter{
+.modal__container span#counter{
   font-weight: bold;
 }
 
 .nl-field-toggle{
   margin-left: .5rem;
+  @include xs-width{
+    margin-left: .85rem;
+  }
 }
 
 .nl-form input[type=submit] {
