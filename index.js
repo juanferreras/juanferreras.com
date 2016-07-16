@@ -31,7 +31,9 @@ app.set('views', './views')
 app.set('view engine', 'jade')
 app.use('/', route);
 
-var server = app.listen(8080, function () {
+var port = process.env.PORTV2 || 8080;
+
+var server = app.listen(port, function () {
    var host = server.address().address;
    var port = server.address().port;
    console.log('Express listening at http://%s:%s', host, port);

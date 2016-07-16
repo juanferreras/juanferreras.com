@@ -201,7 +201,7 @@ block body
         h3.footer__subtitle #{ __("Don't be shy.") }
         p.footer__description 
           | #{ __("You may use the") }
-          a.underline(href="#0") #{ __("contact form ") }
+          a.underline(href="#0" data-type='modal-trigger-alt') #{ __("contact form ") }
           | #{ __("on the top, or") }
           a.underline(href="mailto:juan@flioh.com") #{ __("e-mail me ") }
           | #{ __("directly if that's how you") }
@@ -225,5 +225,5 @@ block body
           .footer__column.footer__column--right
             p
               | #{ __("Code available on") }
-              a.underline(href="https://github.com/juanferreras/juanferreras.com" target="_BLANK") Github
+              a.underline(href="https://github.com/juanferreras/juanferreras.com/tree/v2" target="_BLANK") Github
       script(src='js/scripts.js')

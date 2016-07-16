@@ -20,7 +20,7 @@
 	"Please reach out at": "Por favor, contactame a",
 	"The world is full of obvious things which nobody by any chance ever observes.": "El mundo está lleno de cosas obvias que nadie, ni por casualidad observa jamás.",
 	"— said Sherlock Holmes once. ": "— dijo Sherlock Holmes. ",
-	" times you have visited this section yet you haven't contacted me. If you need any help, please feel free to ": " veces has visitado esta sección en particular pero todavía no me enviaste nada. Si necesitás ayuda, por favor contactame ",
+	" times you have visited this section yet you haven't contacted me. If you need any help, please feel free to ": " veces has visitado esta sección en particular pero todavía no me enviaste nada. Si te resulta más conveniente, por favor contactame ",
 	"email me.": "via email.",
 	"Designer": "Diseñador",
 	"Good design is obvious. Great design is transparent.": "El buen diseño es obvio. El diseño genial es transparente.",
@@ -104,10 +104,9 @@
 	"by": "por",
 	"Code available on": "Código disponible en",
 	"404.": "404.",
-	"Oh boy, that's awkward.": "Oh boy, that's awkward.",
-	"Take me home": "Take me home",
-	"Rest assured, our team of highly trained experts is working really hard to fix it.": "Rest assured, our team of highly trained experts is working really hard to fix it.",
+	"Oh boy, that's awkward.": "Uh, ésto es incómodo.",
+	"Take me home": "Volver",
 	"Not found.": "Not found.",
-	"Rest assured, our team of highly trained experts is": "Rest assured, our team of highly trained experts is",
-	"working really hard to fix it.": "working really hard to fix it."
+	"Rest assured, our team of highly trained experts is": "No te preocupes, nuestro equipo de profesionales altamente calificados",
+	"working really hard to fix it.": "está trabajando intensamente para solucionarlo."
 }

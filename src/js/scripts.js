@@ -54,6 +54,10 @@ function initNaturalLanguageForm(){
 		counter = 0;
 	}
 
+	$('[data-type="modal-trigger-alt"]').on('click', function(){
+		$('[data-type="modal-trigger"]').click();
+	});
+
 	$('[data-type="modal-trigger"]').on('click', function(){
 		counter++;
 		localStorage.setItem("jf_form-visits", counter);
