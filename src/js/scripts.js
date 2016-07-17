@@ -32,7 +32,7 @@ function initLayout(){
 }
 
 function preloadImages(){
-	var images = $('img, .gravity, section');
+	var images = $('img, .parallax__content, section, .about__background, .footer__background');
 	$.each(images, function(){
 		var el = $(this),
 		image = el.css('background-image').replace(/"/g, '').replace(/url\(|\)$/ig, '');

@@ -92,7 +92,7 @@ main{
 }
 .footer__description a.underline{
   color: map-get($colors, red);
-  font-size: 1.11rem;
+  font-size: 1.15rem;
   margin: 0 .45rem;
   line-height: 1.7;
   white-space: nowrap;
@@ -173,7 +173,7 @@ main{
   margin-top: .5rem;
 }
 .footer__column p{
-  line-height: 1;
+  line-height: 1.1;
 }
 .footer__column p > a{
   margin-left: .5rem;

@@ -106,7 +106,8 @@
 	"404.": "404.",
 	"Oh boy, that's awkward.": "Uh, ésto es incómodo.",
 	"Take me home": "Volver",
-	"Not found.": "Not found.",
+	"Not found.": "No encontrado.",
 	"Rest assured, our team of highly trained experts is": "No te preocupes, nuestro equipo de profesionales altamente calificados",
-	"working really hard to fix it.": "está trabajando intensamente para solucionarlo."
+	"working really hard to fix it.": "está trabajando intensamente para solucionarlo.",
+	"Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.": "Fundador y Líder Técnico de un estudio de diseño basado en Argentina, especializado en la creación de productos digitales para clientes del extranjero, con una fuerte presencia en Canadá, Inglaterra y Estados Unidos."
 }
