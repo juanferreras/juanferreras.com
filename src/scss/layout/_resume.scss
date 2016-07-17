@@ -1,5 +1,6 @@
 .resume{
   background: map-get($colors, white);
+  padding-bottom: 7rem;
 }
 .resume__header{
   background: map-get($colors, purple);
@@ -22,7 +23,7 @@
   }
 }
 .resume__title h1{
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: normal;
   font-family: map-get($typography, futura);
   color: map-get($colors, white);
@@ -36,26 +37,44 @@
 }
 .resume__title h3{
   color: map-get($colors, light-grey);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  @include md-width{
+    font-size: 1.5rem;
+  }
 }
 .resume__details{
   padding-top: 2rem;
   @include md-width{
-    padding-top: .5rem;
+    padding-top: 1rem;
     @include span(4 last);
   }
 }
 .resume__details ul li{
   display: block;
   text-align: right;
-  margin: .5rem 0;
+  margin: .5rem 0 0;
   line-height: 1.5;
   font-size: 1.1rem;
   color: map-get($colors, light-grey);
 }
 .resume__details ul li a{
   font-size: 1.1em;
-  line-height: 1.4;
+  margin-top: .25rem;
+}
+.resume__details ul.resume__social li{
+  display: inline-block;
+  margin: 0;
+  margin-left: .5rem;
+}
+.resume__social li svg{
+  width: 100%;
+  max-width: 35px;
+  fill: map-get($colors, white);
+  transition: fill 0.5s ease;
+}
+.resume__social li a:focus svg,
+.resume__social li a:hover svg {
+  fill: map-get($colors, red);
 }
 .resume-section{
   margin: 2rem 0;
@@ -74,10 +93,17 @@
 }
 .resume-profile__picture,
 .resume-section__times{
-  @include span(3);
+  @include md-width{
+    @include span(3);
+  }
+}
+.resume-section__times h5{
+  color: map-get($colors, dark-grey);
 }
 .resume-section__container{
-  @include span(9 last);
+  @include md-width{
+    @include span(9 last);
+  }
 }
 .resume-profile__picture > img{
   width: 175px;
@@ -94,17 +120,32 @@
   transform: perspective(1px) translate3d(0,0,0) scale(1);
 }
 .resume-section__container p{
-  margin: 1rem 0;
-  line-height: 1.8;
+  line-height: 1.7;
+  margin-top: .25rem;
   color: map-get($colors, dark-grey);
 }
+.resume-section__container p + p{
+  margin-top: 1rem;
+}
+.resume-section__description{
+  font-size: 0.9rem;
+}
 .resume__row{
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  @include md-width{
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
 }
 .resume-section__times{
-  text-align: right;
+  margin-bottom: .25rem;
+  @include md-width{
+    text-align: right;
+  }
 }
-.resume-section__subtitle{
+.resume-section__subtitle,
+.resume-section__times h3{
   font-family: map-get($typography, proxima-nova);
   font-size: 1.3rem;
   color: map-get($colors, purple);
@@ -112,6 +153,18 @@
 }
 .resume-section__container h4{
   font-weight: normal;
+}
+.resume-section__container a{
+  color: map-get($colors, red);
+  line-height: 1.2;
+}
+.resume-section__container a.underline:focus::after,
+.resume-section__container a.underline:hover::after{
+  display: none;
+  background: map-get($colors, red);
+  @include md-width{
+    display: block;
+  }
 }
 .resume-section__note{
   font-size: 0.85em;
@@ -123,4 +176,45 @@
   height: 1px;
   background: map-get($colors, dark-grey);
   margin-bottom: .5rem;
+}
+.resume-section__title span.ampersand{
+  font-family: map-get($typography, merriweather);
+  font-style: italic;
+}
+.resume-section__container ul{
+  margin-top: .35rem;
+}
+.resume-section__container ul li{
+  line-height: 1.5;
+  display: inline-block;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+}
+.resume__btn-back {
+  position: fixed;
+  z-index: 1;
+  left: 2rem;
+  bottom: 2rem;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background:  map-get($colors, white);
+  border: 3px solid map-get($colors, purple);
+  padding: 1rem;
+  transform: translateZ(0) scale(1);
+  transition: transform 0.5s ease, background 0.6s ease;
+}
+.resume__btn-back svg{
+  fill: map-get($colors, purple);
+  max-width: 100%;
+  transform: fill 0.4s ease;
+}
+.resume__btn-back:focus,
+.resume__btn-back:hover{
+  transform: translateZ(0) scale(1.1) translateX(-5px);
+  background: map-get($colors, purple);
+}
+.resume__btn-back:focus svg,
+.resume__btn-back:hover svg{
+  fill: map-get($colors, white);
 }

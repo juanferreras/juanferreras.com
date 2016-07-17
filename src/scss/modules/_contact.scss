@@ -11,6 +11,7 @@
   margin-top: 50px;
   opacity: 0;
   max-width: 35rem;
+  line-height: 1.7;
   color: map-get($colors, grey);
   @include xs-width{
     opacity: 1;

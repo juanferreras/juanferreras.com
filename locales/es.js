@@ -39,7 +39,7 @@
 	"Front-End Developer": "Desarrollador Front-End",
 	"29th of April, 1995": "29 de Abril, 1995",
 	"About me": "Acerca de mí",
-	"I'm a 20 years old Information Systems Engineer student from Santa Fe, Argentina. I find myself constantly learning about the latest trends and best practices in both, software development and design. In fact, I believe it is impossible to talk about our profession without highlighting the importance of good design throughout every portion of software that we craft.": "Soy un estudiante de 20 años de Ingeniería en Sistemas de Información de Santa Fe, Argentina. Me encuentro aprendiendo constantemente acerca de las últimas tendencias y las mejores prácticas tanto en el desarrollo de software como en el diseño. De hecho, creo que es imposible hablar de nuestra profesión sin destacar la importancia del buen diseño en cada una de las piezas de software que creamos.",
+	"I'm a 21 years old Information Systems Engineer student from Santa Fe, Argentina. I find myself constantly learning about the latest trends and best practices in both, software development and design. In fact, I believe it is impossible to talk about our profession without highlighting the importance of good design throughout every portion of software that we craft.": "Soy un estudiante de 21 años de Ingeniería en Sistemas de Información de Santa Fe, Argentina. Me encuentro aprendiendo constantemente acerca de las últimas tendencias y las mejores prácticas tanto en el desarrollo de software como en el diseño. De hecho, creo que es imposible hablar de nuestra profesión sin destacar la importancia del buen diseño en cada una de las piezas de software que creamos.",
 	"If it's not breaking you down, it's not building you up.": "If it's not breaking you down, it's not building you up.",
 	"I'm incredibly passionate about what I do, and I feel really excited towards pushing myself to the edge. I think that we grow and develop ourselves as professionals when we are outside our comfort zone.": "Soy increíblemente apasionado con lo que hago, y disfruto genuinamente llevándome al límite de mi capacidad. Creo que crecemos y nos desenvolvemos como profesionales cuando estamos fuera de nuestra zona de comodidad.",
 	"Experience": "Experiencia",
@@ -55,7 +55,7 @@
 	"AVG: 8.47 / 10": "Promedio: 8.47 / 10",
 	"Certifications": "Certificaciones",
 	"Score: 92/100.": "Nota: 92/100.",
-	"Score: 75/100 - Equivalent to CEFR C2: Proficient.": "Nota: 75/100 - Equivalente a un CEFR C2: Proficient.",
+	"Score: 75/100 - Equivalent to CEFR C2.": "Nota: 75/100 - Equivalente a un CEFR C2.",
 	"Score: 100/100.": "Nota: 100/100.",
 	"Score: 99/100.": "Nota: 99/100.",
 	"Score: 9.8/10.": "Nota: 9.8/10.",
@@ -109,5 +109,7 @@
 	"Not found.": "No encontrado.",
 	"Rest assured, our team of highly trained experts is": "No te preocupes, nuestro equipo de profesionales altamente calificados",
 	"working really hard to fix it.": "está trabajando intensamente para solucionarlo.",
-	"Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.": "Fundador y Líder Técnico de un estudio de diseño basado en Argentina, especializado en la creación de productos digitales para clientes del extranjero, con una fuerte presencia en Canadá, Inglaterra y Estados Unidos."
+	"Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.": "Fundador y Líder Técnico de un estudio de diseño basado en Argentina, especializado en la creación de productos digitales para clientes del extranjero, con una fuerte presencia en Canadá, Inglaterra y Estados Unidos.",
+	"Developing applications with HTML5, AngularJS and NodeJS": "Desarrollo de Aplicaciones con HTML5, AngularJS y NodeJS",
+	"Score: 92/100 - Equivalent to CEFR C1.": "Nota: 92/100 - Equivalente a un CEFR C1."
 }

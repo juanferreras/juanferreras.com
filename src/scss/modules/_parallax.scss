@@ -134,6 +134,9 @@
 .book__list{
   margin-top:4px;
 }
+.book__list li {
+  line-height: 1.7;
+}
 .book__element--completed{
   text-decoration: line-through;
 }
