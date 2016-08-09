@@ -46,7 +46,7 @@
   height: 390px;
   width: 100%;
   z-index: 2;
-  @include xs-width{
+  @include sm-width{
     @include sm-height{
       height: 265px;
     }
@@ -63,10 +63,14 @@
   @include sm-width{
     font-size: 12rem;
   }
+  @include md-width{
+    font-size: 10.667rem;
+  }
 }
 .hero__subtitle {
   min-height: 33px;
   padding: .5rem;
+  font-family: map-get($typography, merriweather);
 }
 .hero__subtitle>span::before,
 .hero__subtitle::after {
@@ -104,7 +108,7 @@
 .background {
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, map-get($colors, light-red) 0%, rgba(map-get($colors, light-purple),0.0) 75%);
+  background: linear-gradient(0deg, map-get($colors, light-red) 0%, rgba(map-get($colors, light-purple),0.0) 75%);
   opacity: 0.75;
   transition: opacity 1s ease;
   z-index: 1;
@@ -129,13 +133,12 @@
 .book__title{
   font-size: 1.5rem;
   font-weight: bold;
-  text-transform: uppercase;
 }
 .book__list{
   margin-top:4px;
 }
 .book__list li {
-  line-height: 1.7;
+  line-height: 1.5;
 }
 .book__element--completed{
   text-decoration: line-through;
@@ -253,10 +256,10 @@
   right: 0;
   left: 0;
   margin: auto;
-  @include sm-height{
-    bottom: 252px;
-  }
   @include sm-width{
+    @include sm-height{
+      bottom: 252px;
+    }
     width: 230px;
     height: 230px;
     bottom: 200px;
@@ -279,7 +282,7 @@
   @include sm-width{
     right: 230px;
   }
-  @include xs-width{
+  @include sm-width{
     @include sm-height{
       bottom: 250px;
     }
@@ -299,7 +302,7 @@
   @include sm-width{
     left: 210px;
   }
-  @include xs-width{
+  @include sm-width{
     @include sm-height{
       bottom: 280px;
     }
@@ -321,7 +324,7 @@
   @include sm-width{
     right: 225px;
   }
-  @include xs-width{
+  @include sm-width{
     @include sm-height{
       bottom: 150px;
     }
@@ -337,6 +340,10 @@
   right:0;
   left:0;
   margin:auto;
+  visibility: hidden;
+  @include md-width{
+    visibility: visible;
+  }
 }
 .scroll-icon__mouse {
   animation: movement .8s ease infinite alternate;
@@ -345,9 +352,11 @@
 @keyframes movement{
   0%{
     transform: translateY(0px);
+    opacity: .25;
   }
   100%{
     transform: translateY(10px);
+    opacity: .75;
   }
 }
 

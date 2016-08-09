@@ -11,7 +11,7 @@
   margin-top: 50px;
   opacity: 0;
   max-width: 35rem;
-  line-height: 1.7;
+  line-height: 1.5;
   color: map-get($colors, grey);
   @include xs-width{
     opacity: 1;
@@ -19,7 +19,6 @@
 }
 #sherlockHolmes a{
   color: map-get($colors, purple);
-  font-size: 1.1em;
 }
 #sherlockHolmes a.underline::after{
   background: map-get($colors, purple);
@@ -217,7 +216,7 @@
     font-size: 1.85rem;
   }
   @include md-width{
-    font-size: 2rem;
+    font-size: 1.777rem;
   }
 }
 .nl-form ul {
@@ -465,6 +464,10 @@
 }
 .progress-button button span{
   color: map-get($colors, purple);
+  font-family: map-get($typography, proxima-nova);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 .progress-button button:focus,
 .progress-button button:hover {

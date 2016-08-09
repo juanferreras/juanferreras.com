@@ -1,7 +1,13 @@
+html {
+  font-size: 16px;
+  @include md-width{
+    font-size: 18px;
+  }
+}
+
 body {
   color: map-get($colors, purple);
-  font-family: map-get($typography, merriweather);
-  font-size: 16px;
+  font-family: map-get($typography, proxima-nova);
   font-weight: 300;
 }
 
@@ -28,7 +34,7 @@ h1{
     font-size: 3rem;
   }
   @include md-width{
-    font-size: 4rem;
+    font-size: 3.55rem;
     letter-spacing: -2px;
   }
 }
@@ -57,7 +63,7 @@ h3{
 
 h4 {
   color: map-get($colors, purple);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-style: italic;
   line-height: 1.7;
 }
@@ -73,24 +79,35 @@ p{
   line-height: 1.5;
 }
 section p{
-  line-height: 1.9;
   margin-bottom: 1rem;
 }
 section p:last-child{
   margin-bottom: 0;
 }
 
+blockquote {
+  font-family: map-get($typography, merriweather);
+  font-style: italic;
+  font-weight: normal;
+}
+
 blockquote > q {
   color: map-get($colors, purple);
   font-size: 1.5rem;
-  font-style: italic;
-  font-weight: normal;
+  @include md-width{
+    font-size: 1.333rem;
+  }
   line-height: 1.5;
+  display: inline;
+}
+
+blockquote > footer{
+  display: inline-block;
+  margin-left: .45rem;
 }
 
 cite{
   color: map-get($colors, grey);
-  font-style: normal;
 }
 
 q,
@@ -101,6 +118,11 @@ blockquote>q {
 
 q{
   font-style: italic;
+  font-family: map-get($typography, merriweather);
+}
+
+p > q {
+  font-size: 0.9em;
 }
 
 blockquote > footer {
@@ -117,6 +139,9 @@ blockquote {
   font-feature-settings: "smcp" on; 
   font-variant: small-caps;
   font-size: 1.3rem;
+  @include md-width{
+    font-size: 1.155rem;
+  }
   font-style: normal;
   font-weight: bold;
   letter-spacing: 1px;

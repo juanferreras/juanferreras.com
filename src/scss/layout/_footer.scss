@@ -4,10 +4,10 @@ main{
     margin-bottom: 38rem;
   }
   @include md-width{
-    margin-bottom: 33rem;
+    margin-bottom: 29.33rem;
   }
   @include lg-width{
-    margin-bottom: 32rem;
+    margin-bottom: 28.44rem;
   }
 }
 #footer{
@@ -20,10 +20,10 @@ main{
     right: 0;
   }
   @include md-width{
-    height: 33rem;
+    height: 29.33rem;
   }
   @include lg-width{
-    height: 32rem;
+    height: 28.44rem;
   }
   width: 100%;
   z-index: -2;
@@ -68,6 +68,9 @@ main{
   @include sm-width{
     font-size: 5rem;
   }
+  @include md-width{
+    font-size: 4.444rem;
+  }
   font-family: map-get($typography, futura);
   text-transform: none;
   border-bottom: 0;
@@ -81,20 +84,17 @@ main{
   font-size: 1.375rem;
   text-transform: uppercase;
   font-family: map-get($typography, proxima-nova);
-  letter-spacing: 2px;
+  letter-spacing: 8px;
   font-weight: bold;
 }
 .footer__description{
   color: map-get($colors, light-grey);
   max-width: 40rem;
   margin: 1rem auto;
-  line-height: 1.7;
 }
 .footer__description a.underline{
   color: map-get($colors, red);
-  font-size: 1.15rem;
-  margin: 0 .45rem;
-  line-height: 1.7;
+  margin: 0 .35rem;
   white-space: nowrap;
 }
 .footer__description a.underline::after{
@@ -131,10 +131,8 @@ main{
     @include span(4);
   }
   text-align: center;
-  color: map-get($colors, dark-grey);
+  color: map-get($colors, grey);
   font-family: map-get($typography, proxima-nova);
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 .footer__column--left{
   @include md-width{
@@ -160,7 +158,7 @@ main{
   fill: map-get($colors, red);
   max-width: 1rem;
   margin-left: 0;
-  margin-bottom: 4px;
+  margin: 2px .45rem .35rem 4px;
 }
 .footer__column p .heart-icon + a {
   display: inline;

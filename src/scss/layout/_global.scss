@@ -171,10 +171,12 @@ svg g{
   z-index: 1;
   -webkit-backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
-  color: map-get($colors, white);
   font-size: 1rem;
+  @include md-width{
+    font-size: .889rem;
+  }
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   padding: .75rem 1rem;
   color: map-get($colors, white);

@@ -12,9 +12,9 @@
   width: 90%;
   position: relative;
   z-index: 1;
-  padding: 6rem 2rem;
+  padding: 6rem .5rem;
   @include lg-width{
-    padding: 8rem 0
+    padding: 8rem 0;
   }
 }
 .about__background{
@@ -24,6 +24,7 @@
   background: url("../img/bg-about.jpg") no-repeat;
   background-size: cover;
   position: absolute;
+  opacity: 0.65;
 }
 .about__profile{
   width: 80%;
@@ -55,10 +56,10 @@
     font-size: 5rem;
   }
   @include md-width{
-    font-size: 6rem;
+    font-size: 5.333rem;
   }
   @include xlg-width{
-    font-size: 8rem;
+    font-size: 7.111em;
   }
 }
 .profile__firstname{
@@ -110,7 +111,6 @@
   margin: 0 .5rem;
 }
 .profile__picture {
-  box-shadow: 0 0 50px rgba(0,0,0,0.1);
   width: 100%;
   font-size: 0;
   z-index: -1;
@@ -126,9 +126,15 @@
     position: absolute;
   }
 }
+.profile__picture img{
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
 
 .biography__title{
   font-size: 1.5rem;
+  @include md-width{
+    font-size: 1.333rem;
+  }
   font-weight: bold;
   font-style: normal;
   letter-spacing: 4px;
@@ -136,7 +142,12 @@
   color: map-get($colors, light-purple);
 }
 .biography__intro{
+  font-family: map-get($typography, merriweather);
   font-size: 1.5rem;
+  margin-top: .5rem;
+  @include md-width{
+    font-size: 1.333rem;
+  }
   font-style: italic;
   font-weight: normal;
   line-height: 1.5;
@@ -148,7 +159,7 @@
 .biography__line{
   background: map-get($colors, light-purple);
   height: 3px;
-  margin-top: .5rem;
+  margin-top: .35rem;
   display: none;
   @include sm-width{
     @include span(3);

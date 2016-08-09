@@ -29,7 +29,7 @@
   color: map-get($colors, white);
   margin-bottom: .25rem;
   @include md-width{
-    font-size: 5rem;
+    font-size: 4.445rem;
   }
 }
 .resume__title h1 span{
@@ -65,6 +65,7 @@
   display: inline-block;
   margin: 0;
   margin-left: .5rem;
+  vertical-align: middle;
 }
 .resume__social li svg{
   width: 100%;
@@ -120,15 +121,16 @@
   transform: perspective(1px) translate3d(0,0,0) scale(1);
 }
 .resume-section__container p{
-  line-height: 1.7;
-  margin-top: .25rem;
+  line-height: 1.5;
+  margin-top: .35rem;
+  font-size: 1rem;
   color: map-get($colors, dark-grey);
 }
 .resume-section__container p + p{
   margin-top: 1rem;
 }
 .resume-section__description{
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .resume__row{
   margin-bottom: 3rem;
@@ -166,8 +168,8 @@
     display: block;
   }
 }
-.resume-section__note{
-  font-size: 0.85em;
+p.resume-section__note{
+  font-size: 0.8em;
 }
 .resume-section__note::before{
   display: block;
