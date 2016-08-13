@@ -1,0 +1,127 @@
+#designer{
+  background-image: url("../img/bg-designer.jpg");
+}
+#developer{
+  background-image: url("../img/bg-developer.jpg");
+}
+.container{
+  @include container;
+}
+.container--small{
+  width: 80%;
+  max-width: 36rem;
+  margin: 0 auto;
+  @include xlg-width{
+    width: 90%;
+  }
+}
+.container--center{
+  height: auto;
+  align-self: center;
+}
+.split{
+  display: flex;
+  min-height: 100%;
+  height: auto;
+  width: 100%;
+  position: relative;
+  padding: 11rem 0;
+  @include xs-width{
+    padding: 6rem 0;
+  }
+  @include lg-width{
+    padding: 0;
+    @include span(6 inside no-gutters);
+  }
+}
+.split--designer{
+  background: map-get($colors, transparent-white);
+  @include lg-width{
+    @include span(6 inside no-gutters last);
+  }
+}
+.split--developer{
+  background: map-get($colors, transparent-purple);
+}
+
+.split__ampersand {
+  font-size: 19.55rem;
+  font-family: map-get($typography, merriweather);
+  text-align: center;
+  position: absolute;
+  color: map-get($colors, red);;
+  display: none;
+  @include lg-width-sm-height{
+    display: block;
+  }
+}
+.split--designer .split__ampersand {
+  bottom: -240px;
+  left: -100px;
+  display: none;
+  @include lg-width-sm-height{
+    display: block;
+  }
+}
+.split--developer .split__ampersand {
+  top: -235px;
+  left: 0;
+  right: 0;
+  @include lg-width-sm-height{
+    top: -212px;
+    left: initial;
+    right: -166px;
+    display: block;
+  }
+}
+
+.split__title{
+  font-weight:bold;
+  color: map-get($colors, red);
+  @include xs-width{
+    font-size: 4rem;
+  }
+  @include md-width{
+    font-size: 4.444rem;
+    letter-spacing: -1px;
+  }
+  @include lg-width{
+    font-size: 3.555rem;
+  }
+  @include xlg-width{
+    font-size: 4.444rem;
+  }
+}
+.split__title:after {
+  background: map-get($colors, red);
+  content: "";
+  display: block;
+  height: 6px;
+  margin: 5px 0 10px;
+  max-width: 90px;
+  width: 90%;
+}
+
+.split--designer blockquote > q,
+.split--designer cite,
+.split--designer .smallcaps{
+  color: map-get($colors, purple);
+}
+.split--developer blockquote > q,
+.split--developer cite,
+.split--developer .smallcaps{
+  color: map-get($colors, white);
+}
+.split--designer p{
+  color: map-get($colors, dark-grey);
+}
+.split--developer p{
+  color: map-get($colors, light-grey);
+}
+
+.split p{
+  max-width: 35rem;
+  @include md-width{
+    max-width: 31.111rem;
+  }
+}

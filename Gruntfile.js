@@ -38,7 +38,7 @@
 		options: {
 			map: true,
 			processors: [
-				require('autoprefixer-core')({browsers: ['last 5 versions', 'ie 8', 'ie 9']}),
+				require('autoprefixer')({browsers: ['last 5 versions', 'ie 8', 'ie 9']}),
 			]
 		},
 		dist: {

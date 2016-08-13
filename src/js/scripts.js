@@ -1,8 +1,8 @@
 function initPlugins(){
 	new WOW().init();
+	window.$parallax = $('.parallax').parallax();
 	$('[data-typer-targets]').typer();
-  window.$scene = $('#scene').parallax();
-  $('#fixedScroller > #dots').midnight();
+  $('.nav--dots').midnight();
 }
 
 /* Sets the time for the clock on the header */
@@ -11,9 +11,9 @@ function clock() {
 	    s = t.seconds() * 6,
 	    m = t.minutes() * 6 + s / 60,
 	    h = t.hours() % 12 / 12 * 360 + (m / 12);
-	$(".hour").css("transform", "rotate(" + h + "deg)");
-	$(".minute").css("transform", "rotate(" + m + "deg)");
-	$(".second").css("transform", "rotate(" + s + "deg)");
+	$(".clock__hour").css("transform", "rotate(" + h + "deg)");
+	$(".clock__minute").css("transform", "rotate(" + m + "deg)");
+	$(".clock__second").css("transform", "rotate(" + s + "deg)");
 }
 function refreshClock() {
   clock(), setTimeout(refreshClock, 1000)
@@ -21,9 +21,9 @@ function refreshClock() {
 
 function initLayout(){
 	fixedScrollLayout.init({
-		$sections : $( '#fixedScroller > section' ),
-		$navlinks : $( '#fixedScroller .default a' ),
-		$navlinksBlack : $( '#fixedScroller .black a' ),
+		$sections : $( '#main > section' ),
+		$navlinks : $( '#main .default a' ),
+		$navlinksBlack : $( '#main .nav--black a' ),
 		currentLink : 0,
 		$body : $( 'html, body' ),
 		animspeed : 650,
@@ -32,7 +32,7 @@ function initLayout(){
 }
 
 function preloadImages(){
-	var images = $('img, .gravity, section');
+	var images = $('img, .parallax__content, section, .about__background, .footer__background');
 	$.each(images, function(){
 		var el = $(this),
 		image = el.css('background-image').replace(/"/g, '').replace(/url\(|\)$/ig, '');
@@ -48,15 +48,19 @@ function preloadImages(){
 
 function initNaturalLanguageForm(){
 	window.form = $('#nl-form').clone();
-	var counter = localStorage.getItem('visits');
+	var counter = localStorage.getItem('jf_form-visits');
 
 	if (counter === null) {
 		counter = 0;
 	}
 
+	$('[data-type="modal-trigger-alt"]').on('click', function(){
+		$('[data-type="modal-trigger"]').click();
+	});
+
 	$('[data-type="modal-trigger"]').on('click', function(){
 		counter++;
-		localStorage.setItem("visits", counter);
+		localStorage.setItem("jf_form-visits", counter);
 
 		if(counter>4){
 			$('#counter').html(counter);
@@ -77,29 +81,29 @@ function initNaturalLanguageForm(){
 		var actionBtn = $(this);
 		var body = $("body");
 		body.stop().animate({scrollTop:0}, '300', 'swing',function(){
-			var scaleValue = retrieveScale(actionBtn.next('.modal-bg'));
+			var scaleValue = retrieveScale(actionBtn.next('.modal__bg'));
 			actionBtn.addClass('to-circle');
-			actionBtn.next('.modal-bg').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', 
+			actionBtn.next('.modal__bg').addClass('modal__bg--visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', 
 				function(){
-				animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
+				animateLayer(actionBtn.next('.modal__bg'), scaleValue, true);
 					setTimeout(function(){
-						$scene.parallax('disable');
-						$('.main-layer').css("transform","");
+						$parallax.parallax('disable');
+						$('.parallax__layer--main').css("transform","");
 					}, 300);
 				});
-			if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.modal-bg'), scaleValue, true);
+			if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.modal__bg'), scaleValue, true);
 		});
 
 	});
 
 	//trigger the animation - close modal window
-	$('.section .modal-close').on('click', function(){
+	$('.modal__close').on('click', function(){
 		closeModal();
 	});
 
 	$(window).on('resize', function(){
 		//on window resize - update cover layer dimention and position
-		if($('.section.modal-is-visible').length > 0) window.requestAnimationFrame(updateLayer);
+		if($('.modal--visible').length > 0) window.requestAnimationFrame(updateLayer);
 	});
 }
 
@@ -144,7 +148,7 @@ function handleFormUsingTabs(){
 	        		$('#progress-button > button')[0].focus();
 	        	}
 	        	if (currentTab == 5){
-	        		$('.modal-close')[0].focus();
+	        		$('.modal__close')[0].focus();
 	        	}
 	        } else{
 	        	// emit event to open current tab input
@@ -193,7 +197,7 @@ function handleFormUsingArrows(input){
 
 function retrieveScale(btn) {
 	var btnRadius = btn.width()/2,
-			left = btn.offset().left + btnRadius,
+			left = $(window).width()/2, // btn.offset().left/2 + btnRadius,
 			top = btn.offset().top + btnRadius - $(window).scrollTop(),
 			scale = scaleValue(top, left, btnRadius, $(window).height(), $(window).width());
 
@@ -214,15 +218,15 @@ function scaleValue( topValue, leftValue, radiusValue, windowW, windowH) {
 
 function animateLayer(layer, scaleVal, bool) {
 	layer.velocity({ scale: scaleVal }, 400, function(){
-		$('body').toggleClass('overflow-hidden', bool);
+		$('body').toggleClass('body--frozen', bool);
 		(bool)
-			? layer.parents('.section').addClass('modal-is-visible').end().off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend')
-			: layer.removeClass('is-visible').removeAttr( 'style' ).siblings('[data-type="modal-trigger"]').removeClass('to-circle');
+			? layer.parents('.modal').addClass('modal--visible').end().off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend')
+			: layer.removeClass('modal__bg--visible').removeAttr( 'style' ).siblings('[data-type="modal-trigger"]').removeClass('to-circle');
 	});
 }
 
 function updateLayer() {
-	var layer = $('.section.modal-is-visible').find('.modal-bg'),
+	var layer = $('.modal.modal--visible').find('.modal__bg'),
 			layerRadius = layer.width()/2,
 			layerTop = layer.siblings('.btn').offset().top + layerRadius - $(window).scrollTop(),
 			layerLeft = layer.siblings('.btn').offset().left + layerRadius,
@@ -236,19 +240,19 @@ function updateLayer() {
 }
 
 function closeModal() {
-	var section = $('.section.modal-is-visible');
+	var section = $('.modal.modal--visible');
 	$('body').off('.tabs');
-	section.removeClass('modal-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-		$scene.parallax('enable');
-		$scene.parallax('updateLayers');
-		animateLayer(section.find('.modal-bg'), 1, false);
+	section.removeClass('modal--visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+		$parallax.parallax('enable');
+		$parallax.parallax('updateLayers');
+		animateLayer(section.find('.modal__bg'), 1, false);
 		setTimeout(function(){
 			$('#nl-form').replaceWith(window.form.clone());
 			initFormSubmission();
 		}, 400);
 	});
 	//if browser doesn't support transitions...
-	if(section.parents('.no-csstransitions').length > 0 ) animateLayer(section.find('.modal-bg'), 1, false);
+	if(section.parents('.no-csstransitions').length > 0 ) animateLayer(section.find('.modal__bg'), 1, false);
 }
 
 function toggleFlag(){
@@ -321,7 +325,7 @@ function initFormSubmission(){
 				  .success(function(data){
 				  	$successMessage.slideDown("slow");
 				  	$sherlockHolmes.fadeOut("slow");
-				  	localStorage.setItem("visits", 0);
+				  	localStorage.setItem("jf_form-visits", 0);
 				  	instance.stop(1);
 				  });
 			  } else{
@@ -331,6 +335,15 @@ function initFormSubmission(){
 			}
 		});
 	});
+}
+
+function hoverReveal(){
+	$('#roll').hover(function(e){
+		$('#footerBackground').toggleClass("footer__background--active");
+	})
+	$('#working').hover(function(e){
+    $('#errorBackground').toggleClass("error__background--active");
+  })
 }
 
 function printMessage(){
@@ -355,6 +368,7 @@ $("document").ready(function() {
 	initNaturalLanguageForm();
 	initFormSubmission();
 	toggleFlag();
+	hoverReveal();
 
 	printMessage();
 });

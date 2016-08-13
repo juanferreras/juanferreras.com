@@ -43,11 +43,11 @@ var fixedScrollLayout = (function() {
 
 	// update the current navigation link
 	function changeNav( $section, config ) {
-		config.$navlinks.eq( config.currentLink ).removeClass( 'current' );
-		config.$navlinksBlack.eq( config.currentLink ).removeClass( 'current' );
+		config.$navlinks.eq( config.currentLink ).removeClass( 'nav__element--current' );
+		config.$navlinksBlack.eq( config.currentLink ).removeClass( 'nav__element--current' );
 		config.currentLink = $section.index( 'section' );
-		config.$navlinks.eq( config.currentLink ).addClass( 'current' );
-		config.$navlinksBlack.eq( config.currentLink ).addClass( 'current' );
+		config.$navlinks.eq( config.currentLink ).addClass( 'nav__element--current' );
+		config.$navlinksBlack.eq( config.currentLink ).addClass( 'nav__element--current' );
 	}
 
 	// function to scroll / animate the body

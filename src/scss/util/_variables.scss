@@ -1,0 +1,29 @@
+$typography: (
+  futura: #{'futura-pt', 'Open Sans', 'Arial', sans-serif},
+  proxima-nova: #{'proxima-nova', 'Open Sans', 'Arial', sans-serif},
+  proxima-nova-smallcaps: #{'proxima-nova-sc-osf', 'proxima-nova', 'Open Sans', 'Arial', sans-serif},
+  merriweather: #{'merriweather', 'Georgia', serif}
+);
+
+$colors: (
+  transparent-white: rgba(255,255,255,0.95),
+  white: #fff,
+  light-grey: #ccc,
+  grey: #938e9b,
+  dark-grey: #777,
+  light-red: #f05a5d,
+  red: #f05a5d,
+  transparent-red: rgba(240,90,93, 0.87),
+  light-purple: #112437,
+  purple: #1d3247,
+  dark-purple: #0e1c2a,
+  transparent-purple: rgba(20,41,62,0.95)
+);
+
+$susy: (
+  columns: 12,
+  container: 1170px,
+  gutters: 1/4,
+  // debug: (image: show),
+  global-box-sizing: border-box
+);

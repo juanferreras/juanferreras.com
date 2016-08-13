@@ -1,0 +1,6 @@
+<svg width="70" height="70" class="cross">
+  <path d="m35,35l-9.3,-9.3"></path>
+  <path d="m35,35l9.3,9.3"></path>
+  <path d="m35,35l-9.3,9.3"></path>
+  <path d="m35,35l9.3,-9.3"></path>
+</svg>

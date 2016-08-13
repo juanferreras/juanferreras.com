@@ -1,0 +1,176 @@
+#about{
+  background-color: map-get($colors, red);
+  overflow: auto;
+  overflow-x: hidden;
+  height: auto;
+  @include lg-width{
+    overflow: hidden;
+  }
+}
+.about{
+  @include container;
+  width: 90%;
+  position: relative;
+  z-index: 1;
+  padding: 6rem .5rem;
+  @include lg-width{
+    padding: 8rem 0;
+  }
+}
+.about__background{
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: url("../img/bg-about.jpg") no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.65;
+}
+.about__profile{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  @include sm-width{
+    width: 100%;
+  }  
+  @include lg-width{
+    text-align: left;
+    @include span(6);
+  }
+}
+.about__biography{
+  width: 100%;
+  margin: 3rem 0;
+  max-width: 50rem;
+  @include lg-width{
+    margin: 0;
+    @include span(6 last);
+  }
+}
+.profile__name{
+  color: map-get($colors, light-purple);
+  font-size: 3rem;
+  line-height: 0.9;
+  margin: 0;
+  padding: 0;
+  @include xs-width{
+    font-size: 5rem;
+  }
+  @include md-width{
+    font-size: 5.333rem;
+  }
+  @include xlg-width{
+    font-size: 7.111em;
+  }
+}
+.profile__firstname{
+  font-weight: normal;
+}
+.profile__line{
+  display: none;
+  width: 150px;
+  margin: .5rem;
+  background: map-get($colors, light-purple);
+  height: 5px;
+  vertical-align: middle;
+  @include sm-width{
+    display: inline-block;
+  }
+}
+.profile__role{
+  color: map-get($colors, white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  position: relative;
+  top: 100px;
+  font-family: map-get($typography, futura);
+  @include xs-width{
+    top: 150px;
+  }
+  @include md-width{
+    top: 190px;
+  }
+  @include xlg-width{
+    top: 240px;
+  }
+}
+.profile__role h5,
+.profile__role svg{
+  display: inline-block;
+}
+.profile__role h5{
+  font-weight: bold;
+}
+.profile__role a{
+  display: inline;
+}
+.profile__role svg{
+  fill: #fff;
+  max-width: 50px;
+  vertical-align: middle;
+  margin: 0 .5rem;
+}
+.profile__picture {
+  width: 100%;
+  font-size: 0;
+  z-index: -1;
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @include lg-width{
+    width: 85%;
+    position: absolute;
+  }
+}
+.profile__picture img{
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.biography__title{
+  font-size: 1.5rem;
+  @include md-width{
+    font-size: 1.333rem;
+  }
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 4px;
+  font-family: map-get($typography, futura);
+  color: map-get($colors, light-purple);
+}
+.biography__intro{
+  font-family: map-get($typography, merriweather);
+  font-size: 1.5rem;
+  margin-top: .5rem;
+  @include md-width{
+    font-size: 1.333rem;
+  }
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.5;
+  color: map-get($colors, light-purple);
+}
+.biography__body{
+  margin-top: 2rem;
+}
+.biography__line{
+  background: map-get($colors, light-purple);
+  height: 3px;
+  margin-top: .35rem;
+  display: none;
+  @include sm-width{
+    @include span(3);
+    display: inline-block;
+  }
+}
+.biography__text{
+  color: map-get($colors, white);
+  @include sm-width{
+    @include span(9 last);
+  }
+}

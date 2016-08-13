@@ -1,0 +1,563 @@
+#sherlockHolmes::before{
+  display:block;
+  content:"";
+  background: map-get($colors, grey);
+  width: 100px;
+  height: 1px;
+  margin-bottom: 1rem;
+}
+#sherlockHolmes {
+  display: none;
+  margin-top: 50px;
+  opacity: 0;
+  max-width: 35rem;
+  line-height: 1.5;
+  color: map-get($colors, grey);
+  @include xs-width{
+    opacity: 1;
+  }
+}
+#sherlockHolmes a{
+  color: map-get($colors, purple);
+}
+#sherlockHolmes a.underline::after{
+  background: map-get($colors, purple);
+}
+.submit-wrapper > .formMessage {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
+  color: #fff;
+}
+.submit-wrapper > .formMessage::before{
+  display:none;
+}
+.formMessage.error{
+  background: #FB797E;
+}
+.formMessage.success{
+  background: #1ECD97;
+}
+.modal__container .note::before {
+  display:none;
+}
+.modal__container .note{
+  display: block;
+  color: #B0B0B0;
+  text-shadow: 0 0 30px map-get($colors, purple);
+  padding: 10px 5px;
+  max-width: 350px;
+  margin: -10px auto;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.modal__action .underline {
+  font-size: 1.1rem;
+}
+.modal__action .btn{
+  margin-bottom: .25em;
+}
+.modal__action .btn:hover:nth-child(2)~.note{
+  opacity:1;
+  margin: 0px auto;
+}
+.modal__container {
+  position: fixed;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
+}
+.modal__container .modal__content {
+  height: 100%;
+  width: 100%;
+  padding: 5em 5% 3em;
+  text-align: left;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.modal__container p {
+  color: map-get($colors, purple);
+  line-height: 1.6;
+  margin: 2em 0;
+}
+.modal--visible .modal__container {
+  overflow:hidden;
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s;
+}
+.modal__container .modal__content {
+  -webkit-overflow-scrolling: touch;
+  overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include lg-width{
+    padding: 5em 12%;
+  }
+}
+
+.nl-form {
+  align-self: center;
+  height: auto;
+}
+.modal__action {
+  position: relative;
+}
+.modal__action .btn, .modal__action .modal__bg {
+  display: inline-block;
+}
+.modal__action .modal__bg{
+  background-color: map-get($colors, white);
+  height: 4em;
+}
+.modal__action .btn {
+  border-radius:0;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.modal__action .btn.to-circle,
+.modal__action .btn.to-circle>span {
+  width: 4em;
+  color: transparent;
+  padding: .75rem 0rem;
+}
+.modal__action .modal__bg {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 4px;
+  width: 4em;
+  border-radius: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateZ(0);
+  transform: translateX(-2em);
+  transition: visibility 0s 0.5s;
+}
+.modal__action .modal__bg.modal__bg--visible {
+  opacity: 1;
+  visibility: visible;
+}
+.modal__close {
+  position: fixed;
+  z-index: 1;
+  top: 1.5rem;
+  right: 1.5rem;
+  @include md-width{
+    top: 3rem;
+    right: 3rem;
+  }
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: map-get($colors, white);
+  border: 2px solid map-get($colors, purple);
+  padding: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: translateZ(0) scale(0);
+}
+.modal__close g{
+  fill: none;
+  stroke: map-get($colors, purple);
+  stroke-width: 2px;
+  stroke-linecap: square;
+  stroke-miterlimit:10;
+}
+.modal__close:focus,
+.modal__close:hover{
+  background: map-get($colors, purple);
+  border-color: map-get($colors, purple);
+  transform: scale(1.1) rotate(-90deg) !important;
+}
+.modal__close:focus g,
+.modal__close:hover g{
+  stroke: map-get($colors, white);
+}
+.modal--visible .modal__close {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nl-form {
+  width: 100%;
+  margin: 0.3em auto 0 auto;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  @include xs-width{
+    font-size: 1.5rem;
+  }
+  @include sm-width{
+    font-size: 1.85rem;
+  }
+  @include md-width{
+    font-size: 1.777rem;
+  }
+}
+.nl-form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nl-form input,
+.nl-form select,
+.nl-form span {
+  border: none;
+  background: transparent;
+  font-family: map-get($typography, merriweather);
+  color: map-get($colors, purple);
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.nl-field {
+  display: inline-block;
+  position: relative;
+}
+.nl-field.nl-field-open {
+  z-index: 10000;
+}
+.nl-field-toggle,
+.nl-form input,
+.nl-form select  {
+  line-height: inherit;
+  display: inline-block;
+  color: map-get($colors, grey);
+  font-weight: normal;
+  font-family: map-get($typography, proxima-nova);
+  font-size: 1.15em;
+  cursor: pointer;
+  border-bottom: 1px dashed map-get($colors, grey);
+}
+.nl-field-toggle:focus,
+.nl-field-toggle:hover{
+  color: map-get($colors, purple);
+  border-color: map-get($colors, purple);
+}
+.nl-field ul {
+  position: absolute;
+  visibility: hidden;
+  background: desaturate(lighten(map-get($colors, purple), 10%), 10%);
+  left: -0.5rem;
+  top: 50%;
+  opacity: 0;
+  transform: translateY(-40%) scale(0.9);
+  transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
+}
+.nl-field.nl-field-open ul {
+  visibility: visible;
+  opacity: 1;
+  padding: 0;
+  transform: translateY(-50%) scale(1);
+  @include sm-width{
+    transform: translateY(-45%) scale(1);
+  }
+  transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
+}
+.nl-field ul{
+  width: auto !important;
+}
+.nl-field ul li:focus,
+.nl-field ul li:hover{
+  background: map-get($colors, purple);
+}
+.nl-field ul li {
+  color: map-get($colors, white);
+  position: relative;
+  margin: 0;
+  transition: all 0.5s ease;
+}
+.nl-dd ul li {
+  margin: 0;
+  padding: .3em 1em;
+  width: 100%;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nl-dd ul li.nl-dd-checked {
+  color: map-get($colors, light-grey);
+}
+.nl-dd ul li.nl-dd-focus{
+  color: map-get($colors, purple);
+  background: map-get($colors, white);
+}
+.no-touch .nl-dd ul li:hover {
+  background: rgba(0,0,0,0.05);
+}
+.no-touch .nl-dd ul li:hover:active {
+  color: #478982;
+}
+.nl-ti-text ul {
+  min-width: 12em;
+}
+.nl-ti-text ul li.nl-ti-input input {
+  width: 100%;
+  padding: .1em .2em .2em .3em;
+  padding-right: 65px;
+  border-bottom: none;
+  color: map-get($colors, white);
+}
+.keep-together{
+  display:inline-block;
+  margin-bottom: 1rem;
+  @include md-width{
+    margin-bottom: .5rem;
+  }
+}
+.nl-form .nl-field-go {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 97%;
+  margin-top: 1px;
+  cursor: pointer;
+  background: darken(map-get($colors, purple),5%) url("../img/arrow.svg") no-repeat center;
+  background-size: 35%;
+  width: 60px;
+  text-align: center;
+  color: transparent;
+  border: 0;
+  outline: 0;
+}
+.nl-ti-text ul li.nl-ti-example {
+  display: none;
+  font-size: 40%;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0.4em 1em;
+  color: rgba(0,0,0,0.2);
+  border-top: 1px dashed rgba(255,255,255,0.7);
+}
+.nl-ti-text ul li.nl-ti-example em {
+  color: map-get($colors, white)
+}
+.nl-submit-wrap {
+  margin-top: 0.4em;
+}
+
+.no-touch .nl-form .nl-submit:hover,
+.no-touch .nl-form .nl-submit:active {
+  background: #69B1A9;
+}
+.no-touch .nl-form .nl-submit:hover:before {
+  background: #58a199;
+}
+.nl-overlay {
+  position: fixed;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,.6);
+  opacity: 0;
+  z-index: 9999;
+  visibility: hidden;
+  transition: visibility 0s 0.3s, opacity 0.3s;
+}
+.nl-field-open ~ .nl-overlay{
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.modal__container form+p {
+  font-size: .9rem;
+  color: map-get($colors, grey);
+  line-height: 1.8;
+  width: 90%;
+  max-width: 700px;
+  margin-top: 120px;
+}
+.modal__container p::before{
+  content:"";
+  display:block;
+  height:1px;
+  width: 120px;
+  background-color: map-get($colors, grey);
+  margin-bottom: 25px;
+}
+.modal__container span#counter{
+  font-weight: bold;
+}
+
+.nl-field-toggle{
+  margin-left: .5rem;
+  @include xs-width{
+    margin-left: .85rem;
+  }
+}
+
+.nl-form input[type=submit] {
+  display: block !important;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 15px 0 15px;
+  width: auto;
+  padding: 12px 40px;
+}
+
+.nl-form input[type=submit].btn{
+  color: map-get($colors, purple);
+  border: 2px solid map-get($colors, light-grey);
+  background: transparent;
+}
+.nl-form input[type=submit].btn:focus,
+.nl-form input[type=submit].btn:hover{
+  color: map-get($colors, white);
+  border-color: map-get($colors, purple);
+  background: map-get($colors, purple);
+}
+.submit-wrapper{
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+}
+.progress-button {
+  position: relative;
+  display: inline-block;
+  clear: both;
+  width: 250px;
+}
+.progress-button button {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 250px;
+  height: 70px;
+  border: 2px solid map-get($colors, light-grey);
+  border-radius: 0px;
+  background: transparent;
+  color: map-get($colors, purple);
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+  transition: background-color 0.6s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+}
+.progress-button button span{
+  color: map-get($colors, purple);
+  font-family: map-get($typography, proxima-nova);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+.progress-button button:focus,
+.progress-button button:hover {
+  background-color: map-get($colors, purple);
+  color: map-get($colors, white);
+  outline: 0;
+  border-color: map-get($colors, purple);
+}
+.progress-button button:focus span,
+.progress-button button:hover span{
+  color: map-get($colors, white);
+}
+.progress-button svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.progress-button svg path {
+  opacity: 0;
+  fill: none;
+}
+.progress-button svg.progress-circle path {
+  stroke: map-get($colors, purple);
+  stroke-width: 5;
+}
+.progress-button svg.checkmark path,
+.progress-button svg.cross path {
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-width: 4;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+}
+.loading.progress-button button {
+  width: 70px; /* make a circle */
+  border-width: 5px;
+  border-color: map-get($colors, light-grey);
+  border-radius: 40px;
+  background-color: transparent;
+  color: map-get($colors, white);
+}
+.loading.progress-button span {
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+}
+.loading.progress-button span,
+.success.progress-button span,
+.error.progress-button span {
+  opacity: 0; /* keep it hidden in all states */
+}
+/* Transition for when returning to default state */
+.progress-button button span {
+  -webkit-transition: opacity 0.3s 0.1s, color 0.3s;
+  transition: opacity 0.3s 0.1s, color 0.3s;
+}
+.success.progress-button button,
+.error.progress-button button {
+  -webkit-transition: background-color 0.3s, width 0.3s, border-width 0.3s;
+  transition: background-color 0.3s, width 0.3s, border-width 0.3s;
+}
+.success.progress-button button {
+  border-color: #1ECD97;
+  background-color: #1ECD97;
+}
+
+.error.progress-button button {
+  border-color: #FB797E;
+  background-color: #FB797E;
+}
+.loading.progress-button svg.progress-circle path,
+.success.progress-button svg.checkmark path,
+.error.progress-button svg.cross path {
+  opacity: 1;
+  -webkit-transition: stroke-dashoffset 0.3s;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.elastic.progress-button button {
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1), border-width 0.3s, border-color 0.3s;
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.25, 0.25, 0.4, 1.6), border-width 0.3s, border-color 0.3s;
+}
+
+.loading.elastic.progress-button button {
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, 0, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
+  -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, width 0.3s cubic-bezier(0.6, -0.6, 0.75, 0.75), border-width 0.3s, border-color 0.3s;
+}

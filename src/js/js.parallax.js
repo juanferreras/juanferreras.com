@@ -68,7 +68,8 @@
 
     // DOM Context
     this.element = element;
-    this.layers = element.getElementsByClassName('layer');
+    this.layers = element.getElementsByClassName('parallax__layer');
+    console.log(this.layers, element.getElementsByClassName('layer'));
 
     // Data Extraction
     var data = {
@@ -262,7 +263,8 @@
   Parallax.prototype.updateLayers = function() {
 
     // Cache Layer Elements
-    this.layers = this.element.getElementsByClassName('layer');
+    this.layers = this.element.getElementsByClassName('parallax__layer');
+    console.log(this.layers, this.element.getElementsByClassName('layer'));
     this.depths = [];
 
     // Configure Layer Styles

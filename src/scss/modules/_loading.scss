@@ -1,0 +1,56 @@
+.loading .modal,
+.loading .scroll-icon,
+.loading .parallax__layer{
+  display: none !important;
+}
+.loading .parallax__layer.visible{
+  display: block !important;
+}
+.loading nav{
+  visibility:hidden;
+}
+.loading .background--loading {
+  opacity: 1;
+}
+.background--loading{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.85s ease;
+  background: url("../img/bg.jpg");
+}
+.loading{
+  overflow:hidden;
+}
+.invisible-square--loading{
+  visibility: hidden;
+}
+.loading .invisible-square--loading{
+  visibility: visible;
+}
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading .top-circle--loading {
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-name: rotate-forever;
+  animation-timing-function: linear;
+  border: 6px solid map-get($colors, grey);
+  border-right-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.loading .top-circle--loading {
+  z-index: 9999;
+}
+.top-circle--loading {
+  transition: border-color 0.5s ease;
+  border-color: #fff;
+}

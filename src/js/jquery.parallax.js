@@ -40,7 +40,7 @@
 
     // Selections
     this.$context = $(element).data('api', this);
-    this.$layers = this.$context.find('.layer');
+    this.$layers = this.$context.find('.parallax__layer');
 
     // Data Extraction
     var data = {
@@ -201,7 +201,7 @@
   Plugin.prototype.updateLayers = function() {
 
     // Cache Layer Elements
-    this.$layers = this.$context.find('.layer');
+    this.$layers = this.$context.find('.parallax__layer');
     this.depths = [];
 
     // Configure Layer Styles

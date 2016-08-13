@@ -1,0 +1,16 @@
+extends layout
+
+block body
+  body
+    section.error
+      .error__background#errorBackground
+      .error__container
+        .error__wrapper
+          h2.error__title #{ __("404.") }
+          h3.error__subtitle #{ __("Not found.") }
+          p.error__description 
+            | #{ __("Rest assured, our team of highly trained experts is") }
+            span.working#working #{ __("working really hard to fix it.") }
+          a.btn.error__btn(href="/") #{ __("Take me home") }
+
+  script(src='js/scripts.js')

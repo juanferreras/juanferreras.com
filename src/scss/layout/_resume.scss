@@ -1,160 +1,222 @@
-header.about {
-  background: $color-dark-font;
-  padding: 30px 0;
-  margin-bottom: 16px;
+.resume{
+  background: map-get($colors, white);
+  padding-bottom: 7rem;
 }
-.resume h2{
-  font-family: $font-primary-stack;
+.resume__header{
+  background: map-get($colors, purple);
+  padding: 3rem 0;
 }
-.resume .about h3{
+.resume__container{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+.resume__container::after,
+.resume__row::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.resume__title{
+  @include md-width{
+    @include span(8);
+  }
+}
+.resume__title h1{
+  font-size: 3rem;
   font-weight: normal;
+  font-family: map-get($typography, futura);
+  color: map-get($colors, white);
+  margin-bottom: .25rem;
+  @include md-width{
+    font-size: 4.445rem;
+  }
 }
-.resume h3,
-.resume h3>a{
-  font-family: $font-sans-stack;
+.resume__title h1 span{
   font-weight: bold;
 }
-.resume q {
-  font-style: italic;
+.resume__title h3{
+  color: map-get($colors, light-grey);
+  font-size: 1.2rem;
+  @include md-width{
+    font-size: 1.5rem;
+  }
 }
-h3>a{
-  color: $color-dark-font;
-  border-bottom: 1px solid $color-dark-font;
-  padding-bottom: 0;
-  margin-left: 0;
+.resume__details{
+  padding-top: 2rem;
+  @include md-width{
+    padding-top: 1rem;
+    @include span(4 last);
+  }
 }
-section > .row > div[class^="col-"]:nth-child(2){
-  text-align:left;
-  float:right;
+.resume__details ul li{
+  display: block;
+  text-align: right;
+  margin: .5rem 0 0;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  color: map-get($colors, light-grey);
 }
-
-section > .row blockquote{
-  text-align:center;
+.resume__details ul li a{
+  font-size: 1.1em;
+  margin-top: .25rem;
 }
-
-.note::before{
-  content:"";
-  width: 70px;
-  display:block;
-  height: 1px;
-  margin-top: 1em;
-  margin-bottom: .5em;
-  background: $color-base-font;
+.resume__details ul.resume__social li{
+  display: inline-block;
+  margin: 0;
+  margin-left: .5rem;
+  vertical-align: middle;
 }
-
-section .row p.note{
-  font-size: .8em;
+.resume__social li svg{
+  width: 100%;
+  max-width: 35px;
+  fill: map-get($colors, white);
+  transition: fill 0.5s ease;
 }
-
-section .row p{
-  line-height:1.5;
-  color: $color-grey-font;
-  font-size: 1em;
+.resume__social li a:focus svg,
+.resume__social li a:hover svg {
+  fill: map-get($colors, red);
 }
-
-section .row h4+p{
-  line-height: 1.6;
-  font-size: .9em;
+.resume-section{
+  margin: 2rem 0;
 }
-
-section ul{
-  margin-top: .2em;
+.resume-section__title{
+  font-family: map-get($typography, futura);
+  color: map-get($colors, purple);
 }
-section ul li{
-  line-height: 1.8;
-  margin: 2px 10px;
+.resume-section__title{
+  border-bottom-width: 2px;
+  margin-bottom: 1rem;
 }
-
-ul.profile {
-  font-size: 1em;
-  text-align: left;
-  line-height: 1.7;
-  margin:0;
-  margin-top: 1.35rem;
-  color: $color-grey-font;
+.resume-profile__picture{
+  text-align: center;
+  margin-top: 2rem;
 }
-ul.profile>li{
-  display:block;
-  margin:0;
+.resume-profile__picture,
+.resume-section__times{
+  @include md-width{
+    @include span(3);
+  }
 }
-
-.down-arrow {
-  height: 70px;
-  width: 70px;
-  display:block;
-  border: 3px solid $color-dark-font;
-  border-radius: 100%;
-  transform:  translateZ(0) rotate(90deg);
-  background-color: rgba(255,255,255,0.9);
+.resume-section__times h5{
+  color: map-get($colors, dark-grey);
 }
-
-aside.return{
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
+.resume-section__container{
+  @include md-width{
+    @include span(9 last);
+  }
 }
-
-.down-arrow:before,
-.down-arrow:after {
-  content: '';
-  position: absolute;
-  top: 32px;
-  width: 22px;
-  border: 2px solid $color-dark-font;
-  transition: all 0.2s linear;
-  -webkit-transition: all 0.2s linear;
-}
-
-.down-arrow:before {
-  transform: rotateZ(45deg);
-  -webkit-transform: rotateZ(45deg);
-  left: 13px;
-}
-
-.down-arrow:after {
-  transform: rotateZ(-45deg);
-  -webkit-transform: rotateZ(-45deg);
-  left: 27px;
-}
-
-.down-arrow:hover {
-  cursor: pointer;
-  border-width: 1px;
-  border-color: transparent;
-}
-
-.down-arrow:hover:before,
-.down-arrow:hover:after {
-  top: 47px;
-}
-
-.down-arrow:hover:before {
-  left: 15px;
-}
-
-.down-arrow:hover:after {
-  left: 29px;
-}
-
-.profile-picture>img {
+.resume-profile__picture > img{
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
-  max-width: 175px;
-  margin: 23px auto;
-  box-shadow: 0 0 0px rgba(0,0,0,0.1);
+  box-shadow: -20px 20px 60px rgba(0,0,0,0.04);
+  transform: perspective(1px) translate3d(0,0,0) scale(0.95);
   transition: all 0.6s ease;
   -webkit-filter: grayscale(100%) contrast(110%);
   filter: grayscale(100%) contrast(110%);
 }
-
-.profile-picture>img:hover{
+.resume-profile__picture > img:hover{
   box-shadow: -20px 20px 60px rgba(0,0,0,0.08);
-  transform: perspective(1px) scale(1.05);
+  transform: perspective(1px) translate3d(0,0,0) scale(1);
 }
-
-.profile-picture {
-  text-align: center !important;
+.resume-section__container p{
+  line-height: 1.5;
+  margin-top: .35rem;
+  font-size: 1rem;
+  color: map-get($colors, dark-grey);
 }
-
-.padding-bottom{
-  padding-bottom: 150px;
+.resume-section__container p + p{
+  margin-top: 1rem;
+}
+.resume-section__description{
+  font-size: 1rem;
+}
+.resume__row{
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  @include md-width{
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
+.resume-section__times{
+  margin-bottom: .25rem;
+  @include md-width{
+    text-align: right;
+  }
+}
+.resume-section__subtitle,
+.resume-section__times h3{
+  font-family: map-get($typography, proxima-nova);
+  font-size: 1.3rem;
+  color: map-get($colors, purple);
+  font-weight: bold;
+}
+.resume-section__container h4{
+  font-weight: normal;
+}
+.resume-section__container a{
+  color: map-get($colors, red);
+  line-height: 1.2;
+}
+.resume-section__container a.underline:focus::after,
+.resume-section__container a.underline:hover::after{
+  display: none;
+  background: map-get($colors, red);
+  @include md-width{
+    display: block;
+  }
+}
+p.resume-section__note{
+  font-size: 0.8em;
+}
+.resume-section__note::before{
+  display: block;
+  content: "";
+  width: 100px;
+  height: 1px;
+  background: map-get($colors, dark-grey);
+  margin-bottom: .5rem;
+}
+.resume-section__title span.ampersand{
+  font-family: map-get($typography, merriweather);
+  font-style: italic;
+}
+.resume-section__container ul{
+  margin-top: .35rem;
+}
+.resume-section__container ul li{
+  line-height: 1.5;
+  display: inline-block;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+}
+.resume__btn-back {
+  position: fixed;
+  z-index: 1;
+  left: 2rem;
+  bottom: 2rem;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background:  map-get($colors, white);
+  border: 3px solid map-get($colors, purple);
+  padding: 1rem;
+  transform: translateZ(0) scale(1);
+  transition: transform 0.5s ease, background 0.6s ease;
+}
+.resume__btn-back svg{
+  fill: map-get($colors, purple);
+  max-width: 100%;
+  transform: fill 0.4s ease;
+}
+.resume__btn-back:focus,
+.resume__btn-back:hover{
+  transform: translateZ(0) scale(1.1) translateX(-5px);
+  background: map-get($colors, purple);
+}
+.resume__btn-back:focus svg,
+.resume__btn-back:hover svg{
+  fill: map-get($colors, white);
 }
