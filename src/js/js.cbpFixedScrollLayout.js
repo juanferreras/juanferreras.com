@@ -23,21 +23,15 @@ var fixedScrollLayout = (function() {
 			return false;
 		});
 
-		// 2 waypoints defined:
-		// First one when we scroll down: the current navigation link gets updated. 
-		// A `new section´ is reached when it occupies more than 70% of the viewport
-		// Second one when we scroll up: the current navigation link gets updated. 
-		// A `new section´ is reached when it occupies more than 70% of the viewport
-		config.$sections.waypoint( function( direction ) {
-			if( direction === 'down' ) { changeNav( $( this ), config ); }
-		}, { offset: '30%' } ).waypoint( function( direction ) {
-			if( direction === 'up' ) { changeNav( $( this ), config ); }
-		}, { offset: '-30%' } );
-
-		// on window resize: the body is scrolled to the position of the current section
-		$( window ).on( 'debouncedresize', function() {
-			scrollAnim( config.$sections.eq( config.currentLink ).offset().top, config );
-		} );
+		config.$sections.each(function(){
+			var that = $(this);
+			new Waypoint.Inview({
+			  element: that,
+			  enter: function(direction) {
+			    changeNav(that, config);
+			  }
+			})
+	})
 		
 	}
 

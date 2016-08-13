@@ -1,5 +1,4 @@
 function initPlugins(){
-	new WOW().init();
 	window.$parallax = $('.parallax').parallax();
 	$('[data-typer-targets]').typer();
   $('.nav--dots').midnight();
@@ -375,8 +374,18 @@ function heightFix(){
 	}
 }
 
+function footerFix(){
+	window.addEventListener('touchstart', function setHasTouch () {
+			$('main').addClass('main--relative');
+	    $('#footer').addClass('footer--relative');
+	    window.removeEventListener('touchstart', setHasTouch);
+	}, false);
+}
+
+
 $("document").ready(function() {
 	heightFix();
+	footerFix();
 	initPlugins();	
 	refreshClock();
 

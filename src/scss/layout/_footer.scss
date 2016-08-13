@@ -7,6 +7,9 @@ main{
     margin-bottom: 28.44rem;
   }
 }
+main.main--relative{
+  margin-bottom: 0 !important;
+}
 #footer{
   position: relative;
   @include md-width{
@@ -22,6 +25,10 @@ main{
   width: 100%;
   z-index: -2;
   background: map-get($colors, light-purple);
+}
+#footer.footer--relative{
+  position: relative !important;
+  height: auto !important;
 }
 .footer{
   @include container;
@@ -115,6 +122,9 @@ main{
   @include lg-width{
     padding: 1rem 0;
   }
+}
+.footer--relative .footer__copyright{
+  bottom: initial;
 }
 .footer__row{
   @include container;

@@ -10,17 +10,19 @@
 html,
 body,
 main{
+  width: 100%;
+  max-width: 100%;
   min-height: 100%;
   min-height: 100vh;
   height: auto;
 }
 body{
-  background: map-get($colors, purple);
   overflow-x:hidden;
   overflow-y: auto;
+  background: map-get($colors, purple);
   webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-overflow-scrolling: touch !important;
+  -webkit-overflow-scrolling: touch;
   -webkit-backface-visibility: hidden !important;
   -webkit-font-feature-settings: "kern", "liga";
   font-feature-settings: "kern", "liga";

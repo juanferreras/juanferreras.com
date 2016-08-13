@@ -50,12 +50,10 @@ nav{
 }
 .nav__element:focus::after {
   background: map-get($colors, red);
-  border-color: map-get($colors, red);
   box-shadow: 0 0 20px map-get($colors, red);
 }
 .nav--black .nav__element:focus::after {
   background: map-get($colors, white) !important;
-  border-color: map-get($colors, white) !important;
   box-shadow: 0 0 20px map-get($colors, white) !important;
 }
 .nav--flags {
