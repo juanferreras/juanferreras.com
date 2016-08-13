@@ -35,13 +35,17 @@
   }
 }
 .split--designer{
-  background: map-get($colors, transparent-white);
+  background: map-get($colors, white);
   @include lg-width{
+    background: map-get($colors, transparent-white);
     @include span(6 inside no-gutters last);
   }
 }
 .split--developer{
-  background: map-get($colors, transparent-purple);
+  background: map-get($colors, purple);
+  @include lg-width{
+    background: map-get($colors, transparent-purple);
+  }
 }
 
 .split__ampersand {

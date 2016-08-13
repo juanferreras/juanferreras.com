@@ -1,8 +1,5 @@
 main{
   margin-bottom: 0;
-  @include sm-width{
-    margin-bottom: 38rem;
-  }
   @include md-width{
     margin-bottom: 29.33rem;
   }
@@ -12,15 +9,12 @@ main{
 }
 #footer{
   position: relative;
-  @include sm-width{
-    height: 38rem;
+  @include md-width{
+    height: 29.33rem;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-  }
-  @include md-width{
-    height: 29.33rem;
   }
   @include lg-width{
     height: 28.44rem;
