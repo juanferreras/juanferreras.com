@@ -90,6 +90,7 @@ main{
   color: map-get($colors, red);
   margin: 0 .35rem;
   white-space: nowrap;
+  line-height: 1.2;
 }
 .footer__description a.underline::after{
   background: map-get($colors, red);
@@ -158,6 +159,12 @@ main{
 .footer__column p .heart-icon + a {
   display: inline;
   margin-left: .25rem;
+}
+.footer__column a.underline.underline--fix {
+  margin-bottom: .5rem;
+  @include md-width{
+    margin-bottom: 0;
+  }
 }
 .footer__column a svg {
   bottom: 5px;position: relative;

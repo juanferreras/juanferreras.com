@@ -126,6 +126,13 @@ function findIndexWithClass($inputs, hasClass){
 
 function handleFormUsingTabs(){
 	var $inputs = $('.nl-field');
+	if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			// fix displacement on modal on focus
+			$('input').on('blur', function(){
+				$('body').scrollTop(0);
+			})
+	}
+
 	updateTab();
 
 	$('body').on('keydown.tabs', function(e) {
@@ -358,7 +365,18 @@ function printMessage(){
 	console.log(message);
 }
 
+function heightFix(){
+	if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		var elements = $('html, body, #landing');
+		elements.each(function(){
+			var h = $(this).height();
+			$(this).height(h);
+		})
+	}
+}
+
 $("document").ready(function() {
+	heightFix();
 	initPlugins();	
 	refreshClock();
 

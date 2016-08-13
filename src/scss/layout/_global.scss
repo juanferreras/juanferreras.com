@@ -20,6 +20,8 @@ body{
   overflow-y: auto;
   webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch !important;
+  -webkit-backface-visibility: hidden !important;
   -webkit-font-feature-settings: "kern", "liga";
   font-feature-settings: "kern", "liga";
   width: 100%;

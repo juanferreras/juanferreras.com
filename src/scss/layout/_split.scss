@@ -8,9 +8,12 @@
   @include container;
 }
 .container--small{
-  width: 80%;
+  width: 86%;
   max-width: 36rem;
   margin: 0 auto;
+  @include md-width{
+    width: 80%;
+  }
   @include xlg-width{
     width: 90%;
   }
@@ -22,10 +25,11 @@
 .split{
   display: flex;
   min-height: 100%;
+  min-height: 100vh;
   height: auto;
   width: 100%;
   position: relative;
-  padding: 11rem 0;
+  padding: 5rem 0;
   @include xs-width{
     padding: 6rem 0;
   }

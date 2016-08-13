@@ -74,7 +74,9 @@
   top: -5px;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  height: auto;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -259,8 +261,9 @@
   border-bottom: 1px dashed map-get($colors, grey);
 }
 .nl-field-toggle:focus,
+.nl-field-toggle:active,
 .nl-field-toggle:hover{
-  color: map-get($colors, purple);
+  color: map-get($colors, purple) !important;
   border-color: map-get($colors, purple);
 }
 .nl-field ul {
