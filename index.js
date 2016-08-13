@@ -28,13 +28,12 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.set('views', './views')
-app.set('view engine', 'jade')
+app.set('view engine', 'pug')
 app.use('/', route);
 
-var port = process.env.PORTV2 || 8080;
+var port = process.env.PORT || 8080;
 
 var server = app.listen(port, function () {
-   var host = server.address().address;
    var port = server.address().port;
-   console.log('Express listening at http://%s:%s', host, port);
+   console.log('Express listening at port %s', port);
 });

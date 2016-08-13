@@ -7,7 +7,7 @@ You can see it live at [juanferreras.com](http://juanferreras.com). It uses Expr
 ### Building ###
 
 * `brew install npm` on OSX to install it (or any other way of obtaining npm)
-* `npm install` to grab all the required dependencies.
+* `npm install` to grab all the required dependencies. It will automatically build on `postinstall` using Grunt, compiling all images using `imagemin` cli tool.
 
 You'd need a `config.js` file on `/` containing something like the following.
 ```javascript
@@ -23,3 +23,6 @@ module.exports = {
   }
 };
 ```
+
+### Dev ###
+* `npm start` will build and launch a `browser-sync` tab.

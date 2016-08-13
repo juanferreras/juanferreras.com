@@ -3,8 +3,8 @@ $sm-width: 48rem; //765px
 $md-width: 62rem; //980px
 $lg-width: 75rem; // 1200px
 $xlg-width: 100rem; // 1600px
-$sm-height: 43.75rem; //700px
-$md-height: 56.25rem; //900px
+$sm-height: 700px;
+$md-height: 900px;
 
 @mixin xs-width {
   @media screen and (min-width: $xs-width) {

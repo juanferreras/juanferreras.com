@@ -1,0 +1,235 @@
+extends layout
+
+block title
+  title #{ __("Juan Ferreras - Designer & Developer from Argentina | Resume") }
+
+block body
+  body.resume(itemscope='', itemtype='http://schema.org/Person')
+    header.resume__header
+      .resume__container
+        .resume__title
+          h1(itemprop='name') 
+            | Juan 
+            span Ferreras
+          h3(itemprop='jobTitle')
+            | #{ __("Designer") } 
+            span.amp &
+            |  #{ __("Front-End Developer") }
+        .resume__details
+          ul
+            li(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+              span(itemprop='addressLocality') Santa Fe
+              | , 
+              span(itemprop='addressCountry') Argentina
+            li(itemprop='birthDate') #{ __("29th of April, 1995") }
+            li
+              ul.resume__social
+                li
+                  a(href="https://ar.linkedin.com/in/ferrerasjuan" target="_BLANK") 
+                    include ../src/img/linkedin.svg
+                li
+                  a(href="https://github.com/juanferreras" target="_BLANK") 
+                    include ../src/img/github.svg
+                li
+                  a(href="https://stackoverflow.com/users/6667848/juan-ferreras" target="_BLANK") 
+                    include ../src/img/stackoverflow.svg
+    .resume__container
+      .resume-section
+        h2.resume-section__title #{ __("About me") }
+        .resume__row
+          .resume-profile__picture
+            img(src='img/profile-min.jpg', alt='Profile Picture', title='Profile Picture')
+          .resume-section__container
+            p
+              | #{ __("I'm a 21 years old Information Systems Engineer student from Santa Fe, Argentina. I find myself constantly learning about the latest trends and best practices in both, software development and design. In fact, I believe it is impossible to talk about our profession without highlighting the importance of good design throughout every portion of software that we craft.") }
+            p
+              q #{ __("If it's not breaking you down, it's not building you up.") }
+              |  #{ __("I'm incredibly passionate about what I do, and I feel really excited towards pushing myself to the edge. I think that we grow and develop ourselves as professionals when we are outside our comfort zone.") }
+      .resume-section
+        h2.resume-section__title #{ __("Experience") }
+        .resume__row
+          .resume-section__times
+            h5 #{ __("2013 - PRESENT") }
+          .resume-section__container
+            h3.resume-section__subtitle(itemprop='jobTitle') Chief Executive Officer
+            h4(itemprop='brand') Flioh!
+            p.resume-section__description
+              | #{ __("Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.") }
+      .resume-section
+        h2.resume-section__title #{ __("Education") }
+        .resume__row
+          .resume-section__times
+            h5 2013 - 2018
+          .resume-section__container
+            h3.resume-section__subtitle #{ __("Information Systems Engineering") }
+            h4(itemprop='alumniOf') UTN FRSF
+            p.resume-section__description
+              | #{ __("AVG with/without postponements: 8.18/8.18*") }
+            p.resume-section__note
+              | #{ __("(*)Scale: since in the Ratings System of Universidad Tecnológica Nacional 4 points represent 60/100, an 8.18 average is equivalent to a qualification of 91/100.") }
+        .resume__row
+          .resume-section__times
+            h5 2008 - 2012
+          .resume-section__container
+            h3.resume-section__subtitle
+              | #{ __("Bachelor ") }
+              | #{ __("of") } 
+              | #{ __("Biology") }
+            h4 La Salle Jobson
+            p.resume-section__description
+              | #{ __("AVG: 8.47 / 10") }
+      .resume-section
+        h2.resume-section__title #{ __("Certifications") }
+        .resume__row
+          .resume-section__times
+            h5 2016-04-29
+          .resume-section__container
+            h3.resume-section__subtitle
+              a.underline(href='https://www.dropbox.com/s/02mfat048hnnl1d/Certificate-of-Completion-juan%40flioh.com-1461783351.pdf?dl=0' target="_BLANK")
+                | User Experience Circuit
+            h4 General Assembly
+        .resume__row
+          .resume-section__times
+            h5 2016-03-01
+          .resume-section__container
+            h3.resume-section__subtitle #{ __("Developing applications with HTML5, AngularJS and NodeJS") }
+            h4 UTN FRSF
+        .resume__row
+          .resume-section__times
+            h5 2015-08-19
+          .resume-section__container
+            h3.resume-section__subtitle
+              a.underline(href='https://verify.edx.org/cert/08a414bf9e504a42979db637faf4a56e' target="_BLANK")
+                | uINOV8x - User Innovation: A Path To Entrepreneurship
+            h4 MIT - Massachusetts Institute of Technology
+            p.resume-section__description
+              | #{ __("Score: 92/100.") }
+        .resume__row
+          .resume-section__times
+            h5 2015-09-30
+          .resume-section__container
+            h3.resume-section__subtitle EF EPI-s
+            h4 EF Education First
+            p.resume-section__description
+              | #{ __("Score: 92/100 - Equivalent to CEFR C1.") }
+        .resume__row
+          .resume-section__times
+            h5 2015-08-09
+          .resume-section__container
+            h3.resume-section__subtitle EFSET PLUS 75 (CEFR C2)
+            h4 EF Education First
+            p.resume-section__description
+              | #{ __("Score: 75/100 - Equivalent to CEFR C2.") }
+        .resume__row
+          .resume-section__times
+            h5 2015-08-01
+          .resume-section__container
+            h3.resume-section__subtitle
+              a.underline(href='https://verify.edx.org/cert/887f1921fabd4494afb682ff89affc5c' target="_BLANK")
+                | TPM1x - Creative Problem Solving and Decision Making
+            h4 TU Delft
+            p.resume-section__description
+              | #{ __("Score: 100/100.") }
+        .resume__row
+          .resume-section__times
+            h5 2015-07-27
+          .resume-section__container
+            h3.resume-section__subtitle
+              a.underline(href='https://verify.edx.org/cert/9d5970d71af44afbb1fdac56516b596a' target="_BLANK")
+                | HTML5.1x -  Web Design Fundamentals
+            h4 W3C
+            p.resume-section__description
+              | #{ __("Score: 99/100.") }
+        .resume__row
+          .resume-section__times
+            h5 2015-07-24
+          .resume-section__container
+            h3.resume-section__subtitle
+              a.underline(href='https://certs.duolingo.com/jrxmc4yk' target="_BLANK")
+                | English Proficiency Exam
+            h4 Duolingo
+            p.resume-section__description
+              | #{ __("Score: 9.8/10.") }
+        .resume__row
+          .resume-section__times
+            h5 2015-05-20
+          .resume-section__container
+            h3.resume-section__subtitle
+              a.underline(href='https://verify.edx.org/cert/4becacd7c9794a90b7a6168de09411ed' target="_BLANK")
+                | DEV203x - Bootstrap
+            h4 Microsoft
+            p.resume-section__description
+              | #{ __("Score: 98/100.") }
+      .resume-section
+        h2.resume-section__title
+          | #{ __("Honour") } 
+          span.ampersand & 
+          | #{ __("Awards") }
+        .resume__row
+          .resume-section__times
+            h5 2006 - 2007
+          .resume-section__container
+            h3.resume-section__subtitle #{ __("Provintial Representative") }
+            h4 Olimpíadas Matemáticas Argentina
+        .resume__row
+          .resume-section__times
+            h5 2006
+          .resume-section__container
+            h3.resume-section__subtitle #{ __("National Representative") }
+            h4 Olimpíadas Matemáticas Rioplatense
+      .resume-section
+        h2.resume-section__title
+          | #{ __("Skills") } 
+          span.ampersand & 
+          | #{ __("Knowledge") }
+        .resume__row
+          .resume-section__times
+            h3 Front-End
+          .resume-section__container
+            ul
+              li HTML5
+              li CSS3
+              li Javascript
+              li jQuery
+              li SASS
+              li AngularJS
+              li Bootstrap/Foundation
+              li Responsive Design
+              li Jade
+              li Grunt/Gulp
+              li Ionic
+        .resume__row
+          .resume-section__times
+            h3 #{ __("Design") }
+          .resume-section__container
+            ul
+              li Photoshop
+              li Illustrator
+              li After Effects
+        .resume__row
+          .resume-section__times
+            h3 #{ __("Other") }
+          .resume-section__container
+            ul
+              li Project Management
+              li Java
+              li NodeJS
+              li Express
+              li MongoDB
+              li SQL
+              li Git
+              li Scrum
+      .resume-section
+        h2.resume-section__title #{ __("Languages") } 
+        .resume__row
+          .resume-section__times
+            h3 #{ __("Spanish") }
+          .resume-section__container
+            p #{ __("Native Language") }
+        .resume__row
+          .resume-section__times
+            h3 #{ __("English") }
+          .resume-section__container
+            p #{ __("Full Professional Proficiency") }
+    a.resume__btn-back(href="/" title="Back to home")
+      include ../src/img/left.svg

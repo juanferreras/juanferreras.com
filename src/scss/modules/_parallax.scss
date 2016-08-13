@@ -46,7 +46,7 @@
   height: 390px;
   width: 100%;
   z-index: 2;
-  @include sm-width{
+  @include xs-width{
     @include sm-height{
       height: 265px;
     }
@@ -91,6 +91,11 @@
 }
 .hero__subtitle.hero__subtitle--span::after{
   display:none;
+}
+.hero a:focus,
+.hero a:active,
+.hero a:hover{
+  color: map-get($colors, white);
 }
 
 @keyframes pulsing {
@@ -256,10 +261,12 @@
   right: 0;
   left: 0;
   margin: auto;
-  @include sm-width{
+  @include xs-width{
     @include sm-height{
-      bottom: 252px;
+      bottom: 132px;
     }
+  }
+  @include sm-width{
     width: 230px;
     height: 230px;
     bottom: 200px;
@@ -274,7 +281,7 @@
   height: 3px;
   background: #fff;
   position: absolute;
-  top: 0;
+  top: -20px;
   bottom: 360px;
   right: 144px;
   left: 0;
@@ -282,9 +289,9 @@
   @include sm-width{
     right: 230px;
   }
-  @include sm-width{
+  @include xs-width{
     @include sm-height{
-      bottom: 250px;
+      bottom: 260px;
     }
   }
 }
@@ -302,7 +309,7 @@
   @include sm-width{
     left: 210px;
   }
-  @include sm-width{
+  @include xs-width{
     @include sm-height{
       bottom: 280px;
     }
@@ -324,7 +331,7 @@
   @include sm-width{
     right: 225px;
   }
-  @include sm-width{
+  @include xs-width{
     @include sm-height{
       bottom: 150px;
     }

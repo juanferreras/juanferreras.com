@@ -99,6 +99,7 @@ main{
 }
 .footer__description a.underline::after{
   background: map-get($colors, red);
+  line-height: 1.2;
 }
 .footer__description span.roll{
   font-style: italic;

@@ -9,11 +9,25 @@
 .loading nav{
   visibility:hidden;
 }
-.loading .background{
-  opacity: 0.2;
+.loading .background--loading {
+  opacity: 1;
+}
+.background--loading{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.85s ease;
+  background: url("../img/bg.jpg");
 }
 .loading{
   overflow:hidden;
+}
+.invisible-square--loading{
+  visibility: hidden;
+}
+.loading .invisible-square--loading{
+  visibility: visible;
 }
 @keyframes rotate-forever {
   0% {
