@@ -27,13 +27,10 @@
   opacity: 0.65;
 }
 .about__profile{
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  @include sm-width{
-    width: 100%;
-  }  
   @include lg-width{
     text-align: left;
     @include span(6);

@@ -116,6 +116,7 @@
   background: linear-gradient(0deg, map-get($colors, light-red) 0%, rgba(map-get($colors, light-purple),0.0) 75%);
   opacity: 0.75;
   transition: opacity 1s ease;
+  position: relative;
   z-index: 1;
 }
 

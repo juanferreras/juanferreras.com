@@ -1,0 +1,34 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title *|MC:SUBJECT|*
+  body(leftmargin='0', marginwidth='0', topmargin='0', marginheight='0', offset='0')
+    center
+      table#bodyTable(align='center', border='0', cellpadding='0', cellspacing='0', height='100%', width='100%')
+        tr
+          td#bodyCell(align='center', valign='top')
+            // BEGIN TEMPLATE //
+            table#templateContainer(border='0', cellpadding='0', cellspacing='0')
+              tr
+                td(align='center', valign='top')
+                  // BEGIN HEADER //
+                  table#templateHeader(box-shadow='0 0 100px rgba(0,0,0,0.1)', border='0', cellpadding='0', cellspacing='0', width='100%')
+                    tr
+                      td.headerContent(valign='top')
+                        img#headerImage(src='http://www.juanferreras.com/img/email-header.jpg', style='max-width:600px;', mc:label='header_image', mc:edit='header_image', mc:allowdesigner='', mc:allowtext='')
+                  // // END HEADER
+              tr
+                td(align='center', valign='top')
+                  // BEGIN BODY //
+                  table#templateBody(border='0', cellpadding='0', cellspacing='0', width='100%')
+                    tr
+                      td.bodyContent(valign='top', mc:edit='body_content00')
+                        h1 New Contact Submission.
+                        h3 from 
+                          a(href="http://www.juanferreras.com") www.juanferreras.com
+                        p 
+                          | Hey Juan! My name is #{name}. I'm in need of #{project}. I've got a rough budget of #{budget}. Please reach out at 
+                          a(href=email) #{email}.
+                  // // END BODY
+            // // END TEMPLATE
