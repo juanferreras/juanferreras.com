@@ -17,6 +17,12 @@
     opacity: 1;
   }
 }
+#sherlockHolmes .quote{
+  display: none;
+  @include sm-width-md-height{
+    display: block;
+  }
+}
 #sherlockHolmes a{
   color: map-get($colors, purple);
 }

@@ -46,6 +46,11 @@ $md-height: 900px;
     @content;
   }
 }
+@mixin sm-width-md-height {
+  @media only screen and (min-width: $sm-width) and (min-height: $md-height) {
+    @content;
+  }
+}
 @mixin lg-width-sm-height {
   @media only screen and (min-width: $lg-width) and (min-height: $sm-height) {
     @content;
