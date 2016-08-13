@@ -19,6 +19,7 @@
   left: 0;
   transition: 0.85s ease;
   background: url("../img/bg.jpg");
+  z-index: 0;
 }
 .loading{
   overflow:hidden;
