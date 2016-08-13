@@ -58,6 +58,7 @@ function initNaturalLanguageForm(){
 	});
 
 	$('[data-type="modal-trigger"]').on('click', function(){
+		if (localStorage.getItem("jf_form-visits") == 0) counter = 0;
 		counter++;
 		localStorage.setItem("jf_form-visits", counter);
 
