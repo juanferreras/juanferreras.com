@@ -34,6 +34,7 @@
 	"Developer": "Developer",
 	"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
 	"Martin Fowler": "Martin Fowler",
+	"Co-Founder & Project Manager @ ": "Co-Founder & Project Manager @ ",
 	"A brand is only as successful": "A brand is only as successful",
 	"as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.": "as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.",
 	"AVG with/without postponements": "AVG with/without postponements: 8.11/8.11*",
@@ -50,7 +51,7 @@
 	"I'm incredibly passionate about what I do, and I feel really excited towards pushing myself to the edge. I think that we grow and develop ourselves as professionals when we are outside our comfort zone.": "I'm incredibly passionate about what I do, and I feel really excited towards pushing myself to the edge. I think that we grow and develop ourselves as professionals when we are outside our comfort zone.",
 	"Experience": "Experience",
 	"2013 - PRESENT": "2013 - PRESENT",
-	"Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.": "Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.",
+	"Co-Founder & Project Manager of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United States.": "Co-Founder & Project Manager of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United States.",
 	"Education": "Education",
 	"Information Systems Engineering": "Information Systems Engineering",
 	"Bachelor ": "Bachelor ",
@@ -78,5 +79,6 @@
 	"Spanish": "Spanish",
 	"Native Language": "Native Language",
 	"English": "English",
-	"Full Professional Proficiency": "Full Professional Proficiency"
+	"Full Professional Proficiency": "Full Professional Proficiency",
+	"Co-Founder & Project Manager": "Co-Founder & Project Manager"
 }
