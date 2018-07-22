@@ -56,16 +56,17 @@ block body
           li.parallax__layer.visible.parallax__layer--main(data-depth='0.15')
             .hero.parallax__no-translate
               h1.hero__title JF.
-              - var firstLine = __("Crafting wonderful")
-              - var secondLine = __("Entrepreneur")
-              h3.hero__subtitle#typer(data-typer-targets=firstLine + ', ' + secondLine)
+              - var firstLine = __("Entrepreneur")
+              - var secondLine = __("hero_sellry")
+              - var thirdLine = __("hero_labelradar")
+              h3.hero__subtitle#typer(data-typer-targets=firstLine + ', ' + secondLine + ', ' + thirdLine)
               .modal
                 .modal__action
                   button.btn(data-type='modal-trigger', tabindex='2')
                     | #{ __("Contact") }
                   span.modal__bg
                   span.or #{ __("or") }
-                  a.underline.underline--active(href="/resume", title="Resume", tabindex='3')
+                  a.underline.underline--active(href="https://linkedin.com/in/ferrerasjuan", target="_BLANK", title="Resume", tabindex='3')
                     | #{ __("Resumé") }
                 .modal__container
                   .modal__content
@@ -89,10 +90,10 @@ block body
                       span #{ __("I've got a rough budget of ") }
                       .keep-together
                         select(name='budget')
-                          option(value='1000', selected='') < $1000 USD
-                          option(value='1000-3500') $1000 - $3500 USD
-                          option(value='3500-7000') $3500 - $7000 USD
-                          option(value='7000') > $7000 USD
+                          option(value='5000', selected='') < $5000 USD
+                          option(value='5000-10000') $5000 - $10000 USD
+                          option(value='10000-15000') $10000 - $15000 USD
+                          option(value='15000') > $15000 USD
                         span .
                       br
                       span #{ __("Please reach out at") } 
@@ -144,13 +145,13 @@ block body
                 span.profile__surname #{ __("Ferreras") }
             .parallax__layer(data-depth='0.65')
               .profile__role
-                h5 #{ __("Co-Founder & Project Manager @ ") }
-                a(href="https://www.flioh.com" target="_BLANK")
-                  include ../src/img/flioh.svg
+                h5 #{ __("job_title") }
+                a(href="https://www.sellry.com" target="_BLANK")
+                  include ../src/img/sellry.svg
           .about__biography
             h3.biography__title #{ __("WHO THE F!@#?") }
             p.biography__intro 
-              | #{ __("A 21 years old Information Systems Engineer Student based in Santa Fe, Argentina.") }
+              | #{ __("biography_intro") }
             .biography__body
               span.biography__line
               .biography__text
@@ -212,9 +213,8 @@ block body
           | #{ __("directly if that's how you") }
           span.roll#roll #{ __(" roll. ") }
           | #{ __("While you're at it, feel free to") }
-          a.underline(tabindex="-1" href="/resume") #{ __("check out my resumé ") }
-          | #{ __("to know more about my employment and education history or even") }
-          a.underline(tabindex="-1" href="https://ar.linkedin.com/in/ferrerasjuan" target="_BLANK") #{ __("add me on linkedin.") }
+          a.underline(tabindex="-1" href="https://linkedin.com/in/ferrerasjuan" target="_BLANK") #{ __("check out my resumé ") }
+          | #{ __("to know more about my employment and education history.") }
       .footer__copyright
         .footer__row
           .footer__column.footer__column--left
@@ -230,5 +230,5 @@ block body
           .footer__column.footer__column--right
             p
               | #{ __("Code available on") }
-              a.underline(tabindex="-1" href="https://github.com/juanferreras/juanferreras.com/tree/v2" target="_BLANK") Github
+              a.underline(tabindex="-1" href="https://github.com/juanferreras/juanferreras.com" target="_BLANK") Github
       script(src='js/scripts.js?v4')

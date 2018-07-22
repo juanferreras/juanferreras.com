@@ -100,6 +100,7 @@
 	"While you're at it, feel free to": " También podés",
 	"check out my resumé ": "ver mi currículum ",
 	"to know more about my employment and education history or even": "para saber más acerca de mi experiencia y educación e incluso",
+	"to know more about my employment and education history.": "para saber más acerca de mi experiencia y educación.",
 	"add me on linkedin.": "agregame en linkedin.",
 	"Crafted with": "Hecho con",
 	"by": "por",
@@ -112,5 +113,9 @@
 	"working really hard to fix it.": "está trabajando intensamente para solucionarlo.",
 	"Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.": "Fundador y Líder Técnico de un estudio de diseño basado en Argentina, especializado en la creación de productos digitales para clientes del extranjero, con una fuerte presencia en Canadá, Inglaterra y Estados Unidos.",
 	"Developing applications with HTML5, AngularJS and NodeJS": "Desarrollo de Aplicaciones con HTML5, AngularJS y NodeJS",
-	"Score: 92/100 - Equivalent to CEFR C1.": "Nota: 92/100 - Equivalente a un CEFR C1."
+	"Score: 92/100 - Equivalent to CEFR C1.": "Nota: 92/100 - Equivalente a un CEFR C1.",
+	"job_title": "Lead Shopify Developer @ ",
+	"hero_sellry": "Construyendo el futuro del comercio en Sellry",
+	"hero_labelradar": "Empoderando Artistas y Fans en LabelRadar",
+	"biography_intro": "Un argentino de %AGE% años; Ingeniero en Sistemas de Información y Diseñador UX/UI autodidacta."
 }

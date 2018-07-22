@@ -30,6 +30,19 @@ function initLayout(){
 	});
 }
 
+function _calculateAge(birthday) { // birthday is a date
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+function replaceBirthday(){
+	var myAge = _calculateAge(new Date(1995, 3, 29)); // months start from 0 so April is 3 instead of 4
+	var updatedText = $('.biography__intro').text().replace('%AGE%', myAge);
+	$('.biography__intro').text(updatedText);
+}
+replaceBirthday();
+
 function preloadImages(){
 	var images = $('img, .parallax__content, section, .about__background, .footer__background');
 	$.each(images, function(){
