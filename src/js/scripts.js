@@ -306,10 +306,17 @@ function initFormSubmission(){
 					$successMessage = $('#success'),
 					$sherlockHolmes = $('#sherlockHolmes');
 
-				$formMessage.slideUp("fast");
-
+        $formMessage.slideUp("fast");
+        
 				isValid = validateForm(data);
 				if (isValid){
+          var formData = {
+            name: data.name,
+            project: data.project,
+            budget: data.budget,
+            email: data.email
+          }
+          console.log(formData);  
 					$.ajax({
 						beforeSend: function(){
 							// Fake progress since we're not really sending any heavy data
@@ -334,8 +341,8 @@ function initFormSubmission(){
 			       }, false);
 			       return xhr;
 			      },
-			      url: '/',
-			      data: data,
+			      url: '//formspree.io/juan@sellry.com',
+			      data: formData,
 			      type: 'POST'
 			    })
 				  .error(function(jqXHR, exception) {
@@ -369,10 +376,6 @@ function hoverReveal(){
 function printMessage(){
 	var message = "<---- \n" +
 								"Hey! This website is open source, feel free to check the source code at https://github.com/juanferreras/juanferreras.com" +
-								"\n" + 
-								"We're actually searching for front-end developers in Flioh! If you're interested, reach us out at jobs@flioh.com" + 
-								"\n" + 
-								"The only place you like your JavaScript is on server-side? That's fine, we're also looking for NodeJS back-end developers." +
 								"\n" +
 								"----> \n";
 	console.log(message);

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "imagemin": "imagemin src/img/* --out-dir=public/img",
-    "start": "grunt build && parallelshell \"node index.js\" grunt",
+    "start": "grunt build && node index.js grunt",
     "build": "grunt build && npm run imagemin",
     "postinstall": "npm run build"
   },
@@ -30,8 +30,6 @@
     "i18n-2": "^0.6.3",
     "imagemin-cli": "^3.0.0",
     "node-sass": "^3.8.0",
-    "nodemailer": "^2.5.0",
-    "nodemailer-ses-transport": "^1.4.0",
     "normalize-range": "^0.1.2",
     "parallelshell": "^2.0.0",
     "postcss": "^5.1.2",
