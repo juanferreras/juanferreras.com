@@ -309,14 +309,13 @@ function initFormSubmission(){
         $formMessage.slideUp("fast");
         
 				isValid = validateForm(data);
-				if (isValid){
+				if (isValid && data.length == 4){
           var formData = {
-            name: data.name,
-            project: data.project,
-            budget: data.budget,
-            email: data.email
+            'name': data[0].value,
+            'project': data[1].value,
+            'budget': data[2].value,
+            'email': data[3].value
           }
-          console.log(formData);  
 					$.ajax({
 						beforeSend: function(){
 							// Fake progress since we're not really sending any heavy data
