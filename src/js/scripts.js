@@ -342,7 +342,8 @@ function initFormSubmission(){
 			      },
 			      url: '//formspree.io/juan@sellry.com',
 			      data: formData,
-			      type: 'POST'
+			      type: 'POST',
+            dataType: "json"
 			    })
 				  .error(function(jqXHR, exception) {
 				  	$errorServer.slideDown("slow");
