@@ -81,7 +81,7 @@
 	"English": "English",
 	"Full Professional Proficiency": "Full Professional Proficiency",
 	"Co-Founder & Project Manager": "Founder & Project Manager",
-	"job_title": "Lead Shopify Developer @ ",
+	"job_title": "Lead Engineer @ ",
 	"hero_sellry": "Building the future of commerce at Sellry",
 	"hero_labelradar": "Empowering Artists and Fans at LabelRadar",
 	"biography_intro": "A %AGE% years old Argentinian; Information Systems Engineer and self taught UX/UI Designer.",

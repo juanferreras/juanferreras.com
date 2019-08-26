@@ -114,8 +114,9 @@
 	"Founder and Technical Lead of an argentinian-based small design studio specialized in delivering carefully-crafted digital goods to clients from Canada, England and United  States.": "Fundador y Líder Técnico de un estudio de diseño basado en Argentina, especializado en la creación de productos digitales para clientes del extranjero, con una fuerte presencia en Canadá, Inglaterra y Estados Unidos.",
 	"Developing applications with HTML5, AngularJS and NodeJS": "Desarrollo de Aplicaciones con HTML5, AngularJS y NodeJS",
 	"Score: 92/100 - Equivalent to CEFR C1.": "Nota: 92/100 - Equivalente a un CEFR C1.",
-	"job_title": "Lead Shopify Developer @ ",
+	"job_title": "Lead Engineer @ ",
 	"hero_sellry": "Construyendo el futuro del comercio en Sellry",
 	"hero_labelradar": "Empoderando Artistas y Fans en LabelRadar",
-	"biography_intro": "Un argentino de %AGE% años; Ingeniero en Sistemas de Información y Diseñador UX/UI autodidacta."
+  "biography_intro": "Un argentino de %AGE% años; Ingeniero en Sistemas de Información y Diseñador UX/UI autodidacta.",
+  "I truly enjoy crafting digital experiences; whether that is handling the UX/UI design, leading the software development by example or managing the entire project.": "Disfuto genuinamente crear experiencias digitales; ya sea encargándome del diseño UX/UI, liderando el desarrollo de software con el ejemplo o gestionando el proyecto entero."
 }

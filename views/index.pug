@@ -15,8 +15,6 @@ block body
         .nav__list
           a.nav__element.nav__element--current(href='#landing')
           a.nav__element(href='#about')
-          a.nav__element(href='#designer')
-          a.nav__element(href='#developer')
       section#landing
         ul.parallax
           li.parallax__layer(data-depth='0.20')
@@ -81,7 +79,7 @@ block body
                         select(name='project')
                           option(value='a-website', selected='') #{ __("a website") }
                           option(value='brand-design') #{ __("brand design") }
-                          option(value='app-development') #{ __("app development") } 
+                          option(value='app-development') #{ __("app development") }
                           option(value='motion-design') #{ __("motion design") }
                           option(value='graphic-design') #{ __("graphic design") }
                           option(value='something-else') #{ __("something else") }
@@ -96,7 +94,7 @@ block body
                           option(value='15000') > $15000 USD
                         span .
                       br
-                      span #{ __("Please reach out at") } 
+                      span #{ __("Please reach out at") }
                       .keep-together
                         input#formEmail(type='email', name='email', value='', placeholder='email@domain.com')
                         span .
@@ -121,7 +119,7 @@ block body
                     #sherlockHolmes
                       .quote
                         q #{ __("The world is full of obvious things which nobody by any chance ever observes.") }
-                        | #{ __("— said Sherlock Holmes once. ") } 
+                        | #{ __("— said Sherlock Holmes once. ") }
                       span#counter 4
                       | #{ __(" times you have visited this section yet you haven't contacted me. If you need any help, please feel free to ") }
                       a.underline(href="mailto:juan@sellry.com")
@@ -150,7 +148,7 @@ block body
                   include ../src/img/sellry.svg
           .about__biography
             h3.biography__title #{ __("WHO THE F!@#?") }
-            p.biography__intro 
+            p.biography__intro
               | #{ __("biography_intro") }
             .biography__body
               span.biography__line
@@ -163,49 +161,15 @@ block body
                   q #{ __("Great web design without functionality is like a sports car with no engine.") }
                   | #{ __(", said Paul Cookson once.") }
                 p
-                  | 
-                  q #{ __("If it's not breaking you down, it's not building you up.") }
-                  |  #{ __("Okay, enough with the quotes. I'm incredibly passionate about what I do, and I feel really excited towards pushing myself to the edge. I think that we grow and develop ourselves as professionals when we are outside our comfort zone.") }
-      section#designer(data-midnight='nav--black')
-        .split.split--designer
-          .container.container--small.container--center
-            header
-              h1.split__title #{ __("Designer") }
-            blockquote
-              q
-                | #{ __("Good design is obvious. Great design is transparent.") }
-              footer
-                cite #{ __("Joe Sparano") }
-            p
-              span.smallcaps #{ __("I'm a multi-disciplinary designer") }
-              | #{ __("who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt to a rapidly evolving industry without being left behind.") }
-            p
-              | #{ __("Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.") }
-          span.split__ampersand &
-      section#developer(data-midnight='nav--black')
-        .split.split--developer
-          .container.container--small.container--center
-            header
-              h1.split__title #{ __("Developer") }
-            blockquote
-              q
-                | #{ __("Any fool can write code that a computer can understand. Good programmers write code that humans can understand.") }
-              footer
-                cite #{ __("Martin Fowler") }
-            p
-              span.smallcaps #{ __("A brand is only as successful") }
-              | #{ __("as its implementation; great products should not be defined by design alone, but also by functionality and great user experience.") }
-            p
-              | #{ __("However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.") }
-          span.split__ampersand &
+                  |  #{ __("I truly enjoy crafting digital experiences; whether that is handling the UX/UI design, leading the software development by example or managing the entire project and the team.") }
     footer#footer
       .footer__background#footerBackground
       .footer
-        h2.footer__title 
+        h2.footer__title
           | #{ __("Say ") }
           span.merriweather #{ __("hi! ") }
         h3.footer__subtitle #{ __("Don't be shy.") }
-        p.footer__description 
+        p.footer__description
           | #{ __("You may use the") }
           a.underline(tabindex="-1" href="#0" data-type='modal-trigger-alt') #{ __("contact form ") }
           | #{ __("on the top, or") }
@@ -218,13 +182,10 @@ block body
       .footer__copyright
         .footer__row
           .footer__column.footer__column--left
-            p 
+            p
               | #{ __("Crafted with") }
               span.heart-icon
                 include ../src/img/heart.svg
-              | #{ __("by") }
-              a(tabindex="-1" href="https://www.flioh.com" target="_BLANK")
-                include ../src/img/flioh.svg
           .footer__column
             a.underline.underline--fix(tabindex="-1" href="mailto:juan@sellry.com") juan@sellry.com
           .footer__column.footer__column--right
