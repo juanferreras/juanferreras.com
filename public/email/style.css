@@ -33,6 +33,7 @@ a,
 a:hover,
 a:focus{
   color: #1f142f !important;
+  background-color:orange;
 }
 
 /**
@@ -128,7 +129,7 @@ h3{
 * @style heading 4
 */
 h4{
-  /*@editable*/ color:#808080 !important;
+  /*@editable*/ color:#808080 !important
   display:block;
   /*@editable*/ font-family:'Open Sans', Helvetica, Arial, sans-serif;
   /*@editable*/ font-size:14px;
@@ -190,6 +191,7 @@ h4{
   /*@editable*/ background-color:#FFFFFF;
   /*@editable*/ border-top:0px solid #FFFFFF;
   /*@editable*/ border-bottom:0px solid #CCCCCC;
+  border-radius:10px;
 }
 
 /**
