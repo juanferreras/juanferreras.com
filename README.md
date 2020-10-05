@@ -2,7 +2,7 @@
 
 ![Screenshot](https://www.juanferreras.com/img/email-header.jpg)
 
-You can see it live at [juanferreras.com](http://juanferreras.com). Express/NodeJS.
+You can see it live at [juanferreras.com](http://juanferreras.com). An amazing website Express/NodeJS.
 
 ### Building ###
 
