@@ -35,7 +35,7 @@
     "postcss": "^5.1.2",
     "postcss-discard-comments": "^2.0.4",
     "postcss-value-parser": "^3.3.0",
-    "pug": "^2.0.0-beta5"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "susy": "^2.2.12"
