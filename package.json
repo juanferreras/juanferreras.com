@@ -29,7 +29,7 @@
     "grunt-uncss": "^0.6.1",
     "i18n-2": "^0.6.3",
     "imagemin-cli": "^3.0.0",
-    "node-sass": "^3.8.0",
+    "node-sass": "^7.0.0",
     "normalize-range": "^0.1.2",
     "parallelshell": "^2.0.0",
     "postcss": "^5.1.2",
