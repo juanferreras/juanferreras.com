@@ -19,7 +19,7 @@
     "autoprefixer": "^6.4.0",
     "body-parser": "^1.15.2",
     "email-templates": "^2.4.1",
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-uglify": "^2.0.0",
